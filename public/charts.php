@@ -19,6 +19,8 @@ include_once "header.inc";
         </div>
     </div>
     <div id="visualization"></div>
+
+    <div id="pie" style="width: 900px; height: 700px;"></div>
 </div>
 <script type="text/javascript" src="//www.google.com/jsapi"></script>
 <script type="text/javascript">

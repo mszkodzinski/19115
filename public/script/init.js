@@ -39,6 +39,25 @@ var Hackathon19115 = {
                 containerId: 'visualization'
             });
             wrapper.draw();
+
+            var data = google.visualization.arrayToDataTable([
+                ['Forma zgłoszenia', 'Ilość zgłoszeń'], ['Telefon', 700], ['Mobile', 300], ['Formularz', 400],
+                ['Email', 123], ['Telegram', 16], ['Poczta pantoflowa', 987]
+            ]);
+
+            var options = {
+                title: 'Typ zgłoszenia',
+                legend: 'none',
+                pieHole: 0.2,
+                pieSliceText: 'label',
+                slices: {
+                    3: {offset: 0.1},
+                    4: {offset: 0.15}
+                }
+            };
+
+            var chart = new google.visualization.PieChart(document.getElementById('pie'));
+            chart.draw(data, options);
         }
 
         google.setOnLoadCallback(drawVisualization);
