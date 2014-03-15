@@ -46,7 +46,16 @@ var Hackathon19115 = {
                 groupby: 'year'
             },
             success: function (data) {
-                Chart.drawColumn(data.label, data.value, 'Lata', 'year');
+                Chart.drawPie(data.label, data.value, 'Lata', 'year');
+            }
+        });
+        Api.call({
+            action: 'getData',
+            data: {
+                groupby: 'year_month_day'
+            },
+            success: function (data) {
+                Chart.drawCalendar(data.label, data.value, 'Dni', 'calendar');
             }
         });
     },

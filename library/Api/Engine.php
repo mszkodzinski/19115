@@ -63,7 +63,8 @@ class Api_Engine
                 'district' => 'district',
                 'year' => 'year',
                 'month' => 'month',
-                'year_month' => 'year_month'
+                'year_month' => 'year_month',
+                'year_month_day' => 'year_month_day'
             );
             if (!isset($map[$params['groupby']])) {
                 $r->status = false;
