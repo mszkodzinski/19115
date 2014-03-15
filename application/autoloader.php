@@ -26,6 +26,7 @@ function __autoload($class)
         case 'Horde':
         case 'Core':
         case 'Csv':
+        case 'DB':
         case 'Imap':
             $path = LIB_PATH;
             $class = str_replace('_', '/', $class);
