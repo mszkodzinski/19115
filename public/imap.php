@@ -30,6 +30,8 @@ if (!$connection->isCorrect()) {
     return false;
 }
 
+$db = new DB_DB();
+
 // Pobierz wszystkie od daty... bez treści
 foreach ($connection->getMailboxList($mailboxes) as $mailbox) {
     $uids = $mailbox->getMessagesUidSinceDate($date);
@@ -39,7 +41,7 @@ foreach ($connection->getMailboxList($mailboxes) as $mailbox) {
 
         foreach ($message->getAttachments() as $a) {
             $am = $a->getModel();
-            $file_name = $model['date'];
+            $file_name = substr($model['date'], 0, 10);
 
             switch (trim($model['subject'])) {
                 case "Lista zamkniętych zgłoszeń z systemu CKM":
@@ -51,9 +53,11 @@ foreach ($connection->getMailboxList($mailboxes) as $mailbox) {
             }
 
             $file_name .= ".csv";
-            echo $file_name."<br/>";
+            //echo $file_name."<br/>";
 
             $a->saveContent('../data/file/' . $file_name);
+            $db->insertFile($file_name);
+
         }
 
     }
