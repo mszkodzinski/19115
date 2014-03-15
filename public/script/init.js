@@ -11,7 +11,7 @@ var Hackathon19115 = {
 
         var checkin = $('#date-from').datepicker({
             onRender: function(date) {
-                return date.valueOf() < now.valueOf() ? 'disabled' : '';
+//                return date.valueOf() < now.valueOf() ? 'disabled' : '';
             }
         }).on('changeDate', function(ev) {
             if (ev.date.valueOf() > checkout.date.valueOf()) {
