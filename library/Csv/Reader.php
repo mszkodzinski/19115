@@ -12,7 +12,7 @@
  *      $csvReader->readLines(100);
  *      $result = $csvReader->getData();
  */
-class CsvReader extends CSV
+class Csv_Reader extends Csv_Main
 {
     /**
      * Dane wielu linii

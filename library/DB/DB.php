@@ -6,19 +6,22 @@
  * Time: 12:09 PM
  */
 
-class DB extends PDO  {
+class DB  {
     private $db;
     public function __construct(){
         $config = require_once('../config/default.php');
-        //$this->db = mysql_connect($config['db']['host'],$config['db']['login'],$config['db']['pass']);
+        $this->db = new PDO('mysql:host=localhost;dbname='.$config['db']['dbname'], $config['db']['login'], $config['db']['pass']);
 
 
         //parent::__construct($dns, $config['db']['login'], $config['db']['pass']);
 
     }
 
-    public function insertData($data){
+    public function insertCSVDataToDB($file, $closed = false){
+        require_once('../library/CSV');
+        $csvReader = new CsvReader($filePath);
 
-       // $this->db->
+
+
     }
 } 

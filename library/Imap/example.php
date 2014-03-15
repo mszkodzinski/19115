@@ -16,7 +16,7 @@ $accountData = array(
 $date = '2014-01-01';
 $mailboxes = array('INBOX', '*Sent*', '*Wysłane*');
 
-$connection = new Mail_Model_Imap_Connection_Horde($accountData);
+$connection = new Imap_Connection_Horde($accountData);
 if (!$connection->isCorrect()) {
     return false;
 }
