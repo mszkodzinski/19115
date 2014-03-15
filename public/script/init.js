@@ -32,16 +32,24 @@ var Hackathon19115 = {
         }).data('datepicker');
     },
     chart: function(){
-        function drawVisualization() {
-            var wrapper = new google.visualization.ChartWrapper({
-                chartType: 'ColumnChart',
-                dataTable: [['', 'Telefon', 'Mobile', 'Formularz'],
-                    ['', 700, 300, 400]],
-                options: {'title': 'Typ zgłoszenia'},
-                containerId: 'visualization'
-            });
-            wrapper.draw();
-        }
+        Api.call({
+            action: 'getData',
+            data: {
+                groupby: 'source'
+            },
+            success: function (data) {
+                Chart.drawColumn(data.label, data.value, 'Źródła', 'source');
+            }
+        });
+        Api.call({
+            action: 'getData',
+            data: {
+                groupby: 'year'
+            },
+            success: function (data) {
+                Chart.drawColumn(data.label, data.value, 'Lata', 'year');
+            }
+        });
 
         google.setOnLoadCallback(drawVisualization);
     },
@@ -77,4 +85,6 @@ var Hackathon19115 = {
     }
 };
 
-Hackathon19115.init();
+$(function () {
+    Hackathon19115.init();
+});

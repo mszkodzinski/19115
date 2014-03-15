@@ -9,7 +9,7 @@ class Api_Responce
     public function serialize()
     {
         return json_encode(array(
-            'result' => $this->result,
+            'status' => $this->result,
             'code' => $this->code,
             'data' => $this->data,
             'error' => $this->error
