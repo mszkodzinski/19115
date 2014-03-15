@@ -20,6 +20,8 @@ foreach($query->fetchAll() as $qr) {
     $fileconv = substr($file, 0, strlen($file)-4).'_utf8.csv';
     shell_exec('iconv -f UTF16LE -t UTF8 '.$file.' > '.$fileconv);
     $mapper->insertCSVDataToDB($fileconv);
+
+    $db->updateRow('`importer`', array('status' => '1'), array('id' => $qr['id']));
 }
 
 
