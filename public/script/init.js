@@ -3,17 +3,21 @@ var map = $('#map'),
     container = $('#container');
 
 var Hackathon19115 = {
+    filters: {
+        date: [0, 0]
+    },
     init: function(){
-        this.datepicker();
         Chart.init(function () {
-            Hackathon19115.chart();
+            Hackathon19115.initFilter();
+//            Hackathon19115.chart();
         });
 
 //        this.map();
 //        this.webResponse();
     },
-    datepicker: function(){
+    initFilter: function(){
         var checkin = $('#date-from').datepicker({
+            dateFormat: 'yy-mm-dd',
             onRender: function(date) {
             }
         }).on('changeDate', function(ev) {
@@ -26,18 +30,68 @@ var Hackathon19115 = {
             $('#date-to')[0].focus();
         }).data('datepicker');
         var checkout = $('#date-to').datepicker({
+            dateFormat: 'yy-mm-dd',
             onRender: function(date) {
                 return date.valueOf() <= checkin.date.valueOf() ? 'disabled' : '';
             }
         }).on('changeDate', function(ev) {
             checkout.hide();
         }).data('datepicker');
+        $('#date-type').change(function () {
+            var val = $(this).val(),
+                date = new Date(),
+                year = date.getFullYear(),
+                month = date.getMonth() + 1,
+                day = date.getDate();
+            if (month < 10) {
+                month = '0' + month;
+            }
+            if (day < 10) {
+                day = '0' + day;
+            }
+            switch (val) {
+                case 'year':
+                    $('#date-from').val(year + '-01-01');
+                    $('#date-to').val(year + '-12-31');
+                    $('#date-from,#date-to').hide();
+                    break;
+                case 'month':
+                    $('#date-from').val(year + '-' + month + '-01');
+                    date.setMonth(date.getMonth() + 1);
+                    date.setDate(1);
+                    date.setDate(date.getDate() - 1);
+                    month = date.getMonth() + 1;
+                    day = date.getDate();
+                    if (month < 10) {
+                        month = '0' + month;
+                    }
+                    if (day < 10) {
+                        day = '0' + day;
+                    }
+                    $('#date-to').val(year + '-' + month + '-' + day);
+                    $('#date-from,#date-to').hide();
+                    break;
+                case 'all':
+                    $('#date-from').val('2013-01-01');
+                    $('#date-to').val(year + '-' + month + '-' + day);
+                    $('#date-from,#date-to').hide();
+                    break;
+                case 'own':
+                    $('#date-from,#date-to').show();
+                    break;
+            }
+            Hackathon19115.filters.date[0] = $('#date-from').val();
+            Hackathon19115.filters.date[1] = $('#date-to').val();
+            Hackathon19115.chart();
+        });
+        $('#date-type').trigger('change');
     },
     chart: function(){
         Api.call({
             action: 'getData',
             data: {
-                groupby: 'source'
+                groupby: 'source',
+                filter: Hackathon19115.filters
             },
             success: function (data) {
                 Chart.drawColumn(Chart.getLabels('source', data.label), data.value, 'Źródła', 'source');
@@ -46,7 +100,8 @@ var Hackathon19115 = {
         Api.call({
             action: 'getData',
             data: {
-                groupby: 'district'
+                groupby: 'district',
+                filter: Hackathon19115.filters
             },
             success: function (data) {
                 Chart.drawColumn(Chart.getLabels('district', data.label, true), data.value, 'Dzielnice', 'district');
@@ -55,7 +110,8 @@ var Hackathon19115 = {
         Api.call({
             action: 'getData',
             data: {
-                groupby: 'year'
+                groupby: 'year',
+                filter: Hackathon19115.filters
             },
             success: function (data) {
                 Chart.drawPie(data.label, data.value, 'Lata', 'year');
@@ -64,7 +120,8 @@ var Hackathon19115 = {
         Api.call({
             action: 'getData',
             data: {
-                groupby: 'year_month_day'
+                groupby: 'year_month_day',
+                filter: Hackathon19115.filters
             },
             success: function (data) {
                 Chart.drawCalendar(data.label, data.value, 'Dni', 'calendar');

@@ -11,6 +11,12 @@ include_once "header.inc";
                 </div>
                 <div class="navbar-collapse collapse navbar-responsive-collapse">
                     <form class="navbar-form navbar-left">
+                        <select name="date-type" id="date-type">
+                            <option value="all">Wszystkie</option>
+                            <option value="year" selected="selected">Bieżący rok</option>
+                            <option value="month">Bieżący miesiąc</option>
+                            <option value="own">Dowolny zakres</option>
+                        </select>
                         <input type="text" value="" id="date-from" class="form-control col-lg-8" placeholder="Od">
                         <input type="text" value="" id="date-to" class="form-control col-lg-8" placeholder="Do">
                     </form>
@@ -18,8 +24,8 @@ include_once "header.inc";
             </div>
         </div>
     </div>
-    <div id="map" style="width:1140px; height:800px;"></div>
-    <div id="visualization" style="width:1140px; height:800px;"></div>
+    <div id="map" style="width:1140px; height:800px;display:none"></div>
+    <div id="visualization" style="width:1140px; height:800px;display:none"></div>
     <div id="source"></div>
     <div id="district"></div>
     <div id="year"></div>
