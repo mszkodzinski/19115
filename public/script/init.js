@@ -1,17 +1,17 @@
+var map = $('#map'),
+    chart = $('#visualization'),
+    container = $('#container');
+
 var Hackathon19115 = {
     init: function(){
         this.datepicker();
         this.chart();
         this.map();
-        this.onResize();
+        this.webResponse();
     },
     datepicker: function(){
-        var nowTemp = new Date();
-        var now = new Date(nowTemp.getFullYear(), nowTemp.getMonth(), nowTemp.getDate(), 0, 0, 0, 0);
-
         var checkin = $('#date-from').datepicker({
             onRender: function(date) {
-                return date.valueOf() < now.valueOf() ? 'disabled' : '';
             }
         }).on('changeDate', function(ev) {
             if (ev.date.valueOf() > checkout.date.valueOf()) {
@@ -27,7 +27,6 @@ var Hackathon19115 = {
                 return date.valueOf() <= checkin.date.valueOf() ? 'disabled' : '';
             }
         }).on('changeDate', function(ev) {
-            console.log('date: ', ev);
             checkout.hide();
         }).data('datepicker');
     },
@@ -78,16 +77,22 @@ var Hackathon19115 = {
             }
         }
     },
-    onResize: function(){
-        var map = document.getElementById("map"),
-            chart = document.getElementById("visualisation"),
-            container = document.getElementById("container");
+    webResponse: function(){
+        var w = container.width();
+
+        function setSize(w){
+            map.width(w);
+            chart.width(w);
+        }
 
         window.onresize = function(event) {
-            var w = container.offsetWidth + 'px';
-            map.style.width = w;
-//            chart.style.width = w;
+            var w = container.width();
+
+            setSize(w);
         };
+
+        setSize(w);
+
     }
 };
 
