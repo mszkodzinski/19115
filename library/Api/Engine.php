@@ -24,7 +24,7 @@ class Api_Engine
 
     public function getData($params)
     {
-        foreach (array('filter', 'group', 'sortby', 'order') as $key) {
+        foreach (array('filter', 'groupby', 'sortby', 'order') as $key) {
             if (!isset($params[$key])) {
                 $params[$key] = null;
             }

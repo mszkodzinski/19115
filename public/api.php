@@ -7,7 +7,7 @@ ini_set('display_errors', 1);
 
 include_once('../application/autoloader.php');
 
-$action = $_GET['action'];
+$action = isset($_GET['action']) ? $_GET['action'] : (isset($_POST['action']) ? $_POST['action'] : 'test');
 $data = $_POST;
 if (!count($data)) {
     $data = $_GET;

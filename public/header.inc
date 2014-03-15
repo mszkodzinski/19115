@@ -14,6 +14,7 @@
     <![endif]-->
     <script src="./script/jquery.js"></script>
     <script src="./script/bootstrap.js"></script>
+    <script src="./script/api.js"></script>
 </head>
 <body>
 
