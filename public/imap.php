@@ -21,7 +21,7 @@ $accountData = array(
     'secure' => 'ssl',
 );
 
-$date = '2014-03-07';
+$date = '2013-01-01';
 $mailboxes = array('INBOX', '*Sent*', '*Wysłane*');
 
 $connection = new Imap_Connection_Horde($accountData);
