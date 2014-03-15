@@ -10,9 +10,14 @@ class DB_DB  {
     private $db;
     public function __construct(){
         $config = require_once('../config/default.php');
-        $this->db = new PDO('mysql:host=localhost;dbname='.$config['db']['dbname'], $config['db']['login'], $config['db']['pass']);
+        $this->db = new PDO('mysql:host=127.0.0.1;dbname='.$config['db']['dbname'], $config['db']['login'], $config['db']['pass']);
 
 
+    }
+
+    public function insertFile($file_name) {
+        $query = $this->db->prepare('INSERT INTO `importer` (`file` ,`import_date` ,`status`) VALUES (?, CURRENT_TIMESTAMP ,  \'0\');');
+        return $query->execute(array($file_name));
     }
 
     public function insertCSVDataToDB($filename, $closed = false){
