@@ -67,7 +67,8 @@ class DB_DB  {
 
 
         try {
-            $sql ='insert IGNORE  into '.$table.' ('.implode(',', array_keys($row)).' ) values ('.trim($str,',').')';
+            $sql ='insert  into '.$table.' ('.implode(',', array_keys($row)).' ) values ('.trim($str,',').')';
+            echo $sql;
             $stmt = $this->db->prepare($sql);
             try {
                 $this->db->beginTransaction();

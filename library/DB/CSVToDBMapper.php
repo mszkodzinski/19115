@@ -34,10 +34,11 @@ class DB_CSVToDBMapper {
         foreach($row as $key=>$val){
             if(array_key_exists($key, $header_mapper)){
                // $func = $val[0];
+                //$id = call_user_func_array(array($this->db,$val[0] ), array($header_mapper[$key][1], $val));
                 $id = $this->db->insertDictData($header_mapper[$key][1], $val);
                 $row_to_db[$key]=$id;
             } else {
-                $row_to_db[$key]=is_null($val)?'null':$val;
+                $row_to_db[$key]=is_null($val)?'null': iconv('UTF-16LE', 'UTF-8', $val."\0") ; ;
             }
 
         }
@@ -53,15 +54,15 @@ class DB_CSVToDBMapper {
 
         $header_mapper = array(
             'number',
-            'date_of_acceptance',
+            'date_of_acceptance',//=>array('dateParser'),
             'k_status'=>array('insertDictData','status'),
-            'district',
+            'k_district'=>array('insertDictData','district'),
             'street',
             'house_nr',
             'lattitude',
             'longtitude',
             'k_organization'=>array('insertDictData','organization'),
-            'close_date',
+            'close_date',//=>array('dateParser'),
             'k_source'=>array('insertDictData','source')
         );
 
