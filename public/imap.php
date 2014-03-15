@@ -21,9 +21,7 @@ $accountData = array(
     'secure' => 'ssl',
 );
 
-print_r($accountData);
-
-$date = '2014-03-14';
+$date = '2014-03-07';
 $mailboxes = array('INBOX', '*Sent*', '*Wysłane*');
 
 $connection = new Imap_Connection_Horde($accountData);
@@ -32,38 +30,35 @@ if (!$connection->isCorrect()) {
     return false;
 }
 
+$db = new DB_DB();
+
 // Pobierz wszystkie od daty... bez treści
 foreach ($connection->getMailboxList($mailboxes) as $mailbox) {
     $uids = $mailbox->getMessagesUidSinceDate($date);
+
     foreach ($mailbox->getMessagesByUid($uids, true) as $message) {
         $model = $message->getModel();
-echo $model['from'].'---';
-echo $model['date'].'---';
 
         foreach ($message->getAttachments() as $a) {
             $am = $a->getModel();
-            // zrób coś z załącznikiem...
-            echo $am['name'];
-            $a->saveContent('../tmp/' . $am['name']);
+            $file_name = substr($model['date'], 0, 10);
+
+            switch (trim($model['subject'])) {
+                case "Lista zamkniętych zgłoszeń z systemu CKM":
+                    $file_name .= "_closed";
+                    break;
+                case "Lista zgłoszeń z systemu CKM":
+                    $file_name .= "_open";
+                    break;
+            }
+
+            $file_name .= ".csv";
+            //echo $file_name."<br/>";
+
+            $a->saveContent('../data/file/' . $file_name);
+            $db->insertFile($file_name);
+
         }
-        //2014-03-01_open.csv
-        // Zrób coś z wiadomością...
+
     }
 }
-
-// Pobierz po uid z treścią
-/*
-foreach ($connection->getMailboxList($mail->mailbox) as $mailbox) {
-    foreach ($mailbox->getMessagesByUid($mail->uid, true) as $message) {
-        $model = $message->getModel();
-
-        echo $model;
-
-        foreach ($message->getAttachments() as $a) {
-            $am = $a->getModel();
-            // zrób coś z załącznikiem...
-            $a->saveContent('/tmp/' . $am->name);
-        }
-    }
-}
-*/
