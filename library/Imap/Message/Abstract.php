@@ -72,21 +72,21 @@ abstract class Imap_Message_Abstract
 
     public static function clearText($text, $isHtml = false)
     {
-        $c = new Core_Html2Text($text, false, array(
-            'width' => 0
-        ));
-        if ($isHtml) {
-            $text = $c->get_text();
-        }
-        $text = $c->text2text($text);
-
-        $text = preg_replace(array(
-            '/^((>(\s*))*(FROM:|From:|OD:|Od:|Wiadomość napisana przez|Wiadomosc napisana przez|W dniu ([[:print:]]*) napisa))/m',
-            '/(^(' . static::MESSAGE_SPLITTER . ')(\R)+){2,}/im'
-        ), array(
-            static::MESSAGE_SPLITTER . "\n$1",
-            static::MESSAGE_SPLITTER . "\n"
-        ), $text);
+//        $c = new Core_Html2Text($text, false, array(
+//            'width' => 0
+//        ));
+//        if ($isHtml) {
+//            $text = $c->get_text();
+//        }
+//        $text = $c->text2text($text);
+//
+//        $text = preg_replace(array(
+//            '/^((>(\s*))*(FROM:|From:|OD:|Od:|Wiadomość napisana przez|Wiadomosc napisana przez|W dniu ([[:print:]]*) napisa))/m',
+//            '/(^(' . static::MESSAGE_SPLITTER . ')(\R)+){2,}/im'
+//        ), array(
+//            static::MESSAGE_SPLITTER . "\n$1",
+//            static::MESSAGE_SPLITTER . "\n"
+//        ), $text);
         return $text;
     }
 }
