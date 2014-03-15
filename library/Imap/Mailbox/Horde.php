@@ -7,7 +7,7 @@
  * @author     Michał Szkodziński
  * @version    $Id: $
  */
-class Mail_Model_Imap_Mailbox_Horde extends Mail_Model_Imap_Mailbox_Abstract
+class Imap_Mailbox_Horde extends Imap_Mailbox_Abstract
 {
     public function getMessagesUidSinceDate($date)
     {
@@ -46,7 +46,7 @@ class Mail_Model_Imap_Mailbox_Horde extends Mail_Model_Imap_Mailbox_Abstract
         $query->flags();
         $query->size();
 
-        $messageList = new Mail_Model_Imap_Message_List();
+        $messageList = new Imap_Message_List();
         foreach ($this->getHordeMessageByUid($uids, $query) as $m) {
             $message = $this->_makeMessageFromHordeMessage($m);
             // Pomijamy duże maile tekstowe, bez załączników
@@ -62,7 +62,7 @@ class Mail_Model_Imap_Mailbox_Horde extends Mail_Model_Imap_Mailbox_Abstract
     {
         $envelope = $hordeMessage->getEnvelope();
 
-        $message = new Mail_Model_Imap_Message_Horde($this);
+        $message = new Imap_Message_Horde($this);
         $message->setHordeMessage($hordeMessage)
             ->setUuid(sha1(
                 $hordeMessage->getEnvelope()->message_id

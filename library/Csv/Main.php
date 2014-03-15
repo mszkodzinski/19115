@@ -1,5 +1,5 @@
 <?php
-class CSV
+class Csv_Main
 {
     const ERR_FILE_PATH_EMPTY = -10;
     const ERR_FILE_NOT_EXISTS = -20;

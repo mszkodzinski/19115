@@ -7,7 +7,7 @@
  * @author     Michał Szkodziński
  * @version    $Id: $
  */
-class Mail_Model_Imap_Connection_Horde extends Mail_Model_Imap_Connection_Abstract
+class Imap_Connection_Horde extends Imap_Connection_Abstract
 {
     protected static $_keyMap = array(
         'username' => 'username',
@@ -55,10 +55,10 @@ class Mail_Model_Imap_Connection_Horde extends Mail_Model_Imap_Connection_Abstra
         if (null === $pattern) {
             $pattern = '*';
         }
-        $boxes = new Mail_Model_Imap_Mailbox_List();
+        $boxes = new Imap_Mailbox_List();
         foreach ($this->_socket->listMailboxes($pattern, Horde_Imap_Client::MBOX_ALL) as $box) {
             if (isset($box['mailbox']) && $box['mailbox']->utf8) {
-                $boxes[] = new Mail_Model_Imap_Mailbox_Horde($this, $box['mailbox']->utf8);
+                $boxes[] = new Imap_Mailbox_Horde($this, $box['mailbox']->utf8);
             }
         }
         return $boxes;

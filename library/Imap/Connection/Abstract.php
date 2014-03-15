@@ -7,7 +7,7 @@
  * @author     Michał Szkodziński
  * @version    $Id: $
  */
-abstract class Mail_Model_Imap_Connection_Abstract
+abstract class Imap_Connection_Abstract
 {
     protected $_params;
 
@@ -15,7 +15,7 @@ abstract class Mail_Model_Imap_Connection_Abstract
 
     public function __construct($params = array())
     {
-        if ($params instanceof Mail_Model_Account) {
+        if ($params instanceof Account) {
             $this->_params = $params->toArray();
             $this->_params['password'] = $params->decrypt($this->_params['password']);
         } else {
@@ -34,7 +34,7 @@ abstract class Mail_Model_Imap_Connection_Abstract
 
     public function setParams($params)
     {
-        if ($params instanceof Mail_Model_Account) {
+        if ($params instanceof Account) {
             $this->_params = $params->toArray();
             $this->_params['password'] = $params->decrypt($this->_params['password']);
         } else {
@@ -57,7 +57,7 @@ abstract class Mail_Model_Imap_Connection_Abstract
     abstract public function isCorrect();
 
     /**
-     * @return Mail_Model_Imap_Mailbox_List
+     * @return Imap_Mailbox_List
      */
     abstract public function getMailboxList();
 }

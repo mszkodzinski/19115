@@ -7,16 +7,16 @@
  * @author     Michał Szkodziński
  * @version    $Id: $
  */
-class Mail_Model_Imap_Attachment_Horde extends Mail_Model_Imap_Attachment_Abstract
+class Imap_Attachment_Horde extends Imap_Attachment_Abstract
 {
     /**
-     * @var Mail_Model_Imap_Message_Horde
+     * @var Imap_Message_Horde
      */
     protected $_message;
 
     protected $_content;
 
-    public function setMessage(Mail_Model_Imap_Message_Horde $message)
+    public function setMessage(Imap_Message_Horde $message)
     {
         $this->_message = $message;
         return $this;

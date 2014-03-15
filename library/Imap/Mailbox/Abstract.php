@@ -7,12 +7,12 @@
  * @author     Michał Szkodziński
  * @version    $Id: $
  */
-abstract class Mail_Model_Imap_Mailbox_Abstract
+abstract class Imap_Mailbox_Abstract
 {
     protected $_connection;
     protected $_name;
 
-    public function __construct(Mail_Model_Imap_Connection_Abstract $connection, $name)
+    public function __construct(Imap_Connection_Abstract $connection, $name)
     {
         $this->_connection = $connection;
         $this->_name = $name;

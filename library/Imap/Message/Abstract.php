@@ -7,7 +7,7 @@
  * @author     Michał Szkodziński
  * @version    $Id: $
  */
-abstract class Mail_Model_Imap_Message_Abstract
+abstract class Imap_Message_Abstract
 {
     const MESSAGE_SPLITTER = '-----Original Message-----';
 
@@ -15,7 +15,7 @@ abstract class Mail_Model_Imap_Message_Abstract
     protected $_params = array();
     protected $_uuid = null;
 
-    public function __construct(Mail_Model_Imap_Mailbox_Abstract $mailbox)
+    public function __construct(Imap_Mailbox_Abstract $mailbox)
     {
         $this->_mailbox = $mailbox;
         $this->init();
