@@ -2,6 +2,27 @@
 
 class Reader_Data extends DB_DB
 {
+    public function getLabels()
+    {
+        $result = array(
+            'organization' => array(),
+            'source' => array()
+        );
+        $q = $this->getDBObject()->query('select * from organization');
+        if ($q) {
+            foreach ($q->fetchAll() as $item) {
+                $result['organization'][$item['id']] = $item['name'];
+            }
+        }
+        $q = $this->getDBObject()->query('select * from source');
+        if ($q) {
+            foreach ($q->fetchAll() as $item) {
+                $result['source'][$item['id']] = $item['name'];
+            }
+        }
+        return $result;
+    }
+
     public function getData($params)
     {
         $fields = '*';

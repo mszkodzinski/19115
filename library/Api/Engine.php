@@ -11,6 +11,9 @@ class Api_Engine
             case 'getData':
                 $r = $this->getData($data);
                 break;
+            case 'getLabels':
+                $r = $this->getLabels($data);
+                break;
         }
         return $r->serialize();
     }
@@ -19,6 +22,21 @@ class Api_Engine
     {
         $r = new Api_Responce();
         $r->data = $data;
+        return $r;
+    }
+    public function getLabels()
+    {
+        $r = new Api_Responce();
+
+        $reader = new Reader_Data();
+        $result = $reader->getLabels();
+
+        if (!$result) {
+            $r->status = false;
+            $r->code = 500;
+        } else {
+            $r->data = $result;
+        }
         return $r;
     }
 
@@ -40,6 +58,7 @@ class Api_Engine
         } else {
             $map = array(
                 'status' => 'k_status',
+                'source' => 'k_source',
                 'organization' => 'k_organization',
                 'district' => 'district',
                 'year' => 'year',
