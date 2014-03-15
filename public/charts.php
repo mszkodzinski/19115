@@ -30,6 +30,9 @@ include_once "header.inc";
     </div>
 </div>
 
+<script src="./script/bootstrap-datepicker.js"></script>
+<script src="./script/init.js"></script>
+
 <?php
 include_once "footer.inc";
 ?>
