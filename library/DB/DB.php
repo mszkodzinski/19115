@@ -16,24 +16,27 @@ class DB_DB  {
     }
 
     public function insertCSVDataToDB($filename, $closed = false){
-//        if(!file_exists($filename) || !is_readable($filename))
-//            return FALSE;
-//
-//        $header = NULL;
-//        $data = array();
-//        if (($handle = fopen($filename, 'r')) !== FALSE)
-//        {
-//            while (($row = fgetcsv($handle, 1000, "\t")) !== FALSE)
-//            {
-//                if(!$header)
-//                    $header = $row;
-//                else
-//                    $data[] = array_combine($header, $row);
-//            }
-//            fclose($handle);
-//        }
-//        print_r($data);
-//        return $data;
+
+        if(!file_exists($filename) || !is_readable($filename))
+            return FALSE;
+
+        $header = NULL;
+        $data = array();
+        if (($handle = fopen($filename, 'r')) !== FALSE)
+        {
+            while (($row = fgetcsv($handle, 1000, "\t")) !== FALSE)
+            {
+                if(!$header){
+                    $header = $row;
+                    var_Dump($header);
+                } else {
+                    $data[] = array_combine($header, $row);
+                }
+            }
+            fclose($handle);
+        }
+        print_r($data);
+        return $data;
 
 
         $ignoreFirstRow = 1;
@@ -68,7 +71,7 @@ class DB_DB  {
                         $line = Core_Utils::clearNonUtf8Characters($line);
 
                     }
-                    echo $line;
+                    var_dump( $line);
                     // Zrób coś...
                 }
             }
