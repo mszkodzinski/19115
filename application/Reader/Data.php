@@ -4,7 +4,11 @@ class Reader_Data extends DB_DB
 {
     public function getData($params)
     {
-        $sql = 'select * from notification ';
+        $fields = '*';
+        if ($params['groupby']) {
+            $fields = ' sum(1), ' . $params['groupby'];
+        }
+        $sql = 'select ' . $fields . ' from notification ';
         if ($params['filter']) {
             $where = array();
             foreach ($params['filter'] as $filterName => $filterDef) {
@@ -13,7 +17,7 @@ class Reader_Data extends DB_DB
                     $filterDef = array($filterDef);
                 }
                 if (count($filterDef) == 1) {
-                    $cond .= ' = ' . $filterDef;
+                    $cond .= ' = ' . $filterDef[0];
                 } else {
                     $cond .= ' in (' . implode(',', $filterDef) . ')';
                 }
@@ -29,6 +33,9 @@ class Reader_Data extends DB_DB
                 $sql .= $params['order'];
             }
         }
-        return array(1,2,3);
+        if ($params['groupby']) {
+            $sql .= ' group by ' . $params['groupby'];
+        }
+        return array($sql);
     }
 }
