@@ -9,8 +9,8 @@ return $config = array(
     ),
     'mail' => array(
         'host' => 'imap.gmail.com',
-        'port' => '587',
-        'login' => '',
-        'pass' => ''
+        'port' => '993',
+        'login' => '19115@epf.org.pl',
+        'pass' => 'fundacja23'
     )
 );

@@ -9,7 +9,7 @@
 class DB_DB  {
     private $db;
     public function __construct(){
-        $config = require_once('../config/default.php');
+        $config = require('../config/default.php');
         $this->db = new PDO('mysql:host=localhost;dbname='.$config['db']['dbname'], $config['db']['login'], $config['db']['pass']);
 
 
@@ -22,6 +22,11 @@ class DB_DB  {
     public function insertFile($file_name) {
         $query = $this->db->prepare('INSERT INTO `importer` (`file` ,`import_date` ,`status`) VALUES (?, CURRENT_TIMESTAMP ,  \'0\');');
         return $query->execute(array($file_name));
+    }
+
+    public function selectDict($table){
+        $stmt = $this->db->query('select * from '.$table);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
     public function selectData($table, $name){
@@ -57,8 +62,31 @@ class DB_DB  {
         }
     }
 
+         public function updateNotificationData($table, $row){
+             try {
+                 $sql ='update '.$table.' set close_date = ? where number = ?';
+                 echo $sql;
+                 $stmt = $this->db->prepare($sql);
+                 try {
+                     $this->db->beginTransaction();
+                     $res = $stmt->execute(array($row['close_date'], $row['number']));
+                     $this->db->commit();
+                     return $res;
+                 } catch(PDOExecption $e) {
+                     $this->db->rollback();
+                     var_dump($e);
+                     print "Error!: " . $e->getMessage() . "</br>";
+                     return false;
+                 }
+             } catch( PDOExecption $e ) {
+                 var_dump($e);
+                 print "Error!: " . $e->getMessage() . "</br>";
+                 return false;
+             }
+             return false;
+         }
 
-    public function insertRowData($table, $row){
+        public function insertRowData($table, $row){
         $cols_no = count($row);
         $str = '';
         for($j=0; $j<$cols_no; $j++){
