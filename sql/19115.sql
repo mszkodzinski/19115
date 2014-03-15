@@ -3,12 +3,13 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Czas wygenerowania: 15 Mar 2014, 16:41
+-- Czas wygenerowania: 15 Mar 2014, 14:19
 -- Wersja serwera: 5.5.35
 -- Wersja PHP: 5.3.10-1ubuntu3.10
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
+
 
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
