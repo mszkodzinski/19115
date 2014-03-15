@@ -13,5 +13,8 @@ $accountData = array(
     'secure' => 'SSL',
 );
 $connection = new Imap_Connection_Horde($accountData);
+
 var_dump($connection->isCorrect());
+
+
 //phpinfo();

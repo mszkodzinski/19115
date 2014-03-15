@@ -8,6 +8,7 @@
 
 class ParseCSVTODB {
     public function importCSVToDB($csv){
+        $csvReader = new CsvReader($filePath);
 
     }
 } 
