@@ -2,6 +2,8 @@ var Hackathon19115 = {
     init: function(){
         this.datepicker();
         this.chart();
+        this.map();
+        this.onResize();
     },
     datepicker: function(){
         var nowTemp = new Date();
@@ -42,6 +44,36 @@ var Hackathon19115 = {
         }
 
         google.setOnLoadCallback(drawVisualization);
+    },
+    map: function(){
+        if (GBrowserIsCompatible()) {
+            var map = new GMap2(document.getElementById("map"));
+            map.setCenter(new GLatLng(52.233333, 21.016667), 12);
+
+            var dataMarkers = [
+                [52.16842458731105, 21.033786862794823],
+                [52.31398490225165, 21.030714290470254],
+                [52.15897774006118, 21.107284782140656],
+                [52.2429427626408, 21.108422247641645]
+            ];
+
+            for (var i = 0; i < dataMarkers.length; i++) {
+                var point = new GLatLng(dataMarkers[i][0], dataMarkers[i][1]);
+                map.addOverlay(new GMarker(point));
+            }
+        }
+    },
+    onResize: function(){
+        var map = document.getElementById("map"),
+            chart = document.getElementById("visualisation"),
+            container = document.getElementById("container");
+
+        window.onresize = function(event) {
+            var w = container.offsetWidth + 'px';
+            map.style.width = w;
+            chart.style.width = w;
+            console.log('resize: ', w);
+        };
     }
 };
 
