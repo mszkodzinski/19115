@@ -15,6 +15,10 @@ class DB_DB  {
 
     }
 
+    public function getDBObject() {
+        return $this->db;
+    }
+
     public function insertFile($file_name) {
         $query = $this->db->prepare('INSERT INTO `importer` (`file` ,`import_date` ,`status`) VALUES (?, CURRENT_TIMESTAMP ,  \'0\');');
         return $query->execute(array($file_name));

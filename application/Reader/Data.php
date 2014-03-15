@@ -36,6 +36,10 @@ class Reader_Data extends DB_DB
         if ($params['groupby']) {
             $sql .= ' group by ' . $params['groupby'];
         }
-        return array($sql);
+
+        $result = $this->getDBObject()->query($sql);
+
+
+        return array($result->fetchAll());
     }
 }
