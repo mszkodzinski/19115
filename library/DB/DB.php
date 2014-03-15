@@ -10,7 +10,7 @@ class DB_DB  {
     private $db;
     public function __construct(){
         $config = require_once('../config/default.php');
-        $this->db = new PDO('mysql:host=127.0.0.1;dbname='.$config['db']['dbname'], $config['db']['login'], $config['db']['pass']);
+        $this->db = new PDO('mysql:host=localhost;dbname='.$config['db']['dbname'], $config['db']['login'], $config['db']['pass']);
 
 
     }
@@ -24,69 +24,71 @@ class DB_DB  {
         return $query->execute(array($file_name));
     }
 
-    public function insertCSVDataToDB($filename, $closed = false){
+    public function selectData($table, $name){
+        $stmt = $this->db->prepare('select id from '.$table.' where name =?');
+        $res = $stmt->execute(array($name));
+        return $stmt->fetch();
 
-        if(!file_exists($filename) || !is_readable($filename))
-            return FALSE;
+    }
 
-        $header = NULL;
-        $data = array();
-        if (($handle = fopen($filename, 'r')) !== FALSE)
-        {
-            while (($row = fgetcsv($handle, 1000, "\t")) !== FALSE)
-            {
-                if(!$header){
-                    $header = $row;
-                    var_Dump($header);
-                } else {
-                    $data[] = array_combine($header, $row);
-                }
+    public function insertData($table, $name){
+        try {
+            $stmt = $this->db->prepare('insert IGNORE  into '.$table.' (name) values(?)');
+            try {
+                $this->db->beginTransaction();
+                $stmt->execute( array( $name));
+                $this->db->commit();
+                return $this->db->lastInsertId();
+            } catch(PDOExecption $e) {
+                $this->db->rollback();
+                print "Error!: " . $e->getMessage() . "</br>";
             }
-            fclose($handle);
+        } catch( PDOExecption $e ) {
+            print "Error!: " . $e->getMessage() . "</br>";
         }
-        print_r($data);
-        return $data;
+        return null;
+    }
+
+    public function insertDictData($table, $name){
+        if($res = $this->selectData($table,$name)){
+            return $res['id'];
+        }else{
+            return $this->insertData($table, $name);
+        }
+    }
 
 
-        $ignoreFirstRow = 1;
-        $csvReader = new Csv_Reader($filename);
-
-// Zaczytanie danych z pliku
-        $csvReader->discoverDelimiter();
-        $csvReader->setInputEncoding('UTF8');
-        $csvReader->detectEncodingFromFile();
-        $csvReader->readColumnNames();
-        $linesNo = $csvReader->getLineNo();
-        echo $linesNo;
-// Aby za każdym razem czytać plik od początku a nie gdzieś od środka
-        $csvReader->rewindFile();
-
-// Pobranie kolejnych linii z pliku i zapis do LS-a
-        for ($lineNo = 0; $lineNo <= $linesNo; $lineNo++) { // W przypadku ignorowanie pierwszego wiersza - zaczynamy od 2giego
-            // Jezeli jest potrzebne pominięcie pierwszej linni - wczytujemy ja ale pomijamy w imporcie
-            if ($ignoreFirstRow == 1 && $lineNo == 0) {
-                $csvReader->readLines();
-            } else {
-                $csvReader->readLines();
-                $line = $csvReader->getLineData();
-
-                // Czasem zdarzają się linie całkiem puste i takich nie chcemy.
-                if (!empty($line)) {
-                    if (is_array($line)) {
-                        foreach ($line as $k => $v) {
-                            $line[$k] = Core_Utils::clearNonUtf8Characters($v);
-                        }
-                    } else if (is_string($line)) {
-                        $line = Core_Utils::clearNonUtf8Characters($line);
-
-                    }
-                    var_dump( $line);
-                    // Zrób coś...
-                }
-            }
+    public function insertRowData($table, $row){
+        $cols_no = count($row);
+        $str = '';
+        for($j=0; $j<$cols_no; $j++){
+            $str .='?,';
         }
 
+
+        try {
+            $sql ='insert IGNORE  into '.$table.' ('.implode(',', array_keys($row)).' ) values ('.trim($str,',').')';
+            $stmt = $this->db->prepare($sql);
+            try {
+                $this->db->beginTransaction();
+                $stmt->execute(array_values($row));
+                $this->db->commit();
+                return $this->db->lastInsertId();
+            } catch(PDOExecption $e) {
+                $this->db->rollback();
+                var_dump($e);
+                print "Error!: " . $e->getMessage() . "</br>";
+                return false;
+            }
+        } catch( PDOExecption $e ) {
+            var_dump($e);
+            print "Error!: " . $e->getMessage() . "</br>";
+            return false;
+        }
+        return null;
 
 
     }
+
+
 } 
