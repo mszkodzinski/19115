@@ -3,9 +3,13 @@ class Api_Engine
 {
     public function action($name, $data)
     {
+        $r = new Api_Responce();
         switch ($name) {
             case 'test':
                 $r = $this->test($data);
+                break;
+            case 'getData':
+                $r = $this->getData($data);
                 break;
         }
         return $r->serialize();
@@ -18,11 +22,23 @@ class Api_Engine
         return $r;
     }
 
-    public function getData($data)
+    public function getData($params)
     {
+        foreach (array('filter', 'group', 'sortby', 'order') as $key) {
+            if (!isset($params[$key])) {
+                $params[$key] = null;
+            }
+        }
+        $reader = new Reader_Data();
+        $result = $reader->getData($params);
 
         $r = new Api_Responce();
-
+        if (!$result) {
+            $r->status = false;
+            $r->code = 500;
+        } else {
+            $r->data = $result;
+        }
         return $r;
     }
 }
