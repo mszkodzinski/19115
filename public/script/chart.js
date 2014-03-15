@@ -33,6 +33,22 @@ Chart = {
         });
         wrapper.draw();
     },
+    drawLine: function (labels, values, title, container) {
+        labels.unshift('');
+        values.unshift('');
+        var data = [];
+        $.each(labels, function (k, v) {
+            data.push([labels[k], values[k]]);
+        });
+        var data = google.visualization.arrayToDataTable(data);
+
+        var options = {
+            title: title
+        };
+
+        var chart = new google.visualization.LineChart($('#' + container)[0]);
+        chart.draw(data, options);
+    },
     drawPie: function (labels, values, title, container) {
         labels.unshift('');
         values.unshift('');
@@ -40,7 +56,7 @@ Chart = {
         $.each(labels, function (k, v) {
             data.push([labels[k], values[k]]);
         });
-        console.log(data);
+
         var data = google.visualization.arrayToDataTable(data);
 
         var options = {

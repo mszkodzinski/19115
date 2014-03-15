@@ -10,8 +10,9 @@ include_once "header.inc";
                     <span class="navbar-brand">Sortuj dane</span>
                 </div>
                 <div class="navbar-collapse collapse navbar-responsive-collapse">
-                    <form class="navbar-form navbar-left">
-                        <select name="date-type" id="date-type">
+                    <form class="navbar-form navbar-left open">
+<!--                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>-->
+                        <select name="date-type" id="date-type" class="dropdown-menu">
                             <option value="all">Wszystkie</option>
                             <option value="year" selected="selected">Bieżący rok</option>
                             <option value="month">Bieżący miesiąc</option>
@@ -36,7 +37,7 @@ include_once "header.inc";
     <script src="//maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAAuPsJpk3MBtDpJ4G8cqBnjRRaGTYH6UMl8mADNa0YKuWNNa8VNxQCzVBXTx2DYyXGsTOxpWhvIG7Djw" type="text/javascript"></script>
     <script type="text/javascript" src="//www.google.com/jsapi"></script>
 <script type="text/javascript">
-    google.load('visualization', '1', {packages: ['corechart', 'calendar']});
+    google.load('visualization', '1', {packages: ['corechart', 'calendar', 'corechart']});
 </script>
 <script src="./script/bootstrap-datepicker.js"></script>
 <script src="./script/init.js"></script>
