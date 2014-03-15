@@ -37,6 +37,9 @@ class Reader_Data extends DB_DB
             case 'year_month':
                 $params['groupby'] = 'concat(year(date_of_acceptance),\'-\',month(date_of_acceptance))';
                 break;
+            case 'year_month_day':
+                $params['groupby'] = 'concat(year(date_of_acceptance),\'-\',month(date_of_acceptance),\'-\',day(date_of_acceptance))';
+                break;
         }
 
         if ($params['groupby']) {
@@ -89,7 +92,7 @@ class Reader_Data extends DB_DB
         if ($q) {
             foreach ($q->fetchAll() as $item) {
                 $result['label'][] = $item['label'];
-                $result['value'][] = $item['value'];
+                $result['value'][] = intval($item['value']);
             }
         }
 
