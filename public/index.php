@@ -2,7 +2,6 @@
 include_once "header.inc";
 ?>
 
-
 <div class="container">
     <div class="page-header" id="banner">
         <div class="row">
