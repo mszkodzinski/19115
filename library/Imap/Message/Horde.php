@@ -7,7 +7,7 @@
  * @author     Michał Szkodziński
  * @version    $Id: $
  */
-class Mail_Model_Imap_Message_Horde extends Mail_Model_Imap_Message_Abstract
+class Imap_Message_Horde extends Imap_Message_Abstract
 {
     protected static $_modelParam = array(
         'from', 'to', 'cc', 'bcc', 'reply_to', 'subject', 'uid', 'size', 'date', 'flags', 'message_id', 'mailbox'
@@ -65,7 +65,7 @@ class Mail_Model_Imap_Message_Horde extends Mail_Model_Imap_Message_Abstract
             return '';
         }
 
-        return Utils::clearNonUtf8Characters(static::clearText($this->getPartDecoded($bodyPartId), $isHtml));
+        return Core_Utils::clearNonUtf8Characters(static::clearText($this->getPartDecoded($bodyPartId), $isHtml));
     }
 
     public function getTextBody()
@@ -98,7 +98,7 @@ class Mail_Model_Imap_Message_Horde extends Mail_Model_Imap_Message_Abstract
             return '';
         }
 
-        return Utils::clearNonUtf8Characters($this->getPartDecoded($bodyPartId));
+        return Core_Utils::clearNonUtf8Characters($this->getPartDecoded($bodyPartId));
     }
 
     public function getHtmlBody()
@@ -118,7 +118,7 @@ class Mail_Model_Imap_Message_Horde extends Mail_Model_Imap_Message_Abstract
             return '';
         }
 
-        return Utils::clearNonUtf8Characters($this->getPartDecoded($bodyPartId));
+        return Core_Utils::clearNonUtf8Characters($this->getPartDecoded($bodyPartId));
     }
 
     public function getPartDecoded($partId)
@@ -148,7 +148,7 @@ class Mail_Model_Imap_Message_Horde extends Mail_Model_Imap_Message_Abstract
 
     public function getAttachments($mimeId = null)
     {
-        $attachments = new Mail_Model_Imap_Attachment_List();
+        $attachments = new Imap_Attachment_List();
 
         $parts = $this->_hordeMessage->getStructure();
         foreach ($parts->contentTypeMap() as $_mimeId => $mimeType) {
@@ -161,7 +161,7 @@ class Mail_Model_Imap_Message_Horde extends Mail_Model_Imap_Message_Abstract
             }
             $p = $part->getAllDispositionParameters();
 
-            $attachment = new Mail_Model_Imap_Attachment_Horde();
+            $attachment = new Imap_Attachment_Horde();
             $attachment->setMessage($this)
                 ->setName(isset($p['filename']) ? $p['filename'] : 'noname')
                 ->setSize(isset($p['size']) ? $p['size'] : 0)
@@ -233,7 +233,7 @@ class Mail_Model_Imap_Message_Horde extends Mail_Model_Imap_Message_Abstract
         $data['uuid'] = $this->getUuid();
         $data['in_reply_to_message_id'] = $this->getParam('in_reply_to');
         if (!empty($data['in_reply_to_message_id'])) {
-            $inReply = Mail_Model_Message::factory()->getIds(array('message_id', $data['in_reply_to_message_id']));
+            $inReply = Message::factory()->getIds(array('message_id', $data['in_reply_to_message_id']));
             if (count($inReply)) {
                 $data['in_reply_to_id'] = array_shift($inReply);
             }

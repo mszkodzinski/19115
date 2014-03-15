@@ -1,6 +1,6 @@
 <?php
 
-class Utils
+class Core_Utils
 {
     public static function clearNonUtf8Characters($text)
     {

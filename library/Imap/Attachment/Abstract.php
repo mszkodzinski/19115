@@ -7,7 +7,7 @@
  * @author     Michał Szkodziński
  * @version    $Id: $
  */
-abstract class Mail_Model_Imap_Attachment_Abstract
+abstract class Imap_Attachment_Abstract
 {
     protected $_name;
     protected $_size;

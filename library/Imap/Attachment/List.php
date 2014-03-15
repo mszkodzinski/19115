@@ -7,6 +7,6 @@
  * @author     Michał Szkodziński
  * @version    $Id: $
  */
-class Mail_Model_Imap_Attachment_List extends ArrayObject
+class Imap_Attachment_List extends ArrayObject
 {
 }
