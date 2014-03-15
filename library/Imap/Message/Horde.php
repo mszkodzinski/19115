@@ -65,7 +65,7 @@ class Imap_Message_Horde extends Imap_Message_Abstract
             return '';
         }
 
-        return Utils::clearNonUtf8Characters(static::clearText($this->getPartDecoded($bodyPartId), $isHtml));
+        return Core_Utils::clearNonUtf8Characters(static::clearText($this->getPartDecoded($bodyPartId), $isHtml));
     }
 
     public function getTextBody()
@@ -98,7 +98,7 @@ class Imap_Message_Horde extends Imap_Message_Abstract
             return '';
         }
 
-        return Utils::clearNonUtf8Characters($this->getPartDecoded($bodyPartId));
+        return Core_Utils::clearNonUtf8Characters($this->getPartDecoded($bodyPartId));
     }
 
     public function getHtmlBody()
@@ -118,7 +118,7 @@ class Imap_Message_Horde extends Imap_Message_Abstract
             return '';
         }
 
-        return Utils::clearNonUtf8Characters($this->getPartDecoded($bodyPartId));
+        return Core_Utils::clearNonUtf8Characters($this->getPartDecoded($bodyPartId));
     }
 
     public function getPartDecoded($partId)
