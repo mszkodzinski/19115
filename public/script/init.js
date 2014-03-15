@@ -30,38 +30,28 @@ var Hackathon19115 = {
         }).data('datepicker');
     },
     chart: function(){
-        function drawVisualization() {
-            var wrapper = new google.visualization.ChartWrapper({
-                chartType: 'ColumnChart',
-                dataTable: [['', 'Telefon', 'Mobile', 'Formularz'],
-                    ['', 700, 300, 400]],
-                options: {'title': 'Typ zgłoszenia'},
-                containerId: 'visualization'
-            });
-            wrapper.draw();
+        Api.call({
+            action: 'getData',
+            data: {
+                groupby: 'source'
+            },
+            success: function (data) {
+                Chart.drawColumn(data.label, data.value, 'Źródła', 'source');
+            }
+        });
+        Api.call({
+            action: 'getData',
+            data: {
+                groupby: 'year'
+            },
+            success: function (data) {
+                Chart.drawColumn(data.label, data.value, 'Lata', 'year');
+            }
+        });
 
-            var data = google.visualization.arrayToDataTable([
-                ['Forma zgłoszenia', 'Ilość zgłoszeń'], ['Telefon', 700], ['Mobile', 300], ['Formularz', 400],
-                ['Email', 123], ['Telegram', 16], ['Poczta pantoflowa', 987]
-            ]);
-
-            var options = {
-                title: 'Typ zgłoszenia',
-                legend: 'none',
-                pieHole: 0.2,
-                pieSliceText: 'label',
-                slices: {
-                    3: {offset: 0.1},
-                    4: {offset: 0.15}
-                }
-            };
-
-            var chart = new google.visualization.PieChart(document.getElementById('pie'));
-            chart.draw(data, options);
-        }
-
-        google.setOnLoadCallback(drawVisualization);
     }
 };
 
-Hackathon19115.init();
+$(function () {
+    Hackathon19115.init();
+});

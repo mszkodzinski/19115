@@ -89,7 +89,7 @@ class Reader_Data extends DB_DB
         if ($q) {
             foreach ($q->fetchAll() as $item) {
                 $result['label'][] = $item['label'];
-                $result['value'][] = $item['value'];
+                $result['value'][] = intval($item['value']);
             }
         }
 

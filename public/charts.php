@@ -18,7 +18,8 @@ include_once "header.inc";
             </div>
         </div>
     </div>
-    <div id="visualization"></div>
+    <div id="source"></div>
+    <div id="year"></div>
 
     <div id="pie" style="width: 900px; height: 700px;"></div>
 </div>
