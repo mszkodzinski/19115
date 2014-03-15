@@ -50,8 +50,6 @@ var Hackathon19115 = {
                 Chart.drawColumn(data.label, data.value, 'Lata', 'year');
             }
         });
-
-        google.setOnLoadCallback(drawVisualization);
     },
     map: function(){
         if (GBrowserIsCompatible()) {
@@ -79,8 +77,7 @@ var Hackathon19115 = {
         window.onresize = function(event) {
             var w = container.offsetWidth + 'px';
             map.style.width = w;
-            chart.style.width = w;
-            console.log('resize: ', w);
+//            chart.style.width = w;
         };
     }
 };

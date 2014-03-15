@@ -19,7 +19,7 @@ include_once "header.inc";
         </div>
     </div>
     <div id="map" style="width:1130px; height:800px;"></div>
-    <div id="visualization"></div>
+    <div id="visualization" style="width:1130px; height:800px;"></div>
     <div id="source"></div>
     <div id="year"></div>
 
