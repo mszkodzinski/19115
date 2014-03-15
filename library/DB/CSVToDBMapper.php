@@ -38,7 +38,7 @@ class DB_CSVToDBMapper {
                 $id = $this->db->insertDictData($header_mapper[$key][1], $val);
                 $row_to_db[$key]=$id;
             } else {
-                $row_to_db[$key]=is_null($val)?'null': iconv('UTF-16LE', 'UTF-8', $val."\0") ; ;
+                $row_to_db[$key]=is_null($val)?'null':$val;// iconv('UTF-16LE', 'UTF-8', $val."\0") ; ;
             }
 
         }
