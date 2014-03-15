@@ -6,11 +6,24 @@ ini_set('display_errors', 1);
 
 include_once('../application/autoloader.php');
 $db  = new DB_DB();
-
-$file = '/var/www/19115/data/file/2014-03-15.csv';
-$fileconv = '/var/www/19115/data/file/2014-03-15_utf8.csv';
-shell_exec('iconv -f UTF16LE -t UTF8 '.$file.' > '.$fileconv);
-
 $mapper  = new DB_CSVToDBMapper($db);
-$mapper->insertCSVDataToDB($fileconv);
+
+//$file = '/var/www/19115/data/file/2014-03-15.csv';
+//$fileconv = '/var/www/19115/data/file/2014-03-15_utf8.csv';
+
+$path = '../data/file/';
+
+$query = $db->getDBObject()->query('SELECT * FROM  `importer` ');
+
+foreach($query->fetchAll() as $qr) {
+    $file = $path.$qr['file'];
+    $fileconv = substr($file, 0, strlen($file)-4).'_utf8.csv';
+    shell_exec('iconv -f UTF16LE -t UTF8 '.$file.' > '.$fileconv);
+    $mapper->insertCSVDataToDB($fileconv);
+}
+
+
+
+
+
 
