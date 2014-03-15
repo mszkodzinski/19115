@@ -6,7 +6,8 @@ class Reader_Data extends DB_DB
     {
         $result = array(
             'organization' => array(),
-            'source' => array()
+            'source' => array(),
+            'district' => array()
         );
         $q = $this->getDBObject()->query('select * from organization');
         if ($q) {
@@ -18,6 +19,12 @@ class Reader_Data extends DB_DB
         if ($q) {
             foreach ($q->fetchAll() as $item) {
                 $result['source'][$item['id']] = $item['name'];
+            }
+        }
+        $q = $this->getDBObject()->query('select * from district');
+        if ($q) {
+            foreach ($q->fetchAll() as $item) {
+                $result['district'][$item['id']] = $item['name'];
             }
         }
         return $result;
@@ -46,8 +53,8 @@ class Reader_Data extends DB_DB
             $fields = ' sum(1) as value, ' . $params['groupby'] . ' as label';
         }
         $sql = 'select ' . $fields . ' from notification ';
+        $where = array();
         if ($params['filter']) {
-            $where = array();
             foreach ($params['filter'] as $filterName => $filterDef) {
                 switch ($filterName) {
                     case 'date':
@@ -69,9 +76,12 @@ class Reader_Data extends DB_DB
                 }
                 $where[] = $cond;
             }
-            if (count($where)) {
-                $sql .= ' where ' . implode(' and ', $where);
-            }
+        }
+//        if ($params['groupby'] && $params['notnull']) {
+//            $where[] = $params['groupby'] . ' is not null';
+//        }
+        if (count($where)) {
+            $sql .= ' where ' . implode(' and ', $where);
         }
         if ($params['sortby']) {
             $sql .= ' order by ' . $params['sortby'];

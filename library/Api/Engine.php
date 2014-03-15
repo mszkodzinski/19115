@@ -43,7 +43,7 @@ class Api_Engine
     public function getData($params)
     {
         $r = new Api_Responce();
-        foreach (array('filter', 'groupby', 'sortby', 'order') as $key) {
+        foreach (array('filter', 'groupby', 'sortby', 'order'/*, 'notnull'*/) as $key) {
             if (!isset($params[$key])) {
                 $params[$key] = null;
             }
@@ -60,7 +60,7 @@ class Api_Engine
                 'status' => 'k_status',
                 'source' => 'k_source',
                 'organization' => 'k_organization',
-                'district' => 'district',
+                'district' => 'k_district',
                 'year' => 'year',
                 'month' => 'month',
                 'year_month' => 'year_month',

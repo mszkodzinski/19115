@@ -5,9 +5,12 @@ var map = $('#map'),
 var Hackathon19115 = {
     init: function(){
         this.datepicker();
-        this.chart();
-        this.map();
-        this.webResponse();
+        Chart.init(function () {
+            Hackathon19115.chart();
+        });
+
+//        this.map();
+//        this.webResponse();
     },
     datepicker: function(){
         var checkin = $('#date-from').datepicker({
@@ -37,7 +40,16 @@ var Hackathon19115 = {
                 groupby: 'source'
             },
             success: function (data) {
-                Chart.drawColumn(data.label, data.value, 'Źródła', 'source');
+                Chart.drawColumn(Chart.getLabels('source', data.label), data.value, 'Źródła', 'source');
+            }
+        });
+        Api.call({
+            action: 'getData',
+            data: {
+                groupby: 'district'
+            },
+            success: function (data) {
+                Chart.drawColumn(Chart.getLabels('district', data.label, true), data.value, 'Dzielnice', 'district');
             }
         });
         Api.call({
