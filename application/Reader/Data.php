@@ -4,7 +4,22 @@ class Reader_Data extends DB_DB
 {
     public function getStats()
     {
+        $result = array(
+            'sum' => 0,
+            'sum30' => 0
+        );
 
+        $q = $this->getDBObject()->query('select count(1) as sum from notification');
+        if ($q) {
+            $r = $q->fetchRow();
+            $result['sum'] = $r['sum'];
+        }
+        $q = $this->getDBObject()->query('select count(1) as sum from notification where date_of_acceptance > \'' . date('Y-m-d', strtotime('-30 days')) . '\'');
+        if ($q) {
+            $r = $q->fetchRow();
+            $result['sum30'] = $r['sum'];
+        }var_dump($result);
+        return $result;
     }
 
     public function getLabels()
