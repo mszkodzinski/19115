@@ -193,36 +193,43 @@ var Hackathon19115 = {
             map.addControl(new GMapTypeControl());
 
             var icons = [
-                './image/icons/kran.png',
+                './image/icons/inne.png',
                 './image/icons/animal.png',
+                './image/icons/forest.png',
+                './image/icons/snow.png',
                 './image/icons/kran.png',
-                './image/icons/kran.png',
-                './image/icons/kran.png',
-                './image/icons/kran.png',
-                './image/icons/kran.png',
-                './image/icons/kran.png',
+                './image/icons/street.png'
             ];
 
             var data = [
                 {
                     points: [52.16842458731105, 21.033786862794823],
                     description: 'Dziura w drodze',
-                    type: 0
+                    type: 5
                 },
                 {
-                    points: [52.31398490225165, 21.030714290470254],
-                    description: 'Wybita szyba',
+                    points: [52.51398490225165, 21.430714290470254],
+                    description: 'Zaginiony pies',
                     type: 1
                 },
                 {
-                    points: [52.15897774006118, 21.107284782140656],
-                    description: 'Wypadek na drodze',
+                    points: [52.45897774006118, 21.307284782140656],
+                    description: 'Śmieci w lesie',
                     type: 2
+                },
+                {
+                    points: [52.35897774006118, 21.207284782140656],
+                    description: 'Zasypało droge',
+                    type: 3
+                },
+                {
+                    points: [52.25897774006118, 21.007284782140656],
+                    description: 'Cieknie woda',
+                    type: 4
                 }
             ];
 
             function createMarker(data) {
-                console.log('data: ', data);
                 // Set up our GMarkerOptions object
                 var baseIcon = new GIcon(G_DEFAULT_ICON);
                     baseIcon.image = icons[data.type];
