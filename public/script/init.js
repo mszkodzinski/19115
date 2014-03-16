@@ -195,11 +195,7 @@ var Hackathon19115 = {
             // Create a base icon for all of our markers that specifies the
             // shadow, icon dimensions, etc.
             var baseIcon = new GIcon(G_DEFAULT_ICON);
-            baseIcon.shadow = "http://www.google.com/mapfiles/shadow50.png";
-            baseIcon.iconSize = new GSize(20, 34);
-            baseIcon.shadowSize = new GSize(37, 34);
-            baseIcon.iconAnchor = new GPoint(9, 34);
-            baseIcon.infoWindowAnchor = new GPoint(9, 2);
+                baseIcon.image = "./image/icons/kran.png";
 
             var dataMarkers = [
                 [52.16842458731105, 21.033786862794823, 'Dziura w drodze'],
@@ -208,16 +204,30 @@ var Hackathon19115 = {
                 [52.2429427626408, 21.108422247641645, 'Wypadek na drodze']
             ];
 
+            var data = [
+                {
+                    points: [52.16842458731105, 21.033786862794823],
+                    description: 'Dziura w drodze',
+                    type: 0
+                },
+                {
+                    points: [52.31398490225165, 21.030714290470254],
+                    description: 'Wybita szyba',
+                    type: 1
+                },
+                {
+                    points: [52.15897774006118, 21.107284782140656],
+                    description: 'Wypadek na drodze',
+                    type: 2
+                }
+            ];
+
             // Creates a marker whose info window displays the letter corresponding
             // to the given index.
-            function createMarker(point, index, desc) {
-                // Create a lettered icon for this point using our icon class
-                var letter = String.fromCharCode("A".charCodeAt(0) + index);
-                var letteredIcon = new GIcon(baseIcon);
-                letteredIcon.image = "http://www.google.com/mapfiles/marker" + letter + ".png";
+            function createMarker(point, desc) {
 
                 // Set up our GMarkerOptions object
-                markerOptions = { icon:letteredIcon };
+                markerOptions = { icon:baseIcon };
                 var marker = new GMarker(point, markerOptions);
 
                 GEvent.addListener(marker, "click", function() {
@@ -230,7 +240,7 @@ var Hackathon19115 = {
 
             for (var i = 0; i < dataMarkers.length; i++) {
                 var point = new GLatLng(dataMarkers[i][0], dataMarkers[i][1]);
-                map.addOverlay(createMarker(point, i, dataMarkers[i][2]));
+                map.addOverlay(createMarker(point, dataMarkers[i][2]));
             }
 
         }
