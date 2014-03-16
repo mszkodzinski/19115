@@ -27,7 +27,7 @@ var Hackathon19115 = {
     },
     initFilter: function(){
         var checkin = $('#date-from').datepicker({
-            dateFormat: 'yy-mm-dd',
+            format: 'yyyy-mm-dd',
             onRender: function(date) {
             }
         }).on('changeDate', function(ev) {
@@ -40,7 +40,7 @@ var Hackathon19115 = {
             $('#date-to')[0].focus();
         }).data('datepicker');
         var checkout = $('#date-to').datepicker({
-            dateFormat: 'yy-mm-dd',
+            format: 'yyyy-mm-dd',
             onRender: function(date) {
                 return date.valueOf() <= checkin.date.valueOf() ? 'disabled' : '';
             }
