@@ -105,6 +105,8 @@ Chart = {
         var options = {
             title: title,
             backgroundColor: '#4e5d6c',
+            fontSize: 15,
+            width: 500,
             colors:['#df691a', '#5cb85c', '#f0ad4e', '#d9534f', '#5bc0de'],
 //            legend: 'none',
             legend: {textStyle: {color:'#eee'}},
