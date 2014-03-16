@@ -167,9 +167,74 @@ group by k_organization order by value desc');
         return $result;
     }
 
+    public function paramsToSql($fields, $params) {
+        switch ($params['groupby']) {
+            case 'year':
+                $params['groupby'] = 'year(date_of_acceptance)';
+                break;
+            case 'month':
+                $params['groupby'] = 'year(date_of_acceptance)';
+                break;
+            case 'year_month':
+                $params['groupby'] = 'concat(year(date_of_acceptance),\'-\',month(date_of_acceptance))';
+                break;
+            case 'year_month_day':
+                $params['groupby'] = 'concat(year(date_of_acceptance),\'-\',month(date_of_acceptance),\'-\',day(date_of_acceptance))';
+                break;
+        }
+
+        if ($params['groupby']) {
+            $fields = ' sum(1) as value, ' . $params['groupby'] . ' as label';
+        }
+        $sql = '';
+        $where = array();
+        if ($params['filter']) {
+            foreach ($params['filter'] as $filterName => $filterDef) {
+                switch ($filterName) {
+                    case 'date':
+                        if (count($filterDef) == 2) {
+                            $cond = ' date_of_acceptance between \'' . $filterDef[0] . '\' and \'' . $filterDef[1] . '\'';
+                        }
+                        break;
+                    default:
+                        $cond = $filterName . ' ';
+                        if (!is_array($filterDef)) {
+                            $filterDef = array($filterDef);
+                        }
+                        if (count($filterDef) == 1) {
+                            $cond .= ' = ' . $filterDef[0];
+                        } else {
+                            $cond .= ' in (' . implode(',', $filterDef) . ')';
+                        }
+                        break;
+                }
+                $where[] = $cond;
+            }
+        }
+
+        if (count($where)) {
+            $sql .= implode(' and ', $where);
+        }
+        if ($params['groupby']) {
+            $sql .= ' group by ' . $params['groupby'];
+        }
+        if ($params['sortby']) {
+            $sql .= ' order by ' . $params['sortby'];
+            if ($params['order']) {
+                $sql .= ' ' . $params['order'];
+            }
+        }
+
+        if (isset($params['limit'])) {
+            $sql .= ' limit ' . $params['limit'];
+        }
+
+        return $sql;
+    }
+
     public function getCoords($params) {
         $fields = array('lattitude', 'longtitude');
-        $sql = "SELECT ".implode(",", $fields)." FROM `notification` WHERE longtitude != '' LIMIT 0,30";
+        $sql = "SELECT ".implode(",", $fields)." FROM `notification` WHERE longtitude != '' ";
 
         $q = $this->getDBObject()->query($sql);
 
@@ -178,8 +243,9 @@ group by k_organization order by value desc');
                 $result[$item[$fields[0]]] = $item[$fields[1]];
             }
         }
-        //echo $sql;
-        return $result;
+        $sql .= $this->paramsToSql($fields, $params);
+        echo $sql;
+        //return $result;
 
     }
 }
