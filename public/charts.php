@@ -40,6 +40,15 @@ include_once "header.inc";
             </div>
         </div>
         <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Dzielnice</div>
+                    <div class="panel-body" id="district">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
             <div class="col-md-6">
                 <div class="panel panel-default">
                     <div class="panel-heading">Źródła</div>
@@ -58,17 +67,8 @@ include_once "header.inc";
             </div>
             <div class="col-md-6">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Organizacje</div>
+                    <div class="panel-heading">Organizacje odpowiedzialne</div>
                     <div class="panel-body" id="organization">
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Dzielnice</div>
-                    <div class="panel-body" id="district">
                     </div>
                 </div>
             </div>

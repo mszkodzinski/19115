@@ -2,6 +2,11 @@
 
 class Reader_Data extends DB_DB
 {
+    public function getStats()
+    {
+
+    }
+
     public function getLabels()
     {
         $result = array(

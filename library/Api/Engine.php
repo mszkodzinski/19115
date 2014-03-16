@@ -87,4 +87,20 @@ class Api_Engine
         }
         return $r;
     }
+
+    public function getStats()
+    {
+        $r = new Api_Responce();
+
+        $reader = new Reader_Data();
+        $result = $reader->getStats();
+
+        if (!$result) {
+            $r->status = false;
+            $r->code = 500;
+        } else {
+            $r->data = $result;
+        }
+        return $r;
+    }
 }
