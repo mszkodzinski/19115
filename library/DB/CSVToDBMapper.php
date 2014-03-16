@@ -42,7 +42,6 @@ class DB_CSVToDBMapper {
             }
 
         }
-        var_dump($row_to_db);
         return $row_to_db;
 
     }
@@ -71,10 +70,10 @@ class DB_CSVToDBMapper {
 
         if(preg_match('/_closed/',$filename)){
             $closed = true;
-            var_dump('closed');
+            echo("closed </br>");
             $header_mapper[] = 'date';
         }
-        var_dump('opened');
+        echo("opened </br>");
 
         $headers = array();
         $i = 0;
@@ -89,10 +88,11 @@ class DB_CSVToDBMapper {
 
         }
 
-        var_dump($headers);
+        //var_dump($headers);
 
         $header = NULL;
         $data = array();
+        $res = array('update'=>array(),'insert'=>array());
         if (($handle = fopen($filename, 'r')) !== FALSE)
         {
             while (($row = fgetcsv($handle, 1000, "\t")) !== FALSE)
@@ -105,16 +105,24 @@ class DB_CSVToDBMapper {
                     $tmp = array_combine($headers, $row);
                     $row =  $this->prepareCSVRow($tmp, $header_mapper);
                     if($closed){
-                        $this->db->updateNotificationData('notification', $row);
+                        $u = $this->db->updateNotificationData('notification', $row);
+                        $res['update'][$row['number']]=$u;
+                        echo $row['number']. ' update result '.$u. "</br>";
+
+
                     }else{
-                        $this->db->insertRowData('notification', $row);
+                        $id = $this->db->insertRowData('notification', $row);
+                        echo $row['number']. ' insert result '.$id. "</br>";
+                        $res['insert'][$row['number']]=$id;
                     }
                     $data[] = array_combine($headers, $row);
                 }
             }
             fclose($handle);
         }
-        print_r($data);
+        echo' //----------------------------------------------------------------';
+        echo 'Dla pliku '.$filename.' zaimportowano dane '. count($res['insert']). ' updated '.  count($res['update']). "</br>";
+        echo' //----------------------------------------------------------------';
         return $data;
 
 

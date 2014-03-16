@@ -3,7 +3,7 @@ setlocale(LC_CTYPE, "pl.UTF8");
 
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
-
+set_time_limit ( 300 );
 include_once('../application/autoloader.php');
 $db  = new DB_DB();
 $mapper  = new DB_CSVToDBMapper($db);
@@ -13,7 +13,7 @@ $mapper  = new DB_CSVToDBMapper($db);
 
 $path = '../data/file/';
 
-$query = $db->getDBObject()->query('SELECT * FROM  `importer` ');
+$query = $db->getDBObject()->query('SELECT * FROM  `importer` where status = 0 order by id asc ');
 
 foreach($query->fetchAll() as $qr) {
     $file = $path.$qr['file'];
