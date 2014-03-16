@@ -46,7 +46,7 @@ Api = {
     },
     test: function () {
         this.call({
-            'action': 'getData',
+            'action': 'getCoords',
             data: {
                 filter: {
                     name: 1,

@@ -20,6 +20,9 @@ class Api_Engine
             case 'getTime':
                 $r = $this->getTime($data);
                 break;
+            case 'getMaps':
+                $r = $this->getMaps($data);
+                break;
         }
         return $r->serialize();
     }
@@ -116,6 +119,22 @@ class Api_Engine
 
         $reader = new Reader_Data();
         $result = $reader->getTime();
+
+        if (!$result) {
+            $r->status = false;
+            $r->code = 500;
+        } else {
+            $r->data = $result;
+        }
+        return $r;
+    }
+
+    public function getMaps()
+    {
+        $r = new Api_Responce();
+
+        $reader = new Reader_Data();
+        $result = $reader->getMaps();
 
         if (!$result) {
             $r->status = false;

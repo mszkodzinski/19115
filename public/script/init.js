@@ -63,7 +63,7 @@ var Hackathon19115 = {
                 case 'year':
                     $('#date-from').val(year + '-01-01');
                     $('#date-to').val(year + '-12-31');
-                   // $('#date-from,#date-to').hide();
+                    // $('#date-from,#date-to').hide();
                     break;
                 case 'month':
                     $('#date-from').val(year + '-' + month + '-01');
@@ -79,12 +79,12 @@ var Hackathon19115 = {
                         day = '0' + day;
                     }
                     $('#date-to').val(year + '-' + month + '-' + day);
-                   // $('#date-from,#date-to').hide();
+                    // $('#date-from,#date-to').hide();
                     break;
                 case 'all':
                     $('#date-from').val('2013-01-01');
                     $('#date-to').val(year + '-' + month + '-' + day);
-                  //  $('#date-from,#date-to').hide();
+                    //  $('#date-from,#date-to').hide();
                     break;
                 case 'own':
                     $('#date-from,#date-to').show();
@@ -203,98 +203,60 @@ var Hackathon19115 = {
     },
     map: function(){
         if (GBrowserIsCompatible()) {
-            var map = new GMap2(document.getElementById('map'));
-            map.setCenter(new GLatLng(52.233333, 21.016667), 11);
-            map.addControl(new GSmallMapControl());
-            map.addControl(new GMapTypeControl());
 
-            var icons = [
-                './image/icons/inne.png',
-                './image/icons/animal.png',
-                './image/icons/forest.png',
-                './image/icons/snow.png',
-                './image/icons/kran.png',
-                './image/icons/street.png',
-                './image/icons/uszkodzenia.png',
-                './image/icons/lokalowe.png',
-                './image/icons/komunikacja.png'
-            ];
+            Api.call({
+                action: 'getMaps',
+                data: {
+                },
+                success: function (data) {
 
-            var data = [
-                {
-                    points: [52.16842458731105, 21.033786862794823],
-                    description: 'Dziura w drodze',
-                    type: 5
-                },
-                {
-                    points: [52.15398490225165, 21.030714290470254],
-                    description: 'Zaginiony pies',
-                    type: 1
-                },
-                {
-                    points: [52.15897774006118, 21.044284782140656],
-                    description: 'Śmieci w lesie',
-                    type: 2
-                },
-                {
-                    points: [52.1747774006118, 21.097284782140656],
-                    description: 'Zasypało droge',
-                    type: 3
-                },
-                {
-                    points: [52.21897774006118, 21.007284782140656],
-                    description: 'Cieknie woda',
-                    type: 4
-                },
-                {
-                    points: [52.24897774006118, 21.007284782140656],
-                    description: 'Cieknie woda',
-                    type: 7
-                },
-                {
-                    points: [52.26897774006118, 21.000084782140656],
-                    description: 'Cieknie woda',
-                    type: 6
-                },
-                {
-                    points: [52.28897774006118, 20.900084782140656],
-                    description: 'Problem',
-                    type: 3
-                },
-                {
-                    points: [52.21897774006118, 21.200084782140656],
-                    description: 'Cieknie woda',
-                    type: 1
-                },
-                {
-                    points: [52.18897774006118, 20.990084782140656],
-                    description: 'Problem',
-                    type: 7
-                },
-                {
-                    points: [52.18897774006118, 20.900084782140656],
-                    description: 'Problem',
-                    type: 0
+                    var map = new GMap2(document.getElementById('map'));
+                    map.setCenter(new GLatLng(52.233333, 21.016667), 11);
+                    map.addControl(new GSmallMapControl());
+                    map.addControl(new GMapTypeControl());
+
+                    var icons = [
+                        './image/icons/lokalowe.png',
+                        './image/icons/kran.png',
+                        './image/icons/inne.png',
+                        './image/icons/animal.png',
+                        './image/icons/lokalowe.png',
+                        './image/icons/komunikacja.png',
+                        './image/icons/forest.png',
+                        './image/icons/snow.png',
+                        './image/icons/kran.png',
+                        './image/icons/uszkodzenia.png',
+                        './image/icons/street.png'
+                    ];
+
+                    var datax = [
+                        {
+                            points: [52.16842458731105, 21.033786862794823],
+                            description: 'Dziura w drodze',
+                            type: 5
+                        }
+                    ];
+
+
+                    function createMarker(data) {
+                        // Set up our GMarkerOptions object
+                        var baseIcon = new GIcon(G_DEFAULT_ICON);
+                        baseIcon.image = icons[data.type];
+                        var markerOptions = { icon: baseIcon };
+                        var point = new GLatLng(data.points[0], data.points[1]);
+                        var marker = new GMarker(point, markerOptions);
+
+                        GEvent.addListener(marker, 'click', function() {
+                            marker.openInfoWindowHtml(data.description);
+                        });
+                        return marker;
+                    }
+
+                    for (var i = 0; i < data.length; i++) {
+                        map.addOverlay(createMarker(data[i]));
+                    }
                 }
-            ];
-
-            function createMarker(data) {
-                // Set up our GMarkerOptions object
-                var baseIcon = new GIcon(G_DEFAULT_ICON);
-                    baseIcon.image = icons[data.type];
-                var markerOptions = { icon: baseIcon };
-                var point = new GLatLng(data.points[0], data.points[1]);
-                var marker = new GMarker(point, markerOptions);
-
-                GEvent.addListener(marker, 'click', function() {
-                    marker.openInfoWindowHtml(data.description);
-                });
-                return marker;
-            }
-
-            for (var i = 0; i < data.length; i++) {
-                map.addOverlay(createMarker(data[i]));
-            }
+            });
 
         }
     },
