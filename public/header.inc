@@ -15,8 +15,8 @@
     <![endif]-->
     <script src="./script/jquery.js"></script>
     <script src="./script/bootstrap.js"></script>
-    <script src="./script/api.js"></script>
     <script src="./script/chart.js"></script>
+    <script src="./script/api.js"></script>
 </head>
 <body>
 
@@ -27,16 +27,15 @@
         </div>
         <div class="navbar-collapse collapse" id="navbar-main">
             <ul class="nav navbar-nav">
-                <li <?php echo $activePage == 'charts' ? 'class="active"' : ''; ?>>
-                    <a href="./charts.php">Wizualizacja</a>
+                <li>
+                    <a href="./charts.php">Zgłoszenia</a>
                 </li>
-                <li <?php echo $activePage == 'maps' ? 'class="active"' : ''; ?>>
+                <li>
                     <a href="./maps.php">Mapa</a>
                 </li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="http://twitter.com/" target="_blank">Kontakt</a></li>
                 <li><a href="http://twitter.com/" target="_blank">Twitter</a></li>
                 <li><a href="http://facebook.com/" target="_blank">Facebook</a></li>
             </ul>
