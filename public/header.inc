@@ -16,6 +16,15 @@
     <script src="./script/bootstrap.js"></script>
     <script src="./script/api.js"></script>
     <script src="./script/chart.js"></script>
+    <style>
+        .navbar-nav:not(.navbar-right) > li > a {
+            font-size: 1.4em !important;
+        }
+        .navbar-form input:not(:focus) {
+            background: #65707A;
+            color: #ccc;
+        }
+    </style>
 </head>
 <body>
 

@@ -158,7 +158,7 @@ var Hackathon19115 = {
                 filter: Hackathon19115.filters
             },
             success: function (data) {
-                Chart.drawLine(data.label, data.value, null, 'day-by-day');
+                Chart.drawLine(data.label, data.value, 'Liczba', 'day-by-day');
             }
         });
     },
