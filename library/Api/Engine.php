@@ -17,6 +17,9 @@ class Api_Engine
             case 'getStats':
                 $r = $this->getStats($data);
                 break;
+            case 'getCoords':
+                $r = $this->getCoords($data);
+                break;
         }
         return $r->serialize();
     }
@@ -97,6 +100,22 @@ class Api_Engine
 
         $reader = new Reader_Data();
         $result = $reader->getStats();
+
+        if (!$result) {
+            $r->status = false;
+            $r->code = 500;
+        } else {
+            $r->data = $result;
+        }
+        return $r;
+    }
+
+    public function getCoords($params)
+    {
+        $r = new Api_Responce();
+
+        $reader = new Reader_Data();
+        $result = $reader->getCoords($params);
 
         if (!$result) {
             $r->status = false;

@@ -145,4 +145,20 @@ class Reader_Data extends DB_DB
 
         return $result;
     }
+
+    public function getCoords($params) {
+        $fields = array('lattitude', 'longtitude');
+        $sql = "SELECT ".implode(",", $fields)." FROM `notification` WHERE longtitude != '' LIMIT 0,30";
+
+        $q = $this->getDBObject()->query($sql);
+
+        if ($q) {
+            foreach ($q->fetchAll() as $item) {
+                $result[$item[$fields[0]]] = $item[$fields[1]];
+            }
+        }
+        //echo $sql;
+        return $result;
+
+    }
 }
