@@ -16,8 +16,8 @@ include_once "header.inc";
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Data <b class="caret"></b></a>
                                 <ul class="dropdown-menu date-type">
                                     <li data-filter="all"><a href="#">Wszystkie</a></li>
-                                    <li data-filter="year"><a href="#">Bieżący rok</a></li>
-                                    <li data-filter="month" class="active"><a href="#">Bieżący miesiąc</a></li>
+                                    <li data-filter="year" class="active"><a href="#">Bieżący rok</a></li>
+                                    <li data-filter="month"><a href="#">Bieżący miesiąc</a></li>
                                     <li data-filter="own"><a href="#">Dowolny zakres</a></li>
                                 </ul>
                             </li>
@@ -31,10 +31,17 @@ include_once "header.inc";
             </div>
         </div>
         <div class="row">
-            <div class="col-md-12">
+            <div class="col-md-8">
                 <div class="panel panel-default">
                     <div class="panel-heading">Dzień po dniu</div>
                     <div class="panel-body" id="day-by-day">
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">W miesiącach</div>
+                    <div class="panel-body" id="year">
                     </div>
                 </div>
             </div>
@@ -42,7 +49,7 @@ include_once "header.inc";
         <div class="row">
             <div class="col-md-12">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Dzielnice</div>
+                    <div class="panel-heading">Aktywność w dzielnicach</div>
                     <div class="panel-body" id="district">
                     </div>
                 </div>
@@ -51,17 +58,10 @@ include_once "header.inc";
         <div class="row">
             <div class="col-md-6">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Źródła</div>
+                    <div class="panel-heading">Źródła zgłoszeń</div>
                     <div class="panel-body">
                         <ul class="list-group"  id="source">
                         </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="panel panel-default">
-                    <div class="panel-heading">Miesiące</div>
-                    <div class="panel-body" id="year">
                     </div>
                 </div>
             </div>

@@ -38,11 +38,13 @@ include_once "header.inc";
             </div>
             <div class="col-md-6">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Podsumowanie</div>
+                    <div class="panel-heading">Liczba zgłoszeń</div>
                     <div class="panel-body" id="stats">
+                        <h2 class="sum"><span class="value"></span> <span class="note"></span><br/>
+                            <span class="note">łącznie</span></h2>
+                        <h4 class="diff30"><span class="value"></span></h4>
                         <h2 class="sum30"><span class="value"></span> <span class="note"></span><br/>
                         <span class="note">ost. 30 dni</span></h2>
-                        <h4 class="diff30"><span class="value"></span></h4>
                     </div>
                 </div>
             </div>

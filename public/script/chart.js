@@ -83,7 +83,7 @@ Chart = {
             legend: 'none',
             colors:['#df691a', '#5cb85c', '#f0ad4e', '#d9534f', '#5bc0de'],
             lineWidth: 5,
-            tooltip: {textStyle: {color: '#eee'}, showColorCode: true},
+            tooltip: {textStyle: {color: '#333'}, showColorCode: true},
             vAxes:[{title:title,textStyle:{color: '#eee'},titleTextStyle: {color: '#eee'}, baselineColor:'#eee'}],
             hAxes:[{textStyle:{color: '#eee'}, baselineColor:'#eee'}]
         };
@@ -92,12 +92,13 @@ Chart = {
         chart.draw(data, options);
     },
     drawPie: function (labels, values, title, container) {
-        labels.unshift('');
-        values.unshift('');
         var data = [];
         $.each(labels, function (k, v) {
-            data.push([labels[k], values[k]]);
+            if (labels[k] != '') {
+                data.push([labels[k], values[k]]);
+            }
         });
+        data.unshift(['','']);
 
         var data = google.visualization.arrayToDataTable(data);
 
@@ -179,6 +180,7 @@ Chart = {
     showStats: function (data, container) {
         var c = $('#' + container);
         c.find('.sum30 .value').text(data['sum30']);
+        c.find('.sum .value').text(data['sum']);
         c.find('.diff30 .value').text(data['diff60p'] + '%');
         c.find('.diff30').removeClass('text-success text-danger');
         if (data['diff60p'] > 0) {
