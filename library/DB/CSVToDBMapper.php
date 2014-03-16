@@ -50,11 +50,8 @@ class DB_CSVToDBMapper {
     public function insertCSVDataToDB($filename){
         $closed = false;
 
-        if(preg_match('_closed',$filename){
-            $closed = true;
-            diee('closed');
-        }
-        return;
+
+
         if(!file_exists($filename) || !is_readable($filename))
             return FALSE;
 
@@ -71,6 +68,13 @@ class DB_CSVToDBMapper {
             'close_date',//=>array('dateParser'),
             'k_source'=>array('insertDictData','source')
         );
+
+        if(preg_match('/_closed/',$filename)){
+            $closed = true;
+            var_dump('closed');
+            $header_mapper[] = 'date';
+        }
+        var_dump('opened');
 
         $headers = array();
         $i = 0;

@@ -21,6 +21,7 @@ include_once "header.inc";
     <div id="map" style="width:1140px; height:800px;"></div>
     <div id="visualization" style="width:1140px; height:800px;"></div>
     <div id="source"></div>
+    <div id="district"></div>
     <div id="year"></div>
     <div id="calendar"></div>
 

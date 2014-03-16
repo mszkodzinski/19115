@@ -1,17 +1,29 @@
 Chart = {
     labels: {},
-    init: function () {
+    init: function (callback) {
         var self = this;
         Api.call({
-            action: getLabels,
+            action: 'getLabels',
             success: function (data) {
                 self.labels = data;
+                if ($.isFunction(callback)) {
+                    callback();
+                }
             }
         });
+    },
+    getLabels: function(type, ids) {
+        var result = [],
+            self = this;
+        $.each(ids, function(k, v) {
+            result.push(self.labels[type][v] !== undefined ? self.labels[type][v] : '');
+        });
+        return result;
     },
     drawColumn: function (labels, values, title, container) {
         labels.unshift('');
         values.unshift('');
+
         var wrapper = new google.visualization.ChartWrapper({
             chartType: 'ColumnChart',
             dataTable: [labels,

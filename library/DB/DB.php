@@ -86,7 +86,7 @@ class DB_DB  {
              return false;
          }
 
-        public function insertRowData($table, $row){
+    public function insertRowData($table, $row){
         $cols_no = count($row);
         $str = '';
         for($j=0; $j<$cols_no; $j++){

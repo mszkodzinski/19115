@@ -10,7 +10,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
 
-include_once('../config/default.php');
+include_once('../config/config.php');
 include_once('../application/autoloader.php');
 
 $accountData = array(
@@ -20,7 +20,8 @@ $accountData = array(
     'port' => $config['mail']['port'],
     'secure' => 'ssl',
 );
-$date = '2014-03-07';
+
+$date = '2013-01-01';
 $mailboxes = array('INBOX', '*Sent*', '*Wysłane*');
 
 $connection = new Imap_Connection_Horde($accountData);
