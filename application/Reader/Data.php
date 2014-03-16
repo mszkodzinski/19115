@@ -2,12 +2,33 @@
 
 class Reader_Data extends DB_DB
 {
+    public function getStats()
+    {
+        $result = array(
+            'sum' => 0,
+            'sum30' => 0
+        );
+
+        $q = $this->getDBObject()->query('select count(1) as sum from notification');
+        if ($q) {
+            $r = $q->fetchRow();
+            $result['sum'] = $r['sum'];
+        }
+        $q = $this->getDBObject()->query('select count(1) as sum from notification where date_of_acceptance > \'' . date('Y-m-d', strtotime('-30 days')) . '\'');
+        if ($q) {
+            $r = $q->fetchRow();
+            $result['sum30'] = $r['sum'];
+        }var_dump($result);
+        return $result;
+    }
+
     public function getLabels()
     {
         $result = array(
             'organization' => array(),
             'source' => array(),
-            'district' => array()
+            'district' => array(),
+            'status' => array()
         );
         $q = $this->getDBObject()->query('select * from organization');
         if ($q) {
@@ -25,6 +46,12 @@ class Reader_Data extends DB_DB
         if ($q) {
             foreach ($q->fetchAll() as $item) {
                 $result['district'][$item['id']] = $item['name'];
+            }
+        }
+        $q = $this->getDBObject()->query('select * from status');
+        if ($q) {
+            foreach ($q->fetchAll() as $item) {
+                $result['status'][$item['id']] = $item['name'];
             }
         }
         return $result;
@@ -83,14 +110,17 @@ class Reader_Data extends DB_DB
         if (count($where)) {
             $sql .= ' where ' . implode(' and ', $where);
         }
+        if ($params['groupby']) {
+            $sql .= ' group by ' . $params['groupby'];
+        }
         if ($params['sortby']) {
             $sql .= ' order by ' . $params['sortby'];
             if ($params['order']) {
-                $sql .= $params['order'];
+                $sql .= ' ' . $params['order'];
             }
         }
-        if ($params['groupby']) {
-            $sql .= ' group by ' . $params['groupby'];
+        if ($params['limit']) {
+            $sql .= ' limit ' . $params['limit'];
         }
 
         $result = array(

@@ -9,7 +9,7 @@ return $config = array(
     ),
     'mail' => array(
         'host' => 'imap.gmail.com',
-        'port' => '587',
+        'port' => '993',
         'login' => '',
         'pass' => ''
     )

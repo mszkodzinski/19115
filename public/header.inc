@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./css/bootstrap.css" media="screen">
     <link rel="stylesheet" href="./css/bootswatch.css">
     <link rel="stylesheet" href="./css/datepicker.css">
+    <link rel="stylesheet" href="./css/style.css">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="./script/html5shiv.js"></script>
@@ -26,15 +27,16 @@
         </div>
         <div class="navbar-collapse collapse" id="navbar-main">
             <ul class="nav navbar-nav">
-                <li>
-                    <a href="./charts.php">Wizualizacja danych</a>
+                <li <?php echo $activePage == 'charts' ? 'class="active"' : ''; ?>>
+                    <a href="./charts.php">Wizualizacja</a>
                 </li>
-                <li>
-                    <a href="./contact.php">Kontakt</a>
+                <li <?php echo $activePage == 'maps' ? 'class="active"' : ''; ?>>
+                    <a href="./maps.php">Mapa</a>
                 </li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
+                <li><a href="http://twitter.com/" target="_blank">Kontakt</a></li>
                 <li><a href="http://twitter.com/" target="_blank">Twitter</a></li>
                 <li><a href="http://facebook.com/" target="_blank">Facebook</a></li>
             </ul>

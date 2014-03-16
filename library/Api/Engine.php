@@ -43,7 +43,7 @@ class Api_Engine
     public function getData($params)
     {
         $r = new Api_Responce();
-        foreach (array('filter', 'groupby', 'sortby', 'order'/*, 'notnull'*/) as $key) {
+        foreach (array('filter', 'groupby', 'sortby', 'order', 'limit'/*, 'notnull'*/) as $key) {
             if (!isset($params[$key])) {
                 $params[$key] = null;
             }
@@ -78,6 +78,22 @@ class Api_Engine
 
         $reader = new Reader_Data();
         $result = $reader->getData($params);
+
+        if (!$result) {
+            $r->status = false;
+            $r->code = 500;
+        } else {
+            $r->data = $result;
+        }
+        return $r;
+    }
+
+    public function getStats()
+    {
+        $r = new Api_Responce();
+
+        $reader = new Reader_Data();
+        $result = $reader->getStats();
 
         if (!$result) {
             $r->status = false;

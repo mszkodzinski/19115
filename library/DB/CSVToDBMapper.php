@@ -42,12 +42,14 @@ class DB_CSVToDBMapper {
             }
 
         }
-        var_dump($row_to_db);
         return $row_to_db;
 
     }
 
-    public function insertCSVDataToDB($filename, $closed = false){
+    public function insertCSVDataToDB($filename){
+        $closed = false;
+
+
 
         if(!file_exists($filename) || !is_readable($filename))
             return FALSE;
@@ -66,6 +68,13 @@ class DB_CSVToDBMapper {
             'k_source'=>array('insertDictData','source')
         );
 
+        if(preg_match('/_closed/',$filename)){
+            $closed = true;
+            echo("closed </br>");
+            $header_mapper[] = 'date';
+        }
+        echo("opened </br>");
+
         $headers = array();
         $i = 0;
         foreach ($header_mapper as $key=>$val){
@@ -79,10 +88,11 @@ class DB_CSVToDBMapper {
 
         }
 
-        var_dump($headers);
+        //var_dump($headers);
 
         $header = NULL;
         $data = array();
+        $res = array('update'=>array(),'insert'=>array());
         if (($handle = fopen($filename, 'r')) !== FALSE)
         {
             while (($row = fgetcsv($handle, 1000, "\t")) !== FALSE)
@@ -94,13 +104,25 @@ class DB_CSVToDBMapper {
                 } else {
                     $tmp = array_combine($headers, $row);
                     $row =  $this->prepareCSVRow($tmp, $header_mapper);
-                    $this->db->insertRowData('notification', $row);
+                    if($closed){
+                        $u = $this->db->updateNotificationData('notification', $row);
+                        $res['update'][$row['number']]=$u;
+                        echo $row['number']. ' update result '.$u. "</br>";
+
+
+                    }else{
+                        $id = $this->db->insertRowData('notification', $row);
+                        echo $row['number']. ' insert result '.$id. "</br>";
+                        $res['insert'][$row['number']]=$id;
+                    }
                     $data[] = array_combine($headers, $row);
                 }
             }
             fclose($handle);
         }
-        print_r($data);
+        echo' //----------------------------------------------------------------';
+        echo 'Dla pliku '.$filename.' zaimportowano dane '. count($res['insert']). ' updated '.  count($res['update']). "</br>";
+        echo' //----------------------------------------------------------------';
         return $data;
 
 

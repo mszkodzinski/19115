@@ -36,6 +36,11 @@ class DB_DB  {
         return $query->execute();
     }
 
+    public function selectDict($table){
+        $stmt = $this->db->query('select * from '.$table);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
     public function selectData($table, $name){
         $stmt = $this->db->prepare('select id from '.$table.' where name =?');
         $res = $stmt->execute(array($name));
@@ -69,6 +74,41 @@ class DB_DB  {
         }
     }
 
+         public function updateNotificationData($table, $row){
+             try {
+
+                 $start_date = new DateTime($row['date_of_acceptance']);
+                 $close_date = new DateTime($row['close_date']);
+
+                 $since_start = $start_date->diff($close_date);
+                 $minutes='null';
+                 if($since_start){
+                     $minutes = $since_start->days * 24 * 60;
+                     $minutes += $since_start->h * 60;
+                     $minutes += $since_start->i;
+                 }
+
+                 $sql ='update '.$table.' set close_date = ?, notification_time =? where number = ?';
+                 //echo $sql;
+                 $stmt = $this->db->prepare($sql);
+                 try {
+                     $this->db->beginTransaction();
+                     $res = $stmt->execute(array($row['close_date'],$minutes, $row['number']));
+                     $this->db->commit();
+                     return $res;
+                 } catch(PDOExecption $e) {
+                     $this->db->rollback();
+                    // var_dump($e);
+                     print "Error!: " . $e->getMessage() . "</br>";
+                     return false;
+                 }
+             } catch( PDOExecption $e ) {
+                 //var_dump($e);
+                 print "Error!: " . $e->getMessage() . "</br>";
+                 return false;
+             }
+             return false;
+         }
 
     public function insertRowData($table, $row){
         $cols_no = count($row);
@@ -80,7 +120,7 @@ class DB_DB  {
 
         try {
             $sql ='insert  into '.$table.' ('.implode(',', array_keys($row)).' ) values ('.trim($str,',').')';
-            echo $sql;
+            //echo $sql;
             $stmt = $this->db->prepare($sql);
             try {
                 $this->db->beginTransaction();
@@ -89,12 +129,12 @@ class DB_DB  {
                 return $this->db->lastInsertId();
             } catch(PDOExecption $e) {
                 $this->db->rollback();
-                var_dump($e);
+               // var_dump($e);
                 print "Error!: " . $e->getMessage() . "</br>";
                 return false;
             }
         } catch( PDOExecption $e ) {
-            var_dump($e);
+           // var_dump($e);
             print "Error!: " . $e->getMessage() . "</br>";
             return false;
         }
