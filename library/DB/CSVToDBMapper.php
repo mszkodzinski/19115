@@ -46,6 +46,13 @@ class DB_CSVToDBMapper {
 
     }
 
+    public function convertCoords($lattitude, $longtitude){
+        'proj '
+
+
+    }
+
+
     public function insertCSVDataToDB($filename){
         $closed = false;
 
@@ -61,8 +68,8 @@ class DB_CSVToDBMapper {
             'k_district'=>array('insertDictData','district'),
             'street',
             'house_nr',
-            'lattitude',
             'longtitude',
+            'lattitude',
             'k_organization'=>array('insertDictData','organization'),
             'close_date',//=>array('dateParser'),
             'k_source'=>array('insertDictData','source')

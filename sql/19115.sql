@@ -69,8 +69,8 @@ CREATE TABLE IF NOT EXISTS `notification` (
 
 CREATE TABLE IF NOT EXISTS `organization` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `name` int(11) NOT NULL,
-  `description` int(11) NOT NULL,
+  `name` varchar(32) NOT NULL,
+  `description` varchar(32),
   PRIMARY KEY (`id`),
   UNIQUE KEY `uniq_organisation` (`name`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=8436 ;
