@@ -7,7 +7,8 @@ class Reader_Data extends DB_DB
         $result = array(
             'organization' => array(),
             'source' => array(),
-            'district' => array()
+            'district' => array(),
+            'status' => array()
         );
         $q = $this->getDBObject()->query('select * from organization');
         if ($q) {
@@ -25,6 +26,12 @@ class Reader_Data extends DB_DB
         if ($q) {
             foreach ($q->fetchAll() as $item) {
                 $result['district'][$item['id']] = $item['name'];
+            }
+        }
+        $q = $this->getDBObject()->query('select * from status');
+        if ($q) {
+            foreach ($q->fetchAll() as $item) {
+                $result['status'][$item['id']] = $item['name'];
             }
         }
         return $result;
@@ -83,14 +90,17 @@ class Reader_Data extends DB_DB
         if (count($where)) {
             $sql .= ' where ' . implode(' and ', $where);
         }
+        if ($params['groupby']) {
+            $sql .= ' group by ' . $params['groupby'];
+        }
         if ($params['sortby']) {
             $sql .= ' order by ' . $params['sortby'];
             if ($params['order']) {
-                $sql .= $params['order'];
+                $sql .= ' ' . $params['order'];
             }
         }
-        if ($params['groupby']) {
-            $sql .= ' group by ' . $params['groupby'];
+        if ($params['limit']) {
+            $sql .= ' limit ' . $params['limit'];
         }
 
         $result = array(

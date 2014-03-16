@@ -9,7 +9,7 @@
 class DB_DB  {
     private $db;
     public function __construct(){
-        $config = require('../config/default.php');
+        $config = require_once('../config/default.php');
         $this->db = new PDO('mysql:host=localhost;dbname='.$config['db']['dbname'], $config['db']['login'], $config['db']['pass']);
 
 
@@ -22,6 +22,18 @@ class DB_DB  {
     public function insertFile($file_name) {
         $query = $this->db->prepare('INSERT INTO `importer` (`file` ,`import_date` ,`status`) VALUES (?, CURRENT_TIMESTAMP ,  \'0\');');
         return $query->execute(array($file_name));
+    }
+
+    public function implodeKeyValue($array) {
+        return implode(', ', array_map(function ($v, $k) { return $k . '=' . $v; }, $array, array_keys($array)));
+    }
+
+    public function updateRow($table, $data, $where_data) {
+        $data_output = $this->implodeKeyValue($data);
+        $where_data_output = $this->implodeKeyValue($where_data);
+
+        $query = $this->db->prepare('UPDATE '.$table.' SET '.$data_output.' WHERE '.$where_data_output);
+        return $query->execute();
     }
 
     public function selectDict($table){
