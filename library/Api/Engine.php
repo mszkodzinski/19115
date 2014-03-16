@@ -20,6 +20,9 @@ class Api_Engine
             case 'getCoords':
                 $r = $this->getCoords($data);
                 break;
+            case 'getTime':
+                $r = $this->getTime($data);
+                break;
         }
         return $r->serialize();
     }
@@ -100,6 +103,22 @@ class Api_Engine
 
         $reader = new Reader_Data();
         $result = $reader->getStats();
+
+        if (!$result) {
+            $r->status = false;
+            $r->code = 500;
+        } else {
+            $r->data = $result;
+        }
+        return $r;
+    }
+
+    public function getTime()
+    {
+        $r = new Api_Responce();
+
+        $reader = new Reader_Data();
+        $result = $reader->getTime();
 
         if (!$result) {
             $r->status = false;

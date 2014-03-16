@@ -1,5 +1,7 @@
 /* custom style */
-
+.navbar {
+    font-size: 14px;
+}
 #map{
     color: #080f1f;
 }
@@ -21,15 +23,34 @@
     max-width:100px;
     width: auto;
     display: block;
-    float:left;
-    margin-top: 50px;
+    float:right;
+    margin-top: 15px;
 }
-.sum30 .note {
+.sum30 .note,.sum .note {
     font-size:.6em;
 }
-.sum30 {
+.sum30, .sum {
     width: auto;
     display: inline-block;
-    padding: 10px;;
-    float:left
+    padding: 0 10px;
+    float:right;
+    margin-top: 0;
+}
+.sum {
+    margin-right: 20px;
+    float:left;
+}
+.panel-warning .panel-heading {
+    color: #333;
+}
+.panel-heading {
+    font-size:1.5em
+}
+#stats {
+    padding: 15px 70px;
+}
+#time {
+    height: 360px;
+    overflow: scroll;
+    overflow-x: hidden;
 }

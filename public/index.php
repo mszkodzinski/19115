@@ -18,6 +18,16 @@ include_once "header.inc";
                         <a class="btn btn-success btn-lg" href="https://warszawa19115.pl/web/portal/sprawdz-status" target="_blank">Sprawdź status</a>
                     </p>
                 </div>
+                <div class="col-lg-4">
+                    <div class="well sponsor">
+                        <h4>
+                            Pomóż Urzędowi Miasta dbać o Twoją najbliższą okolicę.
+                        </h4>
+                        <h5>
+                            Zobacz, ile do tej pory udało się zrobić, a na co jeszcze możesz wpłynąć.
+                        </h5>
+                    </div>
+                </div>
             </div>
             <!--<div class="row">
                 <div class="col-lg-6" style="padding: 15px 15px 0 15px;">
@@ -38,11 +48,13 @@ include_once "header.inc";
             </div>
             <div class="col-md-6">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Podsumowanie</div>
+                    <div class="panel-heading">Liczba zgłoszeń</div>
                     <div class="panel-body" id="stats">
+                        <h2 class="sum"><span class="value"></span> <span class="note"></span><br/>
+                            <span class="note">łącznie</span></h2>
+                        <h4 class="diff30"><span class="value"></span></h4>
                         <h2 class="sum30"><span class="value"></span> <span class="note"></span><br/>
                         <span class="note">ost. 30 dni</span></h2>
-                        <h4 class="diff30"><span class="value"></span></h4>
                     </div>
                 </div>
             </div>

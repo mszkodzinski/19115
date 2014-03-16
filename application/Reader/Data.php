@@ -2,6 +2,25 @@
 
 class Reader_Data extends DB_DB
 {
+    public function getTime()
+    {
+        $result = array(
+            'label' => array(),
+            'value' => array(),
+        );
+        $q = $this->getDBObject()->query('select round(avg(notification_time)/60/24) as value ,o.name as label from notification n
+join organization o on o.id = n.k_organization
+where notification_time > 0 and length(trim(o.name)) > 0
+group by k_organization order by value desc');
+        if ($q) {
+            foreach ($q->fetchAll() as $item) {
+                $result['label'][] = $item['label'];
+                $result['value'][] = intval($item['value']);
+            }
+        }
+        return $result;
+    }
+
     public function getStats()
     {
         $result = array(
@@ -26,6 +45,8 @@ class Reader_Data extends DB_DB
             $result['sum60'] = $r[0]['sum'];
             $result['diff60p'] = ($result['sum60'] - $result['sum30']) != 0 ? -1 * round(100 * ((float)$result['sum60'] - 2 * $result['sum30']) / ($result['sum60'] - $result['sum30'])) : 0;
         }
+        $result['sum'] = number_format($result['sum'], 0, '.', ' ');
+        $result['sum30'] = number_format($result['sum30'], 0, '.', ' ');
         return $result;
     }
 
