@@ -166,4 +166,25 @@ group by k_organization order by value desc');
 
         return $result;
     }
+
+    public function getMaps()
+    {
+        $result = array(
+        );
+        $q = $this->getDBObject()->query('SELECT longtitude as lon,lattitude as lat,s.name as des,s.id as type FROM notification n
+join status s on s.id = n.k_status
+where (longtitude > 19 and longtitude < 23) and (lattitude > 50 and lattitude < 54)
+order by date_of_acceptance desc
+limit 300');
+        if ($q) {
+            foreach ($q->fetchAll() as $item) {
+                $result[] = array(
+                    'points' =>  array(floatval($item['lat']), floatval($item['lon'])),
+                    'description' => $item['des'],
+                    'type' => intval($item['type'])
+                );
+            }
+        }
+        return $result;
+    }
 }
