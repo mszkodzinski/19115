@@ -20,17 +20,17 @@
 </head>
 <body>
 
-<div class="navbar navbar-default navbar-fixed-top">
+<div class="navbar navbar-default navbar-fixed-top navbar-inverse">
     <div class="container">
         <div class="navbar-header">
             <a href="../" class="navbar-brand">19115</a>
         </div>
         <div class="navbar-collapse collapse" id="navbar-main">
             <ul class="nav navbar-nav">
-                <li>
+                <li <?php if ($activePage=='charts')echo'class="active";'?>>
                     <a href="./charts.php">Zgłoszenia</a>
                 </li>
-                <li>
+                <li <?php if ($activePage=='maps')echo'class="active";'?>>
                     <a href="./maps.php">Mapa</a>
                 </li>
             </ul>

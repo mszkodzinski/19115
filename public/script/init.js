@@ -138,7 +138,7 @@ var Hackathon19115 = {
                 filter: Hackathon19115.filters
             },
             success: function (data) {
-                Chart.drawPie(Chart.getLabels('organization', data.label, true), data.value, null, 'organization');
+                Chart.drawPie(Chart.getLabels('organization', data.label), data.value, null, 'organization');
             }
         });
         Api.call({
