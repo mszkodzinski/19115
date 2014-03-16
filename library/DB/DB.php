@@ -25,14 +25,20 @@ class DB_DB  {
     }
 
     public function implodeKeyValue($array) {
-        return implode(', ', array_map(function ($v, $k) { return $k . '=' . $v; }, $array, array_keys($array)));
+        return implode(', ', array_map(function ($v, $k) { return $k . '="' . $v.'"'; }, $array, array_keys($array)));
+    }
+
+    public function implodeKeyWhereValue($array) {
+        return implode(' AND ', array_map(function ($v, $k) { return $k . '="' . $v.'"'; }, $array, array_keys($array)));
     }
 
     public function updateRow($table, $data, $where_data) {
         $data_output = $this->implodeKeyValue($data);
-        $where_data_output = $this->implodeKeyValue($where_data);
+        $where_data_output = $this->implodeKeyWhereValue($where_data);
+        $sql = 'UPDATE '.$table.' SET '.$data_output.' WHERE '.$where_data_output;
+        echo $sql;
 
-        $query = $this->db->prepare('UPDATE '.$table.' SET '.$data_output.' WHERE '.$where_data_output);
+        $query = $this->db->prepare($sql);
         return $query->execute();
     }
 
