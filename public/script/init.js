@@ -227,24 +227,54 @@ var Hackathon19115 = {
                     type: 5
                 },
                 {
-                    points: [52.51398490225165, 21.430714290470254],
+                    points: [52.15398490225165, 21.030714290470254],
                     description: 'Zaginiony pies',
                     type: 1
                 },
                 {
-                    points: [52.45897774006118, 21.307284782140656],
+                    points: [52.15897774006118, 21.044284782140656],
                     description: 'Śmieci w lesie',
                     type: 2
                 },
                 {
-                    points: [52.35897774006118, 21.207284782140656],
+                    points: [52.1747774006118, 21.097284782140656],
                     description: 'Zasypało droge',
                     type: 3
                 },
                 {
-                    points: [52.25897774006118, 21.007284782140656],
+                    points: [52.21897774006118, 21.007284782140656],
                     description: 'Cieknie woda',
                     type: 4
+                },
+                {
+                    points: [52.24897774006118, 21.007284782140656],
+                    description: 'Cieknie woda',
+                    type: 7
+                },
+                {
+                    points: [52.26897774006118, 21.000084782140656],
+                    description: 'Cieknie woda',
+                    type: 6
+                },
+                {
+                    points: [52.28897774006118, 20.900084782140656],
+                    description: 'Problem',
+                    type: 3
+                },
+                {
+                    points: [52.21897774006118, 21.200084782140656],
+                    description: 'Cieknie woda',
+                    type: 1
+                },
+                {
+                    points: [52.18897774006118, 20.990084782140656],
+                    description: 'Problem',
+                    type: 7
+                },
+                {
+                    points: [52.18897774006118, 20.900084782140656],
+                    description: 'Problem',
+                    type: 0
                 }
             ];
 
