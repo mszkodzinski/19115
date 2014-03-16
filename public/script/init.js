@@ -198,7 +198,10 @@ var Hackathon19115 = {
                 './image/icons/forest.png',
                 './image/icons/snow.png',
                 './image/icons/kran.png',
-                './image/icons/street.png'
+                './image/icons/street.png',
+                './image/icons/uszkodzenia.png',
+                './image/icons/lokalowe.png',
+                './image/icons/komunikacja.png'
             ];
 
             var data = [
