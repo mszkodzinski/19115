@@ -74,7 +74,7 @@ include_once "header.inc";
             </div>
             <div class="col-md-6">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Czas obsługi <small>(w dniach)</small></div>
+                    <div class="panel-heading">Czas obsługi zgłoszeń <small>(w dniach)</small></div>
                     <div class="panel-body">
                         <ul class="list-group"  id="time">
                         </ul>
@@ -82,9 +82,9 @@ include_once "header.inc";
                 </div>
             </div>
         </div>
-        <div class="row" style="display:none">
+        <!--<div class="row">
             <div id="calendar"></div>
-        </div>
+        </div>-->
     </div>
     <script src="//maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAAuPsJpk3MBtDpJ4G8cqBnjRRaGTYH6UMl8mADNa0YKuWNNa8VNxQCzVBXTx2DYyXGsTOxpWhvIG7Djw" type="text/javascript"></script>
     <script type="text/javascript" src="//www.google.com/jsapi"></script>
