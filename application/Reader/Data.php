@@ -83,14 +83,17 @@ class Reader_Data extends DB_DB
         if (count($where)) {
             $sql .= ' where ' . implode(' and ', $where);
         }
+        if ($params['groupby']) {
+            $sql .= ' group by ' . $params['groupby'];
+        }
         if ($params['sortby']) {
             $sql .= ' order by ' . $params['sortby'];
             if ($params['order']) {
-                $sql .= $params['order'];
+                $sql .= ' ' . $params['order'];
             }
         }
-        if ($params['groupby']) {
-            $sql .= ' group by ' . $params['groupby'];
+        if ($params['limit']) {
+            $sql .= ' limit ' . $params['limit'];
         }
 
         $result = array(

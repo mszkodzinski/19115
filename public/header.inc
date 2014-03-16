@@ -26,15 +26,16 @@
         </div>
         <div class="navbar-collapse collapse" id="navbar-main">
             <ul class="nav navbar-nav">
-                <li>
-                    <a href="./charts.php">Wizualizacja danych</a>
+                <li <?php echo $activePage == 'charts' ? 'class="active"' : ''; ?>>
+                    <a href="./charts.php">Wizualizacja</a>
                 </li>
-                <li>
-                    <a href="./contact.php">Kontakt</a>
+                <li <?php echo $activePage == 'maps' ? 'class="active"' : ''; ?>>
+                    <a href="./maps.php">Mapa</a>
                 </li>
             </ul>
 
             <ul class="nav navbar-nav navbar-right">
+                <li><a href="http://twitter.com/" target="_blank">Kontakt</a></li>
                 <li><a href="http://twitter.com/" target="_blank">Twitter</a></li>
                 <li><a href="http://facebook.com/" target="_blank">Facebook</a></li>
             </ul>

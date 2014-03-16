@@ -6,14 +6,24 @@ var Hackathon19115 = {
     filters: {
         date: [0, 0]
     },
-    init: function(){
-        Chart.init(function () {
-            Hackathon19115.initFilter();
+    init: function(page){
+        switch (page) {
+            case 'charts':
+                Chart.init(function () {
+                    Hackathon19115.initFilter();
 //            Hackathon19115.chart();
-        });
-
-//        this.map();
-//        this.webResponse();
+                });
+                break;
+            case 'maps':
+                this.map();
+                this.webResponse();
+                break;
+            case 'main':
+                Chart.init(function () {
+                    Hackathon19115.main();
+                });
+                break;
+        }
     },
     initFilter: function(){
         var checkin = $('#date-from').datepicker({
@@ -37,8 +47,8 @@ var Hackathon19115 = {
         }).on('changeDate', function(ev) {
             checkout.hide();
         }).data('datepicker');
-        $('#date-type').change(function () {
-            var val = $(this).val(),
+        $('ul.date-type a').click(function () {
+            var val = $(this).parent().attr('data-filter'),
                 date = new Date(),
                 year = date.getFullYear(),
                 month = date.getMonth() + 1,
@@ -53,7 +63,7 @@ var Hackathon19115 = {
                 case 'year':
                     $('#date-from').val(year + '-01-01');
                     $('#date-to').val(year + '-12-31');
-                    $('#date-from,#date-to').hide();
+                   // $('#date-from,#date-to').hide();
                     break;
                 case 'month':
                     $('#date-from').val(year + '-' + month + '-01');
@@ -69,12 +79,12 @@ var Hackathon19115 = {
                         day = '0' + day;
                     }
                     $('#date-to').val(year + '-' + month + '-' + day);
-                    $('#date-from,#date-to').hide();
+                   // $('#date-from,#date-to').hide();
                     break;
                 case 'all':
                     $('#date-from').val('2013-01-01');
                     $('#date-to').val(year + '-' + month + '-' + day);
-                    $('#date-from,#date-to').hide();
+                  //  $('#date-from,#date-to').hide();
                     break;
                 case 'own':
                     $('#date-from,#date-to').show();
@@ -84,37 +94,41 @@ var Hackathon19115 = {
             Hackathon19115.filters.date[1] = $('#date-to').val();
             Hackathon19115.chart();
         });
-        $('#date-type').trigger('change');
+        $('ul.date-type .active a').trigger('click');
     },
     chart: function(){
         Api.call({
             action: 'getData',
             data: {
                 groupby: 'source',
-                filter: Hackathon19115.filters
+                filter: Hackathon19115.filters,
+                sortby: 'value',
+                order: 'desc'
             },
             success: function (data) {
-                Chart.drawColumn(Chart.getLabels('source', data.label), data.value, 'Źródła', 'source');
+                Chart.showList(Chart.getLabels('source', data.label), data.value, 'source');
             }
         });
         Api.call({
             action: 'getData',
             data: {
                 groupby: 'district',
-                filter: Hackathon19115.filters
+                filter: Hackathon19115.filters,
+                sortby: 'value',
+                order: 'desc'
             },
             success: function (data) {
-                Chart.drawColumn(Chart.getLabels('district', data.label, true), data.value, 'Dzielnice', 'district');
+                Chart.drawColumn(Chart.getLabels('district', data.label, true), data.value, null, 'district');
             }
         });
         Api.call({
             action: 'getData',
             data: {
-                groupby: 'year',
+                groupby: 'year_month',
                 filter: Hackathon19115.filters
             },
             success: function (data) {
-                Chart.drawPie(data.label, data.value, 'Lata', 'year');
+                Chart.drawPie(data.label, data.value, null, 'year');
             }
         });
         Api.call({
@@ -125,6 +139,20 @@ var Hackathon19115 = {
             },
             success: function (data) {
                 Chart.drawCalendar(data.label, data.value, 'Dni', 'calendar');
+            }
+        });
+    },
+    main: function () {
+        Api.call({
+            action: 'getData',
+            data: {
+                groupby: 'district',
+                sortby: 'value',
+                order: 'desc',
+                limit: 5
+            },
+            success: function (data) {
+                Chart.showList(Chart.getLabels('district', data.label, true), data.value, 'district', true);
             }
         });
     },
@@ -196,7 +224,3 @@ var Hackathon19115 = {
 
     }
 };
-
-$(function () {
-    Hackathon19115.init();
-});
