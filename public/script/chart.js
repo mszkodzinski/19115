@@ -41,8 +41,12 @@ Chart = {
                 backgroundColor: '#4e5d6c',
                 colors: ['#df691a', '#5cb85c', '#f0ad4e', '#d9534f', '#5bc0de'],
                 legend: {
-                    position: 'bottom'
-                }
+                    position: 'bottom',
+                    maxLines: 90,
+                    textStyle:{color: '#eee'}
+                },
+                vAxes:[{title:title, textStyle:{color: '#eee'},titleTextStyle: {color: '#eee'}, baselineColor:'#eee'}],
+                hAxes:[{textStyle:{color: '#eee'}, baselineColor:'#eee'}]
             },
             containerId: container
         });
@@ -83,8 +87,8 @@ Chart = {
             legend: 'none',
             colors:['#df691a', '#5cb85c', '#f0ad4e', '#d9534f', '#5bc0de'],
             lineWidth: 5,
-            tooltip: {textStyle: {color: '#eee'}, showColorCode: true},
-            vAxes:[{title:title,textStyle:{color: '#eee'},titleTextStyle: {color: '#eee'}, baselineColor:'#eee'}],
+            tooltip: {textStyle: {color: '#333'}, showColorCode: true},
+            vAxes:[{title:title, textStyle:{color: '#eee'},titleTextStyle: {color: '#eee'}, baselineColor:'#eee'}],
             hAxes:[{textStyle:{color: '#eee'}, baselineColor:'#eee'}]
         };
 
@@ -92,18 +96,20 @@ Chart = {
         chart.draw(data, options);
     },
     drawPie: function (labels, values, title, container) {
-        labels.unshift('');
-        values.unshift('');
         var data = [];
         $.each(labels, function (k, v) {
-            data.push([labels[k], values[k]]);
+            if (labels[k] != '') {
+                data.push([labels[k], values[k]]);
+            }
         });
+        data.unshift(['','']);
 
         var data = google.visualization.arrayToDataTable(data);
 
         var options = {
             title: title,
             backgroundColor: '#4e5d6c',
+            fontSize: 15,
             colors:['#df691a', '#5cb85c', '#f0ad4e', '#d9534f', '#5bc0de'],
 //            legend: 'none',
             legend: {textStyle: {color:'#eee'}},
@@ -149,11 +155,12 @@ Chart = {
             }
         }
     },
-    showList: function (labels, values, container, hideSum) {
+    showList: function (labels, values, container, hideSum, type) {
         var c = $('#' + container),
             sum = 0,
             max = 0;
         hideSum = hideSum || false;
+        type = type || 'info';
         c.find('li').remove();
         $.each(labels, function (k, v) {
             if (labels[k].length) {
@@ -163,7 +170,7 @@ Chart = {
                     max = vv;
                 }
                 c.append('<li class="list-group-item"><span class="badge">' + values[k] + '</span>' + labels[k] + '' +
-                    '<div class="progress"><div class="progress-bar progress-bar-info" style="width: 0"></div></div></li>');
+                    '<div class="progress"><div class="progress-bar progress-bar-'+type+'" style="width: 0"></div></div></li>');
             }
         });
         if (!hideSum) {
@@ -173,5 +180,17 @@ Chart = {
             var w = (100 * parseInt($(this).parents('li').find('.badge').text()) / max);
             $(this).css('width', w + '%');
         });
+    },
+    showStats: function (data, container) {
+        var c = $('#' + container);
+        c.find('.sum30 .value').text(data['sum30']);
+        c.find('.sum .value').text(data['sum']);
+        c.find('.diff30 .value').text(data['diff60p'] + '%');
+        c.find('.diff30').removeClass('text-success text-danger');
+        if (data['diff60p'] > 0) {
+            c.find('.diff30').addClass('text-success');
+        } else {
+            c.find('.diff30').addClass('text-danger');
+        }
     }
 }

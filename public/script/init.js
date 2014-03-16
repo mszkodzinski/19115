@@ -27,7 +27,7 @@ var Hackathon19115 = {
     },
     initFilter: function(){
         var checkin = $('#date-from').datepicker({
-            dateFormat: 'yy-mm-dd',
+            format: 'yyyy-mm-dd',
             onRender: function(date) {
             }
         }).on('changeDate', function(ev) {
@@ -40,7 +40,7 @@ var Hackathon19115 = {
             $('#date-to')[0].focus();
         }).data('datepicker');
         var checkout = $('#date-to').datepicker({
-            dateFormat: 'yy-mm-dd',
+            format: 'yyyy-mm-dd',
             onRender: function(date) {
                 return date.valueOf() <= checkin.date.valueOf() ? 'disabled' : '';
             }
@@ -138,19 +138,19 @@ var Hackathon19115 = {
                 filter: Hackathon19115.filters
             },
             success: function (data) {
-                Chart.drawPie(Chart.getLabels('organization', data.label, true), data.value, null, 'organization');
+                Chart.drawPie(Chart.getLabels('organization', data.label), data.value, null, 'organization');
             }
         });
-        Api.call({
-            action: 'getData',
-            data: {
-                groupby: 'year_month_day',
-                filter: Hackathon19115.filters
-            },
-            success: function (data) {
-                Chart.drawCalendar(data.label, data.value, 'Dni', 'calendar');
-            }
-        });
+//        Api.call({
+//            action: 'getData',
+//            data: {
+//                groupby: 'year_month_day',
+//                filter: Hackathon19115.filters
+//            },
+//            success: function (data) {
+//                Chart.drawCalendar(data.label, data.value, 'Dni', 'calendar');
+//            }
+//        });
         Api.call({
             action: 'getData',
             data: {
@@ -159,6 +159,14 @@ var Hackathon19115 = {
             },
             success: function (data) {
                 Chart.drawLine(data.label, data.value, 'Liczba', 'day-by-day');
+            }
+        });
+        Api.call({
+            action: 'getTime',
+            data: {
+            },
+            success: function (data) {
+                Chart.showList(data.label, data.value, 'time', true, 'warning');
             }
         });
     },
@@ -184,6 +192,14 @@ var Hackathon19115 = {
                 Chart.drawPie(Chart.getLabels('status', data.label, true), data.value, null, 'type');
             }
         });
+        Api.call({
+            action: 'getStats',
+            data: {
+            },
+            success: function (data) {
+                Chart.showStats(data, 'stats');
+            }
+        });
     },
     map: function(){
         if (GBrowserIsCompatible()) {
@@ -193,36 +209,76 @@ var Hackathon19115 = {
             map.addControl(new GMapTypeControl());
 
             var icons = [
-                './image/icons/kran.png',
+                './image/icons/inne.png',
                 './image/icons/animal.png',
+                './image/icons/forest.png',
+                './image/icons/snow.png',
                 './image/icons/kran.png',
-                './image/icons/kran.png',
-                './image/icons/kran.png',
-                './image/icons/kran.png',
-                './image/icons/kran.png',
-                './image/icons/kran.png',
+                './image/icons/street.png',
+                './image/icons/uszkodzenia.png',
+                './image/icons/lokalowe.png',
+                './image/icons/komunikacja.png'
             ];
 
             var data = [
                 {
                     points: [52.16842458731105, 21.033786862794823],
                     description: 'Dziura w drodze',
-                    type: 0
+                    type: 5
                 },
                 {
-                    points: [52.31398490225165, 21.030714290470254],
-                    description: 'Wybita szyba',
+                    points: [52.15398490225165, 21.030714290470254],
+                    description: 'Zaginiony pies',
                     type: 1
                 },
                 {
-                    points: [52.15897774006118, 21.107284782140656],
-                    description: 'Wypadek na drodze',
+                    points: [52.15897774006118, 21.044284782140656],
+                    description: 'Śmieci w lesie',
                     type: 2
+                },
+                {
+                    points: [52.1747774006118, 21.097284782140656],
+                    description: 'Zasypało droge',
+                    type: 3
+                },
+                {
+                    points: [52.21897774006118, 21.007284782140656],
+                    description: 'Cieknie woda',
+                    type: 4
+                },
+                {
+                    points: [52.24897774006118, 21.007284782140656],
+                    description: 'Cieknie woda',
+                    type: 7
+                },
+                {
+                    points: [52.26897774006118, 21.000084782140656],
+                    description: 'Cieknie woda',
+                    type: 6
+                },
+                {
+                    points: [52.28897774006118, 20.900084782140656],
+                    description: 'Problem',
+                    type: 3
+                },
+                {
+                    points: [52.21897774006118, 21.200084782140656],
+                    description: 'Cieknie woda',
+                    type: 1
+                },
+                {
+                    points: [52.18897774006118, 20.990084782140656],
+                    description: 'Problem',
+                    type: 7
+                },
+                {
+                    points: [52.18897774006118, 20.900084782140656],
+                    description: 'Problem',
+                    type: 0
                 }
             ];
 
             function createMarker(data) {
-                console.log('data: ', data);
                 // Set up our GMarkerOptions object
                 var baseIcon = new GIcon(G_DEFAULT_ICON);
                     baseIcon.image = icons[data.type];
