@@ -7,7 +7,8 @@ class Reader_Data extends DB_DB
         $result = array(
             'organization' => array(),
             'source' => array(),
-            'district' => array()
+            'district' => array(),
+            'status' => array()
         );
         $q = $this->getDBObject()->query('select * from organization');
         if ($q) {
@@ -25,6 +26,12 @@ class Reader_Data extends DB_DB
         if ($q) {
             foreach ($q->fetchAll() as $item) {
                 $result['district'][$item['id']] = $item['name'];
+            }
+        }
+        $q = $this->getDBObject()->query('select * from status');
+        if ($q) {
+            foreach ($q->fetchAll() as $item) {
+                $result['status'][$item['id']] = $item['name'];
             }
         }
         return $result;

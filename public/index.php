@@ -10,13 +10,13 @@ include_once "header.inc";
                     <div class="jumbotron">
                         <h1>Warszawa 19115</h1>
                         <p class="lead">Jeden numer. Tysiąc spraw.</p>
-                        <p>
-                            <a class="btn btn-danger btn-lg" href="https://warszawa19115.pl/web/portal/zgloszenie-awarii-lub-interwencji" target="_blank">Zgłoś problem</a>
-                            <a class="btn btn-success btn-lg" href="https://warszawa19115.pl/web/portal/sprawdz-status" target="_blank">Sprawdź status</a>
-                        </p>
                     </div>
                 </div>
-                <div class="col-lg-6">
+                <div class="col-lg-4">
+                    <p>
+                        <a class="btn btn-danger btn-lg" href="https://warszawa19115.pl/web/portal/zgloszenie-awarii-lub-interwencji" target="_blank">Zgłoś problem</a>
+                        <a class="btn btn-success btn-lg" href="https://warszawa19115.pl/web/portal/sprawdz-status" target="_blank">Sprawdź status</a>
+                    </p>
                 </div>
             </div>
             <!--<div class="row">
@@ -32,11 +32,23 @@ include_once "header.inc";
                     <div class="panel-body">
                         <ul class="list-group" id="district">
                         </ul>
+                        <button type="button" class="btn btn-primary" href="maps.php" style="float:right">Zobacz na mapie</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Typy zgłoszeń</div>
+                    <div class="panel-body" id="type">
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    <script type="text/javascript" src="//www.google.com/jsapi"></script>
+    <script type="text/javascript">
+        google.load('visualization', '1', {packages: ['corechart', 'calendar', 'corechart']});
+    </script>
     <script src="./script/init.js"></script>
     <script>
         $(function () {

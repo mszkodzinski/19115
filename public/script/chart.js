@@ -73,6 +73,7 @@ Chart = {
         var options = {
             title: title,
             backgroundColor: '#4e5d6c',
+            legend: 'none',
             colors:['#df691a', '#5cb85c', '#f0ad4e', '#d9534f', '#5bc0de']
         };
 

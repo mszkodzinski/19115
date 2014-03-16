@@ -134,11 +134,31 @@ var Hackathon19115 = {
         Api.call({
             action: 'getData',
             data: {
+                groupby: 'organization',
+                filter: Hackathon19115.filters
+            },
+            success: function (data) {
+                Chart.drawPie(data.label, data.value, null, 'organization');
+            }
+        });
+        Api.call({
+            action: 'getData',
+            data: {
                 groupby: 'year_month_day',
                 filter: Hackathon19115.filters
             },
             success: function (data) {
                 Chart.drawCalendar(data.label, data.value, 'Dni', 'calendar');
+            }
+        });
+        Api.call({
+            action: 'getData',
+            data: {
+                groupby: 'year_month_day',
+                filter: Hackathon19115.filters
+            },
+            success: function (data) {
+                Chart.drawLine(data.label, data.value, null, 'day-by-day');
             }
         });
     },
@@ -153,6 +173,15 @@ var Hackathon19115 = {
             },
             success: function (data) {
                 Chart.showList(Chart.getLabels('district', data.label, true), data.value, 'district', true);
+            }
+        });
+        Api.call({
+            action: 'getData',
+            data: {
+                groupby: 'status'
+            },
+            success: function (data) {
+                Chart.drawPie(Chart.getLabels('status', data.label, true), data.value, null, 'type');
             }
         });
     },
