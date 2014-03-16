@@ -72,8 +72,17 @@ include_once "header.inc";
                     </div>
                 </div>
             </div>
+            <div class="col-md-6">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Czas obsługi <small>(w dniach)</small></div>
+                    <div class="panel-body">
+                        <ul class="list-group"  id="time">
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="row">
+        <div class="row" style="display:none">
             <div id="calendar"></div>
         </div>
     </div>

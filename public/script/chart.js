@@ -150,11 +150,12 @@ Chart = {
             }
         }
     },
-    showList: function (labels, values, container, hideSum) {
+    showList: function (labels, values, container, hideSum, type) {
         var c = $('#' + container),
             sum = 0,
             max = 0;
         hideSum = hideSum || false;
+        type = type || 'info';
         c.find('li').remove();
         $.each(labels, function (k, v) {
             if (labels[k].length) {
@@ -164,7 +165,7 @@ Chart = {
                     max = vv;
                 }
                 c.append('<li class="list-group-item"><span class="badge">' + values[k] + '</span>' + labels[k] + '' +
-                    '<div class="progress"><div class="progress-bar progress-bar-info" style="width: 0"></div></div></li>');
+                    '<div class="progress"><div class="progress-bar progress-bar-'+type+'" style="width: 0"></div></div></li>');
             }
         });
         if (!hideSum) {

@@ -161,6 +161,14 @@ var Hackathon19115 = {
                 Chart.drawLine(data.label, data.value, 'Liczba', 'day-by-day');
             }
         });
+        Api.call({
+            action: 'getTime',
+            data: {
+            },
+            success: function (data) {
+                Chart.showList(data.label, data.value, 'time', true, 'warning');
+            }
+        });
     },
     main: function () {
         Api.call({
