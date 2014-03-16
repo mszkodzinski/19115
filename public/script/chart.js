@@ -41,8 +41,12 @@ Chart = {
                 backgroundColor: '#4e5d6c',
                 colors: ['#df691a', '#5cb85c', '#f0ad4e', '#d9534f', '#5bc0de'],
                 legend: {
-                    position: 'bottom'
-                }
+                    position: 'bottom',
+                    maxLines: 90,
+                    textStyle:{color: '#eee'}
+                },
+                vAxes:[{title:title, textStyle:{color: '#eee'},titleTextStyle: {color: '#eee'}, baselineColor:'#eee'}],
+                hAxes:[{textStyle:{color: '#eee'}, baselineColor:'#eee'}]
             },
             containerId: container
         });
@@ -84,7 +88,7 @@ Chart = {
             colors:['#df691a', '#5cb85c', '#f0ad4e', '#d9534f', '#5bc0de'],
             lineWidth: 5,
             tooltip: {textStyle: {color: '#333'}, showColorCode: true},
-            vAxes:[{title:title,textStyle:{color: '#eee'},titleTextStyle: {color: '#eee'}, baselineColor:'#eee'}],
+            vAxes:[{title:title, textStyle:{color: '#eee'},titleTextStyle: {color: '#eee'}, baselineColor:'#eee'}],
             hAxes:[{textStyle:{color: '#eee'}, baselineColor:'#eee'}]
         };
 
