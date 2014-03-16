@@ -1,10 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="06d85587-ec16-4dfe-b90b-cff5d558f3a1" name="Default" comment="" />
     <ignored path="19115.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="data/file/2014-03-15_utf8.csv" />
+=======
+    <list default="true" id="06d85587-ec16-4dfe-b90b-cff5d558f3a1" name="Default" comment="Merge branch 'master' of https://github.com/mszkodzinski/19115&#10;&#10;Conflicts:&#10;&#9;public/imap.php&#10;">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/config/default.php" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/imap.php" afterPath="$PROJECT_DIR$/public/imap.php" />
+    </list>
+    <list id="ed2695c1-ac7b-4ef7-b044-836688edc2f5" name="Failed commit: Default" comment="Merge branch 'master' of https://github.com/mszkodzinski/19115&#10;&#10;Conflicts:&#10;&#9;public/index.php&#10;" />
+    <list id="e6beec25-8836-469e-8d4e-871a2ad5ef79" name="Failed commit: Default (2)" comment="Merge branch 'master' of https://github.com/mszkodzinski/19115&#10;&#10;Conflicts:&#10;&#9;public/imap.php&#10;">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/DB/CSVToDBMapper.php" afterPath="$PROJECT_DIR$/library/DB/CSVToDBMapper.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/DB/DB.php" afterPath="$PROJECT_DIR$/library/DB/DB.php" />
+    </list>
+    <list id="13e7bbd3-5ed4-43d7-9f43-95fb60479d36" name="Failed commit: Default (3)" comment="Merge branch 'master' of https://github.com/mszkodzinski/19115&#10;&#10;Conflicts:&#10;&#9;public/imap.php&#10;">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/Reader/Data.php" afterPath="$PROJECT_DIR$/application/Reader/Data.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/Api/Engine.php" afterPath="$PROJECT_DIR$/library/Api/Engine.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/script/chart.js" afterPath="$PROJECT_DIR$/public/script/chart.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/charts.php" afterPath="$PROJECT_DIR$/public/charts.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/import.php" afterPath="$PROJECT_DIR$/public/import.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/script/init.js" afterPath="$PROJECT_DIR$/public/script/init.js" />
+    </list>
+    <list id="7dd924e5-4384-48f3-9ec6-19279927eb0a" name="Failed commit: Default (4)" comment="Merge branch 'master' of https://github.com/mszkodzinski/19115&#10;&#10;Conflicts:&#10;&#9;public/imap.php&#10;">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+    </list>
+    <ignored path="19115.iws" />
+    <ignored path=".idea/workspace.xml" />
+>>>>>>> fab5ed5aea195a50c796c807a6e266c76abcb1c0
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +49,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+<<<<<<< HEAD
       <file leaf-file-name="Data.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/application/Reader/Data.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -33,29 +59,53 @@
                 <marker date="1394936277821" expanded="true" signature="528:548" placeholder="select * fro..source..." />
                 <marker date="1394936277821" expanded="true" signature="748:770" placeholder="select * fro..district..." />
                 <marker date="1394936277821" expanded="true" signature="972:992" placeholder="select * fro..status..." />
+=======
+      <file leaf-file-name="DB.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/library/DB/DB.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="88" column="7" selection-start="2836" selection-end="2836" vertical-scroll-proportion="-4.703704" vertical-offset="1457" max-vertical-offset="2304">
+              <folding>
+                <element signature="e#6#86#0" expanded="true" />
+                <marker date="1394911689793" expanded="true" signature="499:594" placeholder="INSERT INTO ..." />
+>>>>>>> fab5ed5aea195a50c796c807a6e266c76abcb1c0
               </folding>
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="init.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/script/init.js">
           <provider selected="true" editor-type-id="text-editor">
             <state line="160" column="62" selection-start="5549" selection-end="5549" vertical-scroll-proportion="0.0" vertical-offset="2485" max-vertical-offset="4680">
+=======
+      <file leaf-file-name="DBManager.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/library/DB/DBManager.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="0" selection-start="250" selection-end="250" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="522">
+>>>>>>> fab5ed5aea195a50c796c807a6e266c76abcb1c0
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="bootstrap.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/css/bootstrap.css">
           <provider selected="true" editor-type-id="text-editor">
             <state line="5947" column="1" selection-start="130934" selection-end="130934" vertical-scroll-proportion="0.0" vertical-offset="106482" max-vertical-offset="107154">
+=======
+      <file leaf-file-name="CSVToDBMapper.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/library/DB/CSVToDBMapper.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="49" column="20" selection-start="1309" selection-end="1309" vertical-scroll-proportion="3.3333333" vertical-offset="882" max-vertical-offset="2196">
+>>>>>>> fab5ed5aea195a50c796c807a6e266c76abcb1c0
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="header.inc" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/header.inc">
           <provider selected="true" editor-type-id="text-editor">
@@ -64,10 +114,18 @@
                 <marker date="1394962289873" expanded="true" signature="1552:1624" placeholder="..." />
                 <marker date="1394962289873" expanded="true" signature="1696:1965" placeholder="..." />
               </folding>
+=======
+      <file leaf-file-name="config.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/config.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="396">
+              <folding />
+>>>>>>> fab5ed5aea195a50c796c807a6e266c76abcb1c0
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/index.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -75,10 +133,18 @@
               <folding>
                 <element signature="e#1550#1569#0" expanded="true" />
               </folding>
+=======
+      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="2" column="9" selection-start="25" selection-end="25" vertical-scroll-proportion="0.06629834" vertical-offset="0" max-vertical-offset="543">
+              <folding />
+>>>>>>> fab5ed5aea195a50c796c807a6e266c76abcb1c0
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="maps.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/maps.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -87,6 +153,22 @@
                 <element signature="e#1528#1563#0" expanded="true" />
                 <element signature="e#1599#1634#0" expanded="true" />
               </folding>
+=======
+      <file leaf-file-name="default.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/config/default.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="11" column="22" selection-start="277" selection-end="277" vertical-scroll-proportion="-7.3333335" vertical-offset="0" max-vertical-offset="396">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="contact.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/contact.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="378">
+              <folding />
+>>>>>>> fab5ed5aea195a50c796c807a6e266c76abcb1c0
             </state>
           </provider>
         </entry>
@@ -94,12 +176,17 @@
       <file leaf-file-name="charts.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/charts.php">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state line="76" column="12" selection-start="3272" selection-end="3272" vertical-scroll-proportion="-15.814815" vertical-offset="941" max-vertical-offset="1782">
+=======
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="810">
+>>>>>>> fab5ed5aea195a50c796c807a6e266c76abcb1c0
               <folding />
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="chart.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/script/chart.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -107,15 +194,32 @@
               <folding>
                 <marker date="1394961979965" expanded="true" signature="5820:5828" placeholder="..." />
               </folding>
+=======
+      <file leaf-file-name="imap.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/imap.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="12" column="30" selection-start="174" selection-end="180" vertical-scroll-proportion="-4.6666665" vertical-offset="0" max-vertical-offset="1170">
+              <folding />
+>>>>>>> fab5ed5aea195a50c796c807a6e266c76abcb1c0
             </state>
           </provider>
         </entry>
       </file>
+<<<<<<< HEAD
       <file leaf-file-name="Engine.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/library/Api/Engine.php">
           <provider selected="true" editor-type-id="text-editor">
             <state line="31" column="32" selection-start="725" selection-end="725" vertical-scroll-proportion="-8.407408" vertical-offset="331" max-vertical-offset="1710">
               <folding />
+=======
+      <file leaf-file-name="import.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/import.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="8" column="31" selection-start="176" selection-end="192" vertical-scroll-proportion="-5.3333335" vertical-offset="0" max-vertical-offset="630">
+              <folding>
+                <marker date="1394910849259" expanded="true" signature="378:403" placeholder="SELECT * FRO..." />
+              </folding>
+>>>>>>> fab5ed5aea195a50c796c807a6e266c76abcb1c0
             </state>
           </provider>
         </entry>
@@ -133,6 +237,7 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/config/default.php" />
         <option value="$PROJECT_DIR$/script/.empty" />
         <option value="$PROJECT_DIR$/library/Utils.php" />
@@ -158,6 +263,30 @@
         <option value="$PROJECT_DIR$/public/script/init.js" />
         <option value="$PROJECT_DIR$/public/script/chart.js" />
         <option value="$PROJECT_DIR$/public/header.inc" />
+=======
+        <option value="$PROJECT_DIR$/script/.empty" />
+        <option value="$PROJECT_DIR$/library/Csv/Csv.php" />
+        <option value="$PROJECT_DIR$/library/Csv/CsvReader.php" />
+        <option value="$PROJECT_DIR$/library/Csv/example.php" />
+        <option value="$PROJECT_DIR$/script/ParseCSVTODB.php" />
+        <option value="$PROJECT_DIR$/script/DB.php" />
+        <option value="$PROJECT_DIR$/application/ParseCSVTODB.php" />
+        <option value="$PROJECT_DIR$/application/DBManager.php" />
+        <option value="$PROJECT_DIR$/application/DB.php" />
+        <option value="$PROJECT_DIR$/public/index.php" />
+        <option value="$PROJECT_DIR$/application/autoloader.php" />
+        <option value="$PROJECT_DIR$/application/import.php" />
+        <option value="$PROJECT_DIR$/library/Utils.php" />
+        <option value="$PROJECT_DIR$/sql/19115.sql" />
+        <option value="$PROJECT_DIR$/public/test.php" />
+        <option value="$PROJECT_DIR$/config/default.php" />
+        <option value="$PROJECT_DIR$/public/imap.php" />
+        <option value="$PROJECT_DIR$/public/import.php" />
+        <option value="$PROJECT_DIR$/data/file/aa.csv" />
+        <option value="$PROJECT_DIR$/library/DB/CSVToDBMapper.php" />
+        <option value="$PROJECT_DIR$/library/DB/DB.php" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+>>>>>>> fab5ed5aea195a50c796c807a6e266c76abcb1c0
       </list>
     </option>
   </component>
@@ -165,8 +294,13 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="64" />
     <option name="y" value="-4" />
+<<<<<<< HEAD
     <option name="width" value="1537" />
     <option name="height" value="755" />
+=======
+    <option name="width" value="1857" />
+    <option name="height" value="957" />
+>>>>>>> fab5ed5aea195a50c796c807a6e266c76abcb1c0
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -295,7 +429,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+<<<<<<< HEAD
               <option name="myItemId" value="library" />
+=======
+              <option name="myItemId" value="script" />
+>>>>>>> fab5ed5aea195a50c796c807a6e266c76abcb1c0
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -309,11 +447,14 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+<<<<<<< HEAD
               <option name="myItemId" value="library" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="DB" />
+=======
+              <option name="myItemId" value="public" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -327,6 +468,68 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="library" />
+>>>>>>> fab5ed5aea195a50c796c807a6e266c76abcb1c0
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="19115" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="19115" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+<<<<<<< HEAD
+              <option name="myItemId" value="config" />
+=======
+              <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="log" />
+>>>>>>> fab5ed5aea195a50c796c807a6e266c76abcb1c0
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="19115" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="19115" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+<<<<<<< HEAD
+              <option name="myItemId" value="application" />
+=======
+              <option name="myItemId" value="data" />
+>>>>>>> fab5ed5aea195a50c796c807a6e266c76abcb1c0
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="19115" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="19115" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+<<<<<<< HEAD
+              <option name="myItemId" value="application" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Reader" />
+=======
               <option name="myItemId" value="config" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -342,24 +545,7 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="19115" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="19115" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="application" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Reader" />
+>>>>>>> fab5ed5aea195a50c796c807a6e266c76abcb1c0
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -374,6 +560,7 @@
     <property name="options.splitter.details.proportions" value="0.2" />
     <property name="options.searchVisible" value="true" />
     <property name="FullScreen" value="false" />
+<<<<<<< HEAD
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="129" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="148" />
@@ -389,17 +576,44 @@
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="154" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="1015" />
+=======
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth0" value="15" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth1" value="15" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth2" value="15" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatWidth3" value="15" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_flatOrder3" value="3" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth0" value="15" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder0" value="0" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth1" value="15" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder1" value="1" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth2" value="15" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder2" value="2" />
+    <property name="FileHistory.git4idea.history.GitHistoryProvider_treeWidth3" value="15" />
+>>>>>>> fab5ed5aea195a50c796c807a6e266c76abcb1c0
     <property name="FileHistory.git4idea.history.GitHistoryProvider_treeOrder3" value="3" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+<<<<<<< HEAD
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/config" />
+=======
+      <recent name="$PROJECT_DIR$/config" />
+      <recent name="$PROJECT_DIR$/data/file" />
+>>>>>>> fab5ed5aea195a50c796c807a6e266c76abcb1c0
       <recent name="$PROJECT_DIR$/sql" />
       <recent name="$PROJECT_DIR$/script" />
       <recent name="$PROJECT_DIR$/public/script" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+<<<<<<< HEAD
+=======
+      <recent name="$PROJECT_DIR$/library/DB" />
+      <recent name="$PROJECT_DIR$/application" />
+>>>>>>> fab5ed5aea195a50c796c807a6e266c76abcb1c0
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/public" />
     </key>
@@ -456,6 +670,7 @@
       <created>1394833295676</created>
       <updated>1394833295676</updated>
     </task>
+<<<<<<< HEAD
     <task id="LOCAL-00004" summary="php error">
       <created>1394881003311</created>
       <updated>1394881003311</updated>
@@ -538,6 +753,69 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.45555556" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+=======
+    <task id="LOCAL-00004" summary="csv">
+      <created>1394878784611</created>
+      <updated>1394878784611</updated>
+    </task>
+    <task id="LOCAL-00005" summary="csv">
+      <created>1394883703166</created>
+      <updated>1394883703166</updated>
+    </task>
+    <task id="LOCAL-00006" summary="csv">
+      <created>1394883758569</created>
+      <updated>1394883758569</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Merge branch 'master' of https://github.com/mszkodzinski/19115&#10;&#10;Conflicts:&#10;&#9;public/index.php&#10;">
+      <created>1394889703354</created>
+      <updated>1394889703354</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Merge branch 'master' of https://github.com/mszkodzinski/19115&#10;&#10;Conflicts:&#10;&#9;public/index.php&#10;">
+      <created>1394889885363</created>
+      <updated>1394889885363</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Merge branch 'master' of https://github.com/mszkodzinski/19115&#10;&#10;Conflicts:&#10;&#9;public/index.php&#10;">
+      <created>1394898116963</created>
+      <updated>1394898116964</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Merge branch 'master' of https://github.com/mszkodzinski/19115&#10;&#10;Conflicts:&#10;&#9;public/index.php&#10;">
+      <created>1394898723294</created>
+      <updated>1394898723294</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Merge branch 'master' of https://github.com/mszkodzinski/19115&#10;&#10;Conflicts:&#10;&#9;public/index.php&#10;">
+      <created>1394907133414</created>
+      <updated>1394907133414</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Merge branch 'master' of https://github.com/mszkodzinski/19115&#10;&#10;Conflicts:&#10;&#9;public/index.php&#10;">
+      <created>1394907257712</created>
+      <updated>1394907257712</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Merge branch 'master' of https://github.com/mszkodzinski/19115&#10;&#10;Conflicts:&#10;&#9;public/index.php&#10;">
+      <created>1394907568203</created>
+      <updated>1394907568203</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Merge branch 'master' of https://github.com/mszkodzinski/19115&#10;&#10;Conflicts:&#10;&#9;public/index.php&#10;">
+      <created>1394910655310</created>
+      <updated>1394910655310</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
+    <servers />
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="64" y="-4" width="1857" height="957" extended-state="6" />
+    <editor active="true" />
+    <layout>
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21347709" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32982457" sideWeight="0.49973047" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32982457" sideWeight="0.50026953" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.0058479533" sideWeight="0.91320753" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+>>>>>>> fab5ed5aea195a50c796c807a6e266c76abcb1c0
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -545,6 +823,10 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+<<<<<<< HEAD
+=======
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.012865497" sideWeight="0.85175204" order="1" side_tool="false" content_ui="tabs" />
+>>>>>>> fab5ed5aea195a50c796c807a6e266c76abcb1c0
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
@@ -564,6 +846,7 @@
     </option>
     <MESSAGE value="struktura" />
     <MESSAGE value="csv" />
+<<<<<<< HEAD
     <MESSAGE value="php error" />
     <MESSAGE value="php autoloader" />
     <MESSAGE value="api" />
@@ -573,6 +856,11 @@
     <MESSAGE value="cs" />
     <MESSAGE value="css, układ" />
     <option name="LAST_COMMIT_MESSAGE" value="css, układ" />
+=======
+    <MESSAGE value="Merge branch 'master' of https://github.com/mszkodzinski/19115&#10;&#10;Conflicts:&#10;&#9;public/index.php&#10;" />
+    <MESSAGE value="Merge branch 'master' of https://github.com/mszkodzinski/19115&#10;&#10;Conflicts:&#10;&#9;public/imap.php&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'master' of https://github.com/mszkodzinski/19115&#10;&#10;Conflicts:&#10;&#9;public/imap.php&#10;" />
+>>>>>>> fab5ed5aea195a50c796c807a6e266c76abcb1c0
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -618,6 +906,7 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="806" />
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/library/Csv/example.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="37" column="0" selection-start="1249" selection-end="1249" vertical-scroll-proportion="0.85494226" vertical-offset="0" max-vertical-offset="779" />
@@ -740,10 +1029,132 @@
     <entry file="file://$PROJECT_DIR$/public/imap.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="58" column="27" selection-start="1571" selection-end="1571" vertical-scroll-proportion="0.75838923" vertical-offset="502" max-vertical-offset="1170">
+=======
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="825" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/file/example/Raport ze zgłoszeniami.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="83" selection-start="218" selection-end="225" vertical-scroll-proportion="-0.62068963" vertical-offset="0" max-vertical-offset="16362" />
+      </provider>
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/Horde/Array.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="14.0" vertical-offset="378" max-vertical-offset="2754" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/Horde/Domhtml.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5580" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/Horde/Mime.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="12906" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/Horde/Stream.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5130" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/file/example/Raport ze zgłoszeniami zamkniętymi.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="20" selection-start="17" selection-end="42" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="16560" />
+      </provider>
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/Imap/example.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="50" selection-start="348" selection-end="380" vertical-scroll-proportion="-8.666667" vertical-offset="0" max-vertical-offset="792" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/Imap/Attachment/Abstract.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1296" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/autoloader.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="39" column="14" selection-start="829" selection-end="829" vertical-scroll-proportion="0.68221945" vertical-offset="161" max-vertical-offset="954" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/application/ParseCSVTODB.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="5" selection-start="112" selection-end="203" vertical-scroll-proportion="-4.6666665" vertical-offset="0" max-vertical-offset="252" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/Core/Utils.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="820" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/Csv/Main.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="168" column="42" selection-start="3248" selection-end="3270" vertical-scroll-proportion="10.896552" vertical-offset="3972" max-vertical-offset="4680" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/Csv/Reader.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="75" column="35" selection-start="1575" selection-end="1590" vertical-scroll-proportion="48.62963" vertical-offset="2663" max-vertical-offset="4104" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/Api/Engine.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="34.22222" vertical-offset="924" max-vertical-offset="1692" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/Api/Responce.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="820" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/Csv/example.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="37" selection-start="1031" selection-end="1036" vertical-scroll-proportion="-18.0" vertical-offset="0" max-vertical-offset="774" />
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/standard_6.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="629" column="16" selection-start="21153" selection-end="21160" vertical-scroll-proportion="-22.11111" vertical-offset="10725" max-vertical-offset="21582" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sql/19115.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="118" column="63" selection-start="3422" selection-end="3422" vertical-scroll-proportion="-14.18" vertical-offset="1415" max-vertical-offset="2232" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/api.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="795" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="5" selection-start="11" selection-end="11" vertical-scroll-proportion="-0.6666667" vertical-offset="0" max-vertical-offset="702" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/header.inc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="882" />
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/com/jetbrains/php/lang/psi/stubs/data/PDO.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="150" column="7" selection-start="4153" selection-end="4155" vertical-scroll-proportion="-0.3593947" vertical-offset="2985" max-vertical-offset="24246">
+>>>>>>> fab5ed5aea195a50c796c807a6e266c76abcb1c0
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/public/script/api.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="32" column="31" selection-start="855" selection-end="861" vertical-scroll-proportion="0.2776886" vertical-offset="403" max-vertical-offset="1188">
@@ -802,10 +1213,82 @@
     <entry file="file://$PROJECT_DIR$/public/charts.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="76" column="12" selection-start="3272" selection-end="3272" vertical-scroll-proportion="-15.814815" vertical-offset="941" max-vertical-offset="1782">
+=======
+    <entry file="file://$PROJECT_DIR$/public/test.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="20" selection-start="175" selection-end="175" vertical-scroll-proportion="-7.3333335" vertical-offset="0" max-vertical-offset="306" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/Imap/Connection/Horde.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="6" selection-start="145" selection-end="145" vertical-scroll-proportion="0.20428751" vertical-offset="0" max-vertical-offset="1278" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/file/2014-03-08_closed_utf8.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="12654" />
+      </provider>
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/file/2014-03-08_closed.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="8" selection-start="0" selection-end="184" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="12654" />
+      </provider>
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/file/2014-03-08_open.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="5" selection-start="0" selection-end="168" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="13428" />
+      </provider>
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/file/2014-03-15_open_utf8.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="13788" />
+      </provider>
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/file/2014-03-15_closed_utf8.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="22" selection-start="0" selection-end="184" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="15264" />
+      </provider>
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/file/2014-03-15_closed.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="15264" />
+      </provider>
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/file/2014-03-15_open.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="13788" />
+      </provider>
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/DB/DBManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="0" selection-start="250" selection-end="250" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="522">
+>>>>>>> fab5ed5aea195a50c796c807a6e266c76abcb1c0
           <folding />
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/library/Api/Responce.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="19" selection-start="227" selection-end="227" vertical-scroll-proportion="-7.3333335" vertical-offset="0" max-vertical-offset="414">
@@ -828,10 +1311,33 @@
     <entry file="file://$PROJECT_DIR$/library/Api/Engine.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="31" column="32" selection-start="725" selection-end="725" vertical-scroll-proportion="-8.407408" vertical-offset="331" max-vertical-offset="1710">
+=======
+    <entry file="file://$PROJECT_DIR$/library/DB/DB.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="88" column="7" selection-start="2836" selection-end="2836" vertical-scroll-proportion="-4.703704" vertical-offset="1457" max-vertical-offset="2304">
+          <folding>
+            <element signature="e#6#86#0" expanded="true" />
+            <marker date="1394911689793" expanded="true" signature="499:594" placeholder="INSERT INTO ..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/DB/CSVToDBMapper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="49" column="20" selection-start="1309" selection-end="1309" vertical-scroll-proportion="3.3333333" vertical-offset="882" max-vertical-offset="2196">
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/contact.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="795">
+>>>>>>> fab5ed5aea195a50c796c807a6e266c76abcb1c0
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/public/maps.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="36" column="0" selection-start="1852" selection-end="2058" vertical-scroll-proportion="-2.1149426" vertical-offset="464" max-vertical-offset="1008">
@@ -847,10 +1353,25 @@
         <state line="41" column="43" selection-start="1859" selection-end="1859" vertical-scroll-proportion="-6.740741" vertical-offset="556" max-vertical-offset="1188">
           <folding>
             <element signature="e#1550#1569#0" expanded="true" />
+=======
+    <entry file="file://$PROJECT_DIR$/public/charts.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="810">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/import.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="31" selection-start="176" selection-end="192" vertical-scroll-proportion="-5.3333335" vertical-offset="0" max-vertical-offset="630">
+          <folding>
+            <marker date="1394910849259" expanded="true" signature="378:403" placeholder="SELECT * FRO..." />
+>>>>>>> fab5ed5aea195a50c796c807a6e266c76abcb1c0
           </folding>
         </state>
       </provider>
     </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/library/DB/DB.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="35" column="33" selection-start="1148" selection-end="1148" vertical-scroll-proportion="0.3271028" vertical-offset="365" max-vertical-offset="1926">
@@ -863,10 +1384,23 @@
     <entry file="file://$PROJECT_DIR$/public/script/init.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="160" column="62" selection-start="5549" selection-end="5549" vertical-scroll-proportion="0.0" vertical-offset="2485" max-vertical-offset="4680">
+=======
+    <entry file="file://$PROJECT_DIR$/public/imap.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="12" column="30" selection-start="174" selection-end="180" vertical-scroll-proportion="-4.6666665" vertical-offset="0" max-vertical-offset="1170">
           <folding />
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config/default.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="11" column="22" selection-start="277" selection-end="277" vertical-scroll-proportion="-7.3333335" vertical-offset="0" max-vertical-offset="396">
+>>>>>>> fab5ed5aea195a50c796c807a6e266c76abcb1c0
+          <folding />
+        </state>
+      </provider>
+    </entry>
+<<<<<<< HEAD
     <entry file="file://$PROJECT_DIR$/public/script/chart.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="99" column="11" selection-start="3247" selection-end="3247" vertical-scroll-proportion="0.0" vertical-offset="1512" max-vertical-offset="3258">
@@ -883,6 +1417,19 @@
             <marker date="1394962289873" expanded="true" signature="1552:1624" placeholder="..." />
             <marker date="1394962289873" expanded="true" signature="1696:1965" placeholder="..." />
           </folding>
+=======
+    <entry file="file://$PROJECT_DIR$/config/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="820">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="9" selection-start="25" selection-end="25" vertical-scroll-proportion="0.06629834" vertical-offset="0" max-vertical-offset="543">
+          <folding />
+>>>>>>> fab5ed5aea195a50c796c807a6e266c76abcb1c0
         </state>
       </provider>
     </entry>
