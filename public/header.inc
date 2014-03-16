@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="./css/bootstrap.css" media="screen">
     <link rel="stylesheet" href="./css/bootswatch.css">
     <link rel="stylesheet" href="./css/datepicker.css">
+    <link rel="stylesheet" href="./css/style.css">
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
     <script src="./script/html5shiv.js"></script>
@@ -14,6 +15,7 @@
     <![endif]-->
     <script src="./script/jquery.js"></script>
     <script src="./script/bootstrap.js"></script>
+    <script src="./script/chart.js"></script>
     <script src="./script/api.js"></script>
 </head>
 <body>
@@ -26,10 +28,10 @@
         <div class="navbar-collapse collapse" id="navbar-main">
             <ul class="nav navbar-nav">
                 <li>
-                    <a href="./charts.php">Wizualizacja danych</a>
+                    <a href="./charts.php">Zgłoszenia</a>
                 </li>
                 <li>
-                    <a href="./contact.php">Kontakt</a>
+                    <a href="./maps.php">Mapa</a>
                 </li>
             </ul>
 

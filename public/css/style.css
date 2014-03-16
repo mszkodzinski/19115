@@ -4,7 +4,7 @@
     color: #080f1f;
 }
 .navbar-form .form-control{
-    width: 110px;
+    width: 130px;
     margin-right: 2px;
 }
 .navbar-nav:not(.navbar-right) > li > a {
@@ -13,4 +13,23 @@
 .navbar-form input:not(:focus) {
     background: #65707A;
     color: #ccc;
+}
+.diff30 {
+    background-color:#333;
+    padding: 10px;
+    min-width:50px;
+    max-width:100px;
+    width: auto;
+    display: block;
+    float:left;
+    margin-top: 50px;
+}
+.sum30 .note {
+    font-size:.6em;
+}
+.sum30 {
+    width: auto;
+    display: inline-block;
+    padding: 10px;;
+    float:left
 }

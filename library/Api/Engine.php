@@ -14,6 +14,9 @@ class Api_Engine
             case 'getLabels':
                 $r = $this->getLabels($data);
                 break;
+            case 'getStats':
+                $r = $this->getStats($data);
+                break;
         }
         return $r->serialize();
     }

@@ -173,5 +173,16 @@ Chart = {
             var w = (100 * parseInt($(this).parents('li').find('.badge').text()) / max);
             $(this).css('width', w + '%');
         });
+    },
+    showStats: function (data, container) {
+        var c = $('#' + container);
+        c.find('.sum30 .value').text(data['sum30']);
+        c.find('.diff30 .value').text(data['diff60p'] + '%');
+        c.find('.diff30').removeClass('text-success text-danger');
+        if (data['diff60p'] > 0) {
+            c.find('.diff30').addClass('text-success');
+        } else {
+            c.find('.diff30').addClass('text-danger');
+        }
     }
 }
