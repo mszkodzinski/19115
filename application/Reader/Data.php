@@ -6,19 +6,26 @@ class Reader_Data extends DB_DB
     {
         $result = array(
             'sum' => 0,
-            'sum30' => 0
+            'sum30' => 0,
+            'diff30' => 0
         );
 
         $q = $this->getDBObject()->query('select count(1) as sum from notification');
         if ($q) {
-            $r = $q->fetchRow();
-            $result['sum'] = $r['sum'];
+            $r = $q->fetchAll();
+            $result['sum'] = $r[0]['sum'];
         }
         $q = $this->getDBObject()->query('select count(1) as sum from notification where date_of_acceptance > \'' . date('Y-m-d', strtotime('-30 days')) . '\'');
         if ($q) {
-            $r = $q->fetchRow();
-            $result['sum30'] = $r['sum'];
-        }var_dump($result);
+            $r = $q->fetchAll();
+            $result['sum30'] = $r[0]['sum'];
+        }
+        $q = $this->getDBObject()->query('select count(1) as sum from notification where date_of_acceptance > \'' . date('Y-m-d', strtotime('-60 days')) . '\'');
+        if ($q) {
+            $r = $q->fetchAll();
+            $result['sum60'] = $r[0]['sum'];
+            $result['diff60p'] = -1 * round(100 * ((float)$result['sum60'] - 2 * $result['sum30']) / ($result['sum60'] - $result['sum30']));
+        }
         return $result;
     }
 

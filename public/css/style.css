@@ -14,3 +14,22 @@
     background: #65707A;
     color: #ccc;
 }
+.diff30 {
+    background-color:#333;
+    padding: 10px;
+    min-width:50px;
+    max-width:100px;
+    width: auto;
+    display: block;
+    float:left;
+    margin-top: 50px;
+}
+.sum30 .note {
+    font-size:.6em;
+}
+.sum30 {
+    width: auto;
+    display: inline-block;
+    padding: 10px;;
+    float:left
+}

@@ -184,6 +184,14 @@ var Hackathon19115 = {
                 Chart.drawPie(Chart.getLabels('status', data.label, true), data.value, null, 'type');
             }
         });
+        Api.call({
+            action: 'getStats',
+            data: {
+            },
+            success: function (data) {
+                Chart.showStats(data, 'stats');
+            }
+        });
     },
     map: function(){
         if (GBrowserIsCompatible()) {
