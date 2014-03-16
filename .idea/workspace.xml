@@ -2,25 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="06d85587-ec16-4dfe-b90b-cff5d558f3a1" name="Default" comment="Merge branch 'master' of https://github.com/mszkodzinski/19115&#10;&#10;Conflicts:&#10;&#9;public/imap.php&#10;">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/config/default.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/imap.php" afterPath="$PROJECT_DIR$/public/imap.php" />
-    </list>
-    <list id="ed2695c1-ac7b-4ef7-b044-836688edc2f5" name="Failed commit: Default" comment="Merge branch 'master' of https://github.com/mszkodzinski/19115&#10;&#10;Conflicts:&#10;&#9;public/index.php&#10;" />
-    <list id="e6beec25-8836-469e-8d4e-871a2ad5ef79" name="Failed commit: Default (2)" comment="Merge branch 'master' of https://github.com/mszkodzinski/19115&#10;&#10;Conflicts:&#10;&#9;public/imap.php&#10;">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/DB/CSVToDBMapper.php" afterPath="$PROJECT_DIR$/library/DB/CSVToDBMapper.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/DB/DB.php" afterPath="$PROJECT_DIR$/library/DB/DB.php" />
-    </list>
-    <list id="13e7bbd3-5ed4-43d7-9f43-95fb60479d36" name="Failed commit: Default (3)" comment="Merge branch 'master' of https://github.com/mszkodzinski/19115&#10;&#10;Conflicts:&#10;&#9;public/imap.php&#10;">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application/Reader/Data.php" afterPath="$PROJECT_DIR$/application/Reader/Data.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/library/Api/Engine.php" afterPath="$PROJECT_DIR$/library/Api/Engine.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/script/chart.js" afterPath="$PROJECT_DIR$/public/script/chart.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/charts.php" afterPath="$PROJECT_DIR$/public/charts.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/import.php" afterPath="$PROJECT_DIR$/public/import.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/script/init.js" afterPath="$PROJECT_DIR$/public/script/init.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
-    <list id="7dd924e5-4384-48f3-9ec6-19279927eb0a" name="Failed commit: Default (4)" comment="Merge branch 'master' of https://github.com/mszkodzinski/19115&#10;&#10;Conflicts:&#10;&#9;public/imap.php&#10;">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
-    </list>
+    <list id="ed2695c1-ac7b-4ef7-b044-836688edc2f5" name="Failed commit: Default" comment="Merge branch 'master' of https://github.com/mszkodzinski/19115&#10;&#10;Conflicts:&#10;&#9;public/index.php&#10;" />
+    <list id="e6beec25-8836-469e-8d4e-871a2ad5ef79" name="Failed commit: Default (2)" comment="Merge branch 'master' of https://github.com/mszkodzinski/19115&#10;&#10;Conflicts:&#10;&#9;public/imap.php&#10;" />
+    <list id="13e7bbd3-5ed4-43d7-9f43-95fb60479d36" name="Failed commit: Default (3)" comment="Merge branch 'master' of https://github.com/mszkodzinski/19115&#10;&#10;Conflicts:&#10;&#9;public/imap.php&#10;" />
+    <list id="7dd924e5-4384-48f3-9ec6-19279927eb0a" name="Failed commit: Default (4)" comment="Merge branch 'master' of https://github.com/mszkodzinski/19115&#10;&#10;Conflicts:&#10;&#9;public/imap.php&#10;" />
     <ignored path="19115.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -42,23 +32,13 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="DB.php" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="DB.php" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/library/DB/DB.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="88" column="7" selection-start="2836" selection-end="2836" vertical-scroll-proportion="-4.703704" vertical-offset="1457" max-vertical-offset="2304">
+            <state line="92" column="50" selection-start="3106" selection-end="3106" vertical-scroll-proportion="1.6834925" vertical-offset="332" max-vertical-offset="2646">
               <folding>
-                <element signature="e#6#86#0" expanded="true" />
-                <marker date="1394911689793" expanded="true" signature="499:594" placeholder="INSERT INTO ..." />
+                <marker date="1394962858408" expanded="true" signature="504:599" placeholder="INSERT INTO ..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DBManager.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/library/DB/DBManager.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="17" column="0" selection-start="250" selection-end="250" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="522">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -66,61 +46,16 @@
       <file leaf-file-name="CSVToDBMapper.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/library/DB/CSVToDBMapper.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="20" selection-start="1309" selection-end="1309" vertical-scroll-proportion="3.3333333" vertical-offset="882" max-vertical-offset="2196">
+            <state line="75" column="14" selection-start="2117" selection-end="2117" vertical-scroll-proportion="-4.45977" vertical-offset="872" max-vertical-offset="2340">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/config.php">
+      <file leaf-file-name="DBManager.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/library/DB/DBManager.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="396">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="2" column="9" selection-start="25" selection-end="25" vertical-scroll-proportion="0.06629834" vertical-offset="0" max-vertical-offset="543">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="default.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/config/default.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="22" selection-start="277" selection-end="277" vertical-scroll-proportion="-7.3333335" vertical-offset="0" max-vertical-offset="396">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="contact.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/contact.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="378">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="charts.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/charts.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="810">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="imap.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/imap.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="30" selection-start="174" selection-end="180" vertical-scroll-proportion="-4.6666665" vertical-offset="0" max-vertical-offset="1170">
+            <state line="17" column="0" selection-start="250" selection-end="250" vertical-scroll-proportion="-11.333333" vertical-offset="0" max-vertical-offset="522">
               <folding />
             </state>
           </provider>
@@ -129,11 +64,47 @@
       <file leaf-file-name="import.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/import.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="31" selection-start="176" selection-end="192" vertical-scroll-proportion="-5.3333335" vertical-offset="0" max-vertical-offset="630">
+            <state line="18" column="30" selection-start="532" selection-end="532" vertical-scroll-proportion="-12.0" vertical-offset="0" max-vertical-offset="666">
               <folding>
-                <marker date="1394910849259" expanded="true" signature="378:403" placeholder="SELECT * FRO..." />
+                <marker date="1394962289599" expanded="true" signature="401:459" placeholder="SELECT * FRO..." />
               </folding>
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2014-03-08_closed.csv" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/file/2014-03-08_closed.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="8" selection-start="0" selection-end="184" vertical-scroll-proportion="409.51724" vertical-offset="11876" max-vertical-offset="12654">
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2014-03-15_open.csv" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/file/2014-03-15_open.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="448.6207" vertical-offset="13010" max-vertical-offset="13788">
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2014-03-15_closed.csv" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/data/file/2014-03-15_closed.csv">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="499.51724" vertical-offset="14486" max-vertical-offset="15264">
+              <folding />
+            </state>
+          </provider>
+          <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+            <state />
           </provider>
         </entry>
       </file>
@@ -167,11 +138,11 @@
         <option value="$PROJECT_DIR$/public/test.php" />
         <option value="$PROJECT_DIR$/config/default.php" />
         <option value="$PROJECT_DIR$/public/imap.php" />
-        <option value="$PROJECT_DIR$/public/import.php" />
         <option value="$PROJECT_DIR$/data/file/aa.csv" />
-        <option value="$PROJECT_DIR$/library/DB/CSVToDBMapper.php" />
-        <option value="$PROJECT_DIR$/library/DB/DB.php" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/library/DB/CSVToDBMapper.php" />
+        <option value="$PROJECT_DIR$/public/import.php" />
+        <option value="$PROJECT_DIR$/library/DB/DB.php" />
       </list>
     </option>
   </component>
@@ -351,6 +322,24 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="library" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DB" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="19115" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="19115" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="data" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -370,6 +359,10 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="data" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="file" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -545,13 +538,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-4" width="1857" height="957" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21347709" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21347709" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32982457" sideWeight="0.49973047" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32982457" sideWeight="0.50026953" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.0058479533" sideWeight="0.086792454" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.0058479533" sideWeight="0.91320753" order="7" side_tool="false" content_ui="tabs" />
@@ -560,6 +552,7 @@
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32982457" sideWeight="0.49973047" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -592,6 +585,13 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/public/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="5" selection-start="11" selection-end="11" vertical-scroll-proportion="0.0" vertical-offset="18" max-vertical-offset="1188">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/application/.empty">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="100" />
@@ -630,11 +630,6 @@
     <entry file="file://$PROJECT_DIR$/data/log/.empty">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="806" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="825" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/data/file/example/Raport ze zgłoszeniami.csv">
@@ -738,11 +733,6 @@
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="795" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="5" selection-start="11" selection-end="11" vertical-scroll-proportion="-0.6666667" vertical-offset="0" max-vertical-offset="702" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/header.inc">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="882" />
@@ -773,14 +763,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/file/2014-03-08_closed.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="8" selection-start="0" selection-end="184" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="12654" />
-      </provider>
-      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/data/file/2014-03-08_open.csv">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="5" selection-start="0" selection-end="168" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="13428" />
@@ -805,46 +787,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/file/2014-03-15_closed.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="15264" />
-      </provider>
-      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/data/file/2014-03-15_open.csv">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="13788" />
-      </provider>
-      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/library/DB/DBManager.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="0" selection-start="250" selection-end="250" vertical-scroll-proportion="0.0" vertical-offset="306" max-vertical-offset="522">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/library/DB/DB.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="88" column="7" selection-start="2836" selection-end="2836" vertical-scroll-proportion="-4.703704" vertical-offset="1457" max-vertical-offset="2304">
-          <folding>
-            <element signature="e#6#86#0" expanded="true" />
-            <marker date="1394911689793" expanded="true" signature="499:594" placeholder="INSERT INTO ..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/library/DB/CSVToDBMapper.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="20" selection-start="1309" selection-end="1309" vertical-scroll-proportion="3.3333333" vertical-offset="882" max-vertical-offset="2196">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/contact.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="795">
@@ -854,30 +796,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/charts.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="810">
+        <state line="1" column="0" selection-start="6" selection-end="6" vertical-scroll-proportion="-0.0" vertical-offset="18" max-vertical-offset="1782">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/import.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="31" selection-start="176" selection-end="192" vertical-scroll-proportion="-5.3333335" vertical-offset="0" max-vertical-offset="630">
-          <folding>
-            <marker date="1394910849259" expanded="true" signature="378:403" placeholder="SELECT * FRO..." />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/imap.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="30" selection-start="174" selection-end="180" vertical-scroll-proportion="-4.6666665" vertical-offset="0" max-vertical-offset="1170">
+        <state line="12" column="30" selection-start="174" selection-end="180" vertical-scroll-proportion="0.0" vertical-offset="216" max-vertical-offset="1260">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="5" selection-start="11" selection-end="11" vertical-scroll-proportion="0.0" vertical-offset="18" max-vertical-offset="1188">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/config/default.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="22" selection-start="277" selection-end="277" vertical-scroll-proportion="-7.3333335" vertical-offset="0" max-vertical-offset="396">
+        <state line="11" column="22" selection-start="277" selection-end="277" vertical-scroll-proportion="0.24968474" vertical-offset="0" max-vertical-offset="793">
           <folding />
         </state>
       </provider>
@@ -891,8 +831,77 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="9" selection-start="25" selection-end="25" vertical-scroll-proportion="0.06629834" vertical-offset="0" max-vertical-offset="543">
+        <state line="2" column="9" selection-start="25" selection-end="25" vertical-scroll-proportion="0.043902438" vertical-offset="0" max-vertical-offset="820">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="180">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/file/2014-03-15_open.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="448.6207" vertical-offset="13010" max-vertical-offset="13788">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/file/2014-03-15_closed.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="499.51724" vertical-offset="14486" max-vertical-offset="15264">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/data/file/2014-03-08_closed.csv">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="8" selection-start="0" selection-end="184" vertical-scroll-proportion="409.51724" vertical-offset="11876" max-vertical-offset="12654">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="com.intellij.persistence.database.editor.CsvTableFileEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/DB/CSVToDBMapper.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="75" column="14" selection-start="2117" selection-end="2117" vertical-scroll-proportion="-4.45977" vertical-offset="872" max-vertical-offset="2340">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/import.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="30" selection-start="532" selection-end="532" vertical-scroll-proportion="-12.0" vertical-offset="0" max-vertical-offset="666">
+          <folding>
+            <marker date="1394962289599" expanded="true" signature="401:459" placeholder="SELECT * FRO..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/DB/DBManager.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="0" selection-start="250" selection-end="250" vertical-scroll-proportion="-11.333333" vertical-offset="0" max-vertical-offset="522">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/library/DB/DB.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="92" column="50" selection-start="3106" selection-end="3106" vertical-scroll-proportion="1.6834925" vertical-offset="332" max-vertical-offset="2646">
+          <folding>
+            <marker date="1394962858408" expanded="true" signature="504:599" placeholder="INSERT INTO ..." />
+          </folding>
         </state>
       </provider>
     </entry>
