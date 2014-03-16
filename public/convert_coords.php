@@ -10,6 +10,7 @@ include_once('../application/autoloader.php');
 $db  = new DB_DB();
 $path = '../data/file/';
 
+
 //var_dump($db->selectDict('district'));
 $sql = "SELECT longtitude_2000, lattitude_2000 FROM  `notification` where lattitude_2000 !='' &&  longtitude_2000 !=''  order by id asc ";
 echo $sql;
