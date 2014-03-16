@@ -31,6 +31,9 @@ class DB_CSVToDBMapper {
     public function prepareCSVRow($row, $header_mapper){
 
         $row_to_db = array();
+
+        //$gps_coords = $this->convertCoords($row['lattitude_2000'], $row['longtitude_2000']);
+
         foreach($row as $key=>$val){
             if(array_key_exists($key, $header_mapper)){
                // $func = $val[0];
@@ -46,11 +49,19 @@ class DB_CSVToDBMapper {
 
     }
 
-    public function convertCoords($lattitude, $longtitude){
-        'proj '
-
-
-    }
+//    public function convertCoords($id, $lattitude, $longtitude){
+//        if(!empty($lattitude) && !empty($longtitude)){
+//            $output = '';
+//            $comm = "proj  +proj=tmerc +lat_0=0 +lon_0=21 +k=0.999923 +x_0=7500000 +y_0=0 +ellps=GRS80 +units=m +no_defs -f %12.6f -I   $lattitude $longtitude";
+//            echo $comm;
+//            $res = exec( $comm,$output); //7516620.105 52.222486
+//            var_dump($longtitude);
+//
+//            var_dump($output);
+//            die($res);
+//        }
+//
+//    }
 
 
     public function insertCSVDataToDB($filename){
@@ -68,8 +79,8 @@ class DB_CSVToDBMapper {
             'k_district'=>array('insertDictData','district'),
             'street',
             'house_nr',
-            'longtitude',
-            'lattitude',
+            'longtitude_2000',
+            'lattitude_2000',
             'k_organization'=>array('insertDictData','organization'),
             'close_date',//=>array('dateParser'),
             'k_source'=>array('insertDictData','source')
