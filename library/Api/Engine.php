@@ -17,11 +17,11 @@ class Api_Engine
             case 'getStats':
                 $r = $this->getStats($data);
                 break;
-            case 'getCoords':
-                $r = $this->getCoords($data);
-                break;
             case 'getTime':
                 $r = $this->getTime($data);
+                break;
+            case 'getMaps':
+                $r = $this->getMaps($data);
                 break;
         }
         return $r->serialize();
@@ -129,12 +129,12 @@ class Api_Engine
         return $r;
     }
 
-    public function getCoords($params)
+    public function getMaps()
     {
         $r = new Api_Responce();
 
         $reader = new Reader_Data();
-        $result = $reader->getCoords($params);
+        $result = $reader->getMaps();
 
         if (!$result) {
             $r->status = false;
