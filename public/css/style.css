@@ -1,4 +1,9 @@
 /* custom style */
-.navbar {
-    font-size: 17px;
+
+.navbar-nav:not(.navbar-right) > li > a {
+    font-size: 1.4em !important;
+}
+.navbar-form input:not(:focus) {
+    background: #65707A;
+    color: #ccc;
 }

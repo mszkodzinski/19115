@@ -106,7 +106,8 @@ Chart = {
             backgroundColor: '#4e5d6c',
             colors:['#df691a', '#5cb85c', '#f0ad4e', '#d9534f', '#5bc0de'],
 //            legend: 'none',
-            pieHole: 0.2,
+            legend: {textStyle: {color:'#eee'}},
+            pieHole: 0.6,
             pieSliceBorderColor: '#4e5d6c',
             fontName: 'Helvetica'/*,
              //            slices: {
