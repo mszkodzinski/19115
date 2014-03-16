@@ -49,3 +49,8 @@
 #stats {
     padding: 15px 70px;
 }
+#time {
+    height: 360px;
+    overflow: scroll;
+    overflow-x: hidden;
+}

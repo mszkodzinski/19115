@@ -141,16 +141,16 @@ var Hackathon19115 = {
                 Chart.drawPie(Chart.getLabels('organization', data.label), data.value, null, 'organization');
             }
         });
-        Api.call({
-            action: 'getData',
-            data: {
-                groupby: 'year_month_day',
-                filter: Hackathon19115.filters
-            },
-            success: function (data) {
-                Chart.drawCalendar(data.label, data.value, 'Dni', 'calendar');
-            }
-        });
+//        Api.call({
+//            action: 'getData',
+//            data: {
+//                groupby: 'year_month_day',
+//                filter: Hackathon19115.filters
+//            },
+//            success: function (data) {
+//                Chart.drawCalendar(data.label, data.value, 'Dni', 'calendar');
+//            }
+//        });
         Api.call({
             action: 'getData',
             data: {
@@ -159,6 +159,14 @@ var Hackathon19115 = {
             },
             success: function (data) {
                 Chart.drawLine(data.label, data.value, 'Liczba', 'day-by-day');
+            }
+        });
+        Api.call({
+            action: 'getTime',
+            data: {
+            },
+            success: function (data) {
+                Chart.showList(data.label, data.value, 'time', true, 'warning');
             }
         });
     },

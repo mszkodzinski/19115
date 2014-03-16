@@ -2,6 +2,25 @@
 
 class Reader_Data extends DB_DB
 {
+    public function getTime()
+    {
+        $result = array(
+            'label' => array(),
+            'value' => array(),
+        );
+        $q = $this->getDBObject()->query('select round(avg(notification_time)/60/24) as value ,o.name as label from notification n
+join organization o on o.id = n.k_organization
+where notification_time > 0 and length(trim(o.name)) > 0
+group by k_organization order by value desc');
+        if ($q) {
+            foreach ($q->fetchAll() as $item) {
+                $result['label'][] = $item['label'];
+                $result['value'][] = intval($item['value']);
+            }
+        }
+        return $result;
+    }
+
     public function getStats()
     {
         $result = array(
