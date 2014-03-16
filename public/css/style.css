@@ -1,4 +1,13 @@
 /* custom style */
+.navbar {
+    font-size: 17px;
+}www
+#map{
+    color: #080f1f;
+}
+.navbar-form .form-control{
+    width: 110px;
+    margin-right: 2px;
 
 .navbar-nav:not(.navbar-right) > li > a {
     font-size: 1.4em !important;
