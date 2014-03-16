@@ -7,6 +7,6 @@
  */
 
 include_once('../application/autoloader.php');
-$db  = new Reader_Data();
+$db  = new DB_DB();
 
-var_dump($db->getCoords(NULL));
+var_dump($db->selectDict('district'));
