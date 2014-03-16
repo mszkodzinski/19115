@@ -24,7 +24,7 @@ class Reader_Data extends DB_DB
         if ($q) {
             $r = $q->fetchAll();
             $result['sum60'] = $r[0]['sum'];
-            $result['diff60p'] = -1 * round(100 * ((float)$result['sum60'] - 2 * $result['sum30']) / ($result['sum60'] - $result['sum30']));
+            $result['diff60p'] = ($result['sum60'] - $result['sum30']) != 0 ? -1 * round(100 * ((float)$result['sum60'] - 2 * $result['sum30']) / ($result['sum60'] - $result['sum30'])) : 0;
         }
         return $result;
     }
