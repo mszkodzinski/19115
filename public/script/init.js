@@ -187,21 +187,20 @@ var Hackathon19115 = {
     },
     map: function(){
         if (GBrowserIsCompatible()) {
-            var map = new GMap2(document.getElementById("map"));
-            map.setCenter(new GLatLng(52.233333, 21.016667), 12);
+            var map = new GMap2(document.getElementById('map'));
+            map.setCenter(new GLatLng(52.233333, 21.016667), 11);
             map.addControl(new GSmallMapControl());
             map.addControl(new GMapTypeControl());
 
-            // Create a base icon for all of our markers that specifies the
-            // shadow, icon dimensions, etc.
-            var baseIcon = new GIcon(G_DEFAULT_ICON);
-                baseIcon.image = "./image/icons/kran.png";
-
-            var dataMarkers = [
-                [52.16842458731105, 21.033786862794823, 'Dziura w drodze'],
-                [52.31398490225165, 21.030714290470254, 'Wybita szyba'],
-                [52.15897774006118, 21.107284782140656, 'Pies na drodze'],
-                [52.2429427626408, 21.108422247641645, 'Wypadek na drodze']
+            var icons = [
+                './image/icons/kran.png',
+                './image/icons/animal.png',
+                './image/icons/kran.png',
+                './image/icons/kran.png',
+                './image/icons/kran.png',
+                './image/icons/kran.png',
+                './image/icons/kran.png',
+                './image/icons/kran.png',
             ];
 
             var data = [
@@ -222,25 +221,23 @@ var Hackathon19115 = {
                 }
             ];
 
-            // Creates a marker whose info window displays the letter corresponding
-            // to the given index.
-            function createMarker(point, desc) {
-
+            function createMarker(data) {
+                console.log('data: ', data);
                 // Set up our GMarkerOptions object
-                markerOptions = { icon:baseIcon };
+                var baseIcon = new GIcon(G_DEFAULT_ICON);
+                    baseIcon.image = icons[data.type];
+                var markerOptions = { icon: baseIcon };
+                var point = new GLatLng(data.points[0], data.points[1]);
                 var marker = new GMarker(point, markerOptions);
 
-                GEvent.addListener(marker, "click", function() {
-                    marker.openInfoWindowHtml('Opis zdarzenia: ' + desc);
+                GEvent.addListener(marker, 'click', function() {
+                    marker.openInfoWindowHtml(data.description);
                 });
                 return marker;
             }
 
-
-
-            for (var i = 0; i < dataMarkers.length; i++) {
-                var point = new GLatLng(dataMarkers[i][0], dataMarkers[i][1]);
-                map.addOverlay(createMarker(point, dataMarkers[i][2]));
+            for (var i = 0; i < data.length; i++) {
+                map.addOverlay(createMarker(data[i]));
             }
 
         }
