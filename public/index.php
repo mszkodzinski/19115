@@ -18,6 +18,16 @@ include_once "header.inc";
                         <a class="btn btn-success btn-lg" href="https://warszawa19115.pl/web/portal/sprawdz-status" target="_blank">Sprawdź status</a>
                     </p>
                 </div>
+                <div class="col-lg-4">
+                    <div class="well sponsor">
+                        <h4>
+                            Pomóż Urzędowi Miasta dbać o Twoją najbliższą okolicę.
+                        </h4>
+                        <h5>
+                            Zobacz, ile do tej pory udało się zrobić, a na co jeszcze możesz wpłynąć.
+                        </h5>
+                    </div>
+                </div>
             </div>
             <!--<div class="row">
                 <div class="col-lg-6" style="padding: 15px 15px 0 15px;">
