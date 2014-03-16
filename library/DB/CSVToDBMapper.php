@@ -47,7 +47,10 @@ class DB_CSVToDBMapper {
 
     }
 
-    public function insertCSVDataToDB($filename, $closed = false){
+    public function insertCSVDataToDB($filename){
+        $closed = false;
+
+
 
         if(!file_exists($filename) || !is_readable($filename))
             return FALSE;
@@ -65,6 +68,13 @@ class DB_CSVToDBMapper {
             'close_date',//=>array('dateParser'),
             'k_source'=>array('insertDictData','source')
         );
+
+        if(preg_match('/_closed/',$filename)){
+            $closed = true;
+            var_dump('closed');
+            $header_mapper[] = 'date';
+        }
+        var_dump('opened');
 
         $headers = array();
         $i = 0;
@@ -94,7 +104,11 @@ class DB_CSVToDBMapper {
                 } else {
                     $tmp = array_combine($headers, $row);
                     $row =  $this->prepareCSVRow($tmp, $header_mapper);
-                    $this->db->insertRowData('notification', $row);
+                    if($closed){
+                        $this->db->updateNotificationData('notification', $row);
+                    }else{
+                        $this->db->insertRowData('notification', $row);
+                    }
                     $data[] = array_combine($headers, $row);
                 }
             }
