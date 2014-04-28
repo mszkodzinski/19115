@@ -22,7 +22,7 @@ class DB_CSVToDBMapper {
 //        'k_source'=>array('insertDictData','source')
 //    );
 
-    public function __construct(DB_DB $db){
+    public function __construct(Medoo_Medoo $db){
         $this->db = $db;
 
     }

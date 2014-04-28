@@ -28,6 +28,7 @@ function __autoload($class)
         case 'Csv':
         case 'Api':
         case 'DB':
+        case 'Medoo':
         case 'Imap':
             $path = LIB_PATH;
             $class = str_replace('_', '/', $class);

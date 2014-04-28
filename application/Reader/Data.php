@@ -1,6 +1,6 @@
 <?php
 
-class Reader_Data extends DB_DB
+class Reader_Data
 {
     public function getTime()
     {
@@ -29,20 +29,20 @@ group by k_organization order by value desc');
             'diff30' => 0
         );
 
-        $q = $this->getDBObject()->query('select count(1) as sum from notification');
+        $q = Medoo_Medoo::getInstance()->count("notification");//'select count(1) as sum from notification');
         if ($q) {
-            $r = $q->fetchAll();
-            $result['sum'] = $r[0]['sum'];
+            //$r = $q->fetchAll();
+            $result['sum'] = $q;
         }
-        $q = $this->getDBObject()->query('select count(1) as sum from notification where date_of_acceptance > \'' . date('Y-m-d', strtotime('-30 days')) . '\'');
+        $q = Medoo_Medoo::getInstance()->count("notification", array("date_of_acceptance[>]" => date('Y-m-d', strtotime('-30 days'))));//'select count(1) as sum from notification where date_of_acceptance > \'' . date('Y-m-d', strtotime('-30 days')) . '\'');
         if ($q) {
-            $r = $q->fetchAll();
-            $result['sum30'] = $r[0]['sum'];
+            //$r = $q->fetchAll();
+            $result['sum30'] = $q;
         }
-        $q = $this->getDBObject()->query('select count(1) as sum from notification where date_of_acceptance > \'' . date('Y-m-d', strtotime('-60 days')) . '\'');
+        $q = Medoo_Medoo::getInstance()->count("notification", array("date_of_acceptance[>]" => date('Y-m-d', strtotime('-60 days'))));//select count(1) as sum from notification where date_of_acceptance > \'' . date('Y-m-d', strtotime('-60 days')) . '\'');
         if ($q) {
-            $r = $q->fetchAll();
-            $result['sum60'] = $r[0]['sum'];
+            //$r = $q->fetchAll();
+            $result['sum60'] = $q;
             $result['diff60p'] = ($result['sum60'] - $result['sum30']) != 0 ? -1 * round(100 * ((float)$result['sum60'] - 2 * $result['sum30']) / ($result['sum60'] - $result['sum30'])) : 0;
         }
         $result['sum'] = number_format($result['sum'], 0, '.', ' ');
@@ -58,27 +58,27 @@ group by k_organization order by value desc');
             'district' => array(),
             'status' => array()
         );
-        $q = $this->getDBObject()->query('select * from organization');
+        $q = Medoo_Medoo::getInstance()->select("organization", "*");
         if ($q) {
-            foreach ($q->fetchAll() as $item) {
+            foreach ($q as $item) {
                 $result['organization'][$item['id']] = $item['name'];
             }
         }
-        $q = $this->getDBObject()->query('select * from source');
+        $q = Medoo_Medoo::getInstance()->select("source", "*");//('select * from source');
         if ($q) {
-            foreach ($q->fetchAll() as $item) {
+            foreach ($q as $item) {
                 $result['source'][$item['id']] = $item['name'];
             }
         }
-        $q = $this->getDBObject()->query('select * from district');
+        $q = Medoo_Medoo::getInstance()->select("district", "*");//('select * from district');
         if ($q) {
-            foreach ($q->fetchAll() as $item) {
+            foreach ($q as $item) {
                 $result['district'][$item['id']] = $item['name'];
             }
         }
-        $q = $this->getDBObject()->query('select * from status');
+        $q = Medoo_Medoo::getInstance()->select("status", "*");//('select * from status');
         if ($q) {
-            foreach ($q->fetchAll() as $item) {
+            foreach ($q as $item) {
                 $result['status'][$item['id']] = $item['name'];
             }
         }
@@ -91,16 +91,16 @@ group by k_organization order by value desc');
 
         switch ($params['groupby']) {
             case 'year':
-                $params['groupby'] = 'year(date_of_acceptance)';
+                $params["GROUP"] = 'year(date_of_acceptance)';
                 break;
             case 'month':
-                $params['groupby'] = 'year(date_of_acceptance)';
+                $params["GROUP"] = 'year(date_of_acceptance)';
                 break;
             case 'year_month':
-                $params['groupby'] = 'concat(year(date_of_acceptance),\'-\',month(date_of_acceptance))';
+                $params["GROUP"] = 'concat(year(date_of_acceptance),\'-\',month(date_of_acceptance))';
                 break;
             case 'year_month_day':
-                $params['groupby'] = 'concat(year(date_of_acceptance),\'-\',month(date_of_acceptance),\'-\',day(date_of_acceptance))';
+                $params["GROUP"] = 'concat(year(date_of_acceptance),\'-\',month(date_of_acceptance),\'-\',day(date_of_acceptance))';
                 break;
         }
 
@@ -156,6 +156,7 @@ group by k_organization order by value desc');
             'value' => array(),
         );
 //        echo 'aa'.$sql.'aa';
+        echo $sql;
         $q = $this->getDBObject()->query($sql);
         if ($q) {
             foreach ($q->fetchAll() as $item) {
@@ -171,13 +172,19 @@ group by k_organization order by value desc');
     {
         $result = array(
         );
-        $q = $this->getDBObject()->query('SELECT longtitude as lon,lattitude as lat,s.name as des,s.id as type FROM notification n
-join status s on s.id = n.k_status
-where (longtitude > 19 and longtitude < 23) and (lattitude > 50 and lattitude < 54)
-order by date_of_acceptance desc
-limit 300');
-        if ($q) {
-            foreach ($q->fetchAll() as $item) {
+
+        $q = Medoo_Medoo::getInstance()->select("notification", array("[>]status" => array("k_status" => "id")), array("notification.longtitude(lon)", "notification.lattitude(lat)", "status.name(des)", "status.id(type)"), array(
+            "AND" => array("AND" => array("longtitude[>]" => 19, "longtitude[<]" => 23), "AND" => array("lattitude[>]" => 50, "lattitude[<]" => 54)),
+            "ORDER" => "date_of_acceptance DESC",
+            "LIMIT" => 300
+        ));
+//        $q = $this->getDBObject()->query('SELECT longtitude as lon,lattitude as lat,s.name as des,s.id as type FROM notification n
+//join status s on s.id = n.k_status
+//where (longtitude > 19 and longtitude < 23) and (lattitude > 50 and lattitude < 54)
+//order by date_of_acceptance desc
+//limit 300');
+        if (!empty($q)) {
+            foreach ($q as $item) {
                 $result[] = array(
                     'points' =>  array(floatval($item['lat']), floatval($item['lon'])),
                     'description' => $item['des'],

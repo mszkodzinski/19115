@@ -5,7 +5,7 @@ error_reporting(E_ALL);
 ini_set('display_errors', 1);
 set_time_limit ( 300 );
 include_once('../application/autoloader.php');
-$db  = new DB_DB();
+$db  = Medoo_Medoo::getInstance();
 $mapper  = new DB_CSVToDBMapper($db);
 
 //$file = '/var/www/19115/data/file/2014-03-15.csv';
@@ -13,15 +13,16 @@ $mapper  = new DB_CSVToDBMapper($db);
 
 $path = '../data/file/';
 
-$query = $db->getDBObject()->query('SELECT * FROM  `importer` where status = 0 order by id asc ');
+$query = $db->select("importer", "*", ["status" => 0]);//'SELECT * FROM  `importer` where status = 0 order by id asc ');
 
-foreach($query->fetchAll() as $qr) {
+foreach($query as $qr) {
     $file = $path.$qr['file'];
     $fileconv = substr($file, 0, strlen($file)-4).'_utf8.csv';
     shell_exec('iconv -f UTF16LE -t UTF8 '.$file.' > '.$fileconv);
     $mapper->insertCSVDataToDB($fileconv);
 
-    $db->updateRow('`importer`', array('status' => '1'), array('id' => $qr['id']));
+    //$db->updateRow('`importer`', array('status' => '1'), array('id' => $qr['id']));
+    $db->update("importer", ["status" => 1], ["id" => $qr['id']]);
 }
 
 

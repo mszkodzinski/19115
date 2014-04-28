@@ -30,7 +30,7 @@ if (!$connection->isCorrect()) {
     return false;
 }
 
-$db = new DB_DB();
+$db = Medoo_Medoo::getInstance();
 
 // Pobierz wszystkie od daty... bez treści
 foreach ($connection->getMailboxList($mailboxes) as $mailbox) {
@@ -56,7 +56,12 @@ foreach ($connection->getMailboxList($mailboxes) as $mailbox) {
             //echo $file_name."<br/>";
 
             $a->saveContent('../data/file/' . $file_name);
-            $db->insertFile($file_name);
+            //$db->insertFile($file_name);
+            $db->insert("importer", [
+                "file" => $file_name,
+                "import_date" => "CURRENT_TIMESTAMP",
+                "status" => 0
+            ]);
 
         }
 

@@ -19,6 +19,14 @@ class DB_DB  {
         return $this->db;
     }
 
+    public function beginTransaction() {
+        return $this->db->beginTransaction();
+    }
+
+    public function endTransaction() {
+        return $this->db->commit();
+    }
+
     public function insertFile($file_name) {
         $query = $this->db->prepare('INSERT INTO `importer` (`file` ,`import_date` ,`status`) VALUES (?, CURRENT_TIMESTAMP ,  \'0\');');
         return $query->execute(array($file_name));

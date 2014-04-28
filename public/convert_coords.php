@@ -7,19 +7,20 @@
  */
 
 include_once('../application/autoloader.php');
-$db  = new DB_DB();
+$db  = Medoo_Medoo::getInstance();
 $path = '../data/file/';
 
 
 //var_dump($db->selectDict('district'));
-$sql = "SELECT longtitude_2000, lattitude_2000 FROM  `notification` where lattitude_2000 !='' &&  longtitude_2000 !=''  order by id asc ";
-echo $sql;
-$query = $db->getDBObject()->query($sql);
+$query = $db->select("notification", array("longtitude_2000", "lattitude_2000"), array("lattitude_2000[!]" => "", "longtitude_2000[!]" => "", "ORDER" => "id ASC"));
+//$sql = "SELECT longtitude_2000, lattitude_2000 FROM  `notification` where lattitude_2000 !='' &&  longtitude_2000 !=''  order by id asc ";
+//echo $sql;
+//$query = $db->getDBObject()->query($sql);
 $file = $path.'coords.csv';
 $fp = fopen($file, 'w');
-var_dump($fp);
-foreach($query->fetchAll(PDO::FETCH_ASSOC) as $coords) {
-    var_dump($coords);
+//var_dump($fp);
+foreach($query as $coords) {
+    //var_dump($coords);
     fputcsv($fp,array_values($coords),"\t" );
 
 }
@@ -42,13 +43,14 @@ if (($handle = fopen($file_joined, 'r')) !== FALSE)
 {
     while (($row = fgetcsv($handle, 1000, "\t")) !== FALSE)
     {
-        print_r($row);
-
-        $res = $db->updateRow('notification',
-            array('lattitude'=>trim($row[3]),'longtitude'=>trim($row[2])),
-            array('lattitude_2000'=>trim($row[1]),'longtitude_2000'=>trim($row[0]))
-        );
-        var_dump($res);
+        //print_r($row);
+        $res = $db->update("notification", array("lattitude" => trim($row[3]), "longtitude" => trim($row[2])), array("lattitude_2000" => trim($row[1]), "longtitude_2000" => trim($row[0])));
+//        $res = $db->updateRow('notification',
+//            array('lattitude'=>trim($row[3]),'longtitude'=>trim($row[2])),
+//            array('lattitude_2000'=>trim($row[1]),'longtitude_2000'=>trim($row[0]))
+//        );
+        //var_dump($res);
     }
+
     fclose($handle);
 }
