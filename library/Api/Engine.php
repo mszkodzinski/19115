@@ -37,7 +37,7 @@ class Api_Engine
     {
         $r = new Api_Responce();
 
-        $reader = new Reader_Data();
+        $reader = new p19115_Service_Data();
         $result = $reader->getLabels();
 
         if (!$result) {
@@ -85,7 +85,7 @@ class Api_Engine
             $params['groupby'] = $map[$params['groupby']];
         }
 
-        $reader = new Reader_Data();
+        $reader = new p19115_Service_Data();
         $result = $reader->getData($params);
 
         if (!$result) {
@@ -101,7 +101,7 @@ class Api_Engine
     {
         $r = new Api_Responce();
 
-        $reader = new Reader_Data();
+        $reader = new p19115_Service_Data();
         $result = $reader->getStats();
 
         if (!$result) {
@@ -117,7 +117,7 @@ class Api_Engine
     {
         $r = new Api_Responce();
 
-        $reader = new Reader_Data();
+        $reader = new p19115_Service_Data();
         $result = $reader->getTime();
 
         if (!$result) {
@@ -133,7 +133,7 @@ class Api_Engine
     {
         $r = new Api_Responce();
 
-        $reader = new Reader_Data();
+        $reader = new p19115_Service_Data();
         $result = $reader->getMaps();
 
         if (!$result) {

@@ -1,6 +1,6 @@
 <?php
 
-class Reader_Data
+class p19115_Service_Data
 {
     public function getTime()
     {
@@ -8,7 +8,7 @@ class Reader_Data
             'label' => array(),
             'value' => array(),
         );
-        $q = $this->getDBObject()->query('select round(avg(notification_time)/60/24) as value ,o.name as label from notification n
+        $q = Medoo_Medoo::getInstance()->query('select round(avg(notification_time)/60/24) as value ,o.name as label from notification n
 join organization o on o.id = n.k_organization
 where notification_time > 0 and length(trim(o.name)) > 0
 group by k_organization order by value desc');
@@ -155,9 +155,9 @@ group by k_organization order by value desc');
             'label' => array(),
             'value' => array(),
         );
-//        echo 'aa'.$sql.'aa';
-        echo $sql;
-        $q = $this->getDBObject()->query($sql);
+
+        $q = Medoo_Medoo::getInstance()->query($sql);
+
         if ($q) {
             foreach ($q->fetchAll() as $item) {
                 $result['label'][] = $item['label'];

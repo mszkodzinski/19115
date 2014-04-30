@@ -8,6 +8,6 @@
 
 
 include_once('../application/autoloader.php');
-$db  = new Reader_Data();
+$db  = new p19115_Service_Data();
 
 var_dump($db->getCoords(NULL));

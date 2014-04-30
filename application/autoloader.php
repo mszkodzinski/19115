@@ -40,6 +40,10 @@ function __autoload($class)
             $path = APP_PATH;
             $class = str_replace('_', '/', $class);
     }
+    if (!file_exists($path . $class . '.php')) {
+        echo $class . ' in file ' . $path . $class . '.php';
+        die;
+    }
     require $path . $class . '.php';
 }
 spl_autoload_register('__autoload');
