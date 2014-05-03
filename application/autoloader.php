@@ -1,10 +1,4 @@
 <?php
-setlocale(LC_CTYPE, "pl.UTF8");
-
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
-set_time_limit(300);
-
 define('LIB_PATH', '../library/');
 define('APP_PATH', '../application/');
 
@@ -32,24 +26,21 @@ function __autoload($class)
         case 'Core':
         case 'Csv':
         case 'Api':
-        case 'DB':
         case 'Medoo':
         case 'Imap':
-            $path = LIB_PATH;
-            $class = str_replace('_', '/', $class);
+            $path = LIB_PATH . str_replace('_', '/', $class);
             break;
         default:
             if (isset($name[1])) {
                 $name[1] = strtolower($name[1]);
             }
-            $path = APP_PATH;
-            $class = str_replace('_', '/', $class);
+            $path = APP_PATH . str_replace('_', '/', $class);
     }
-    if (!file_exists($path . $class . '.php')) {
-        echo $class . ' in file ' . $path . $class . '.php';
+    if (!file_exists($path . '.php')) {
+        echo $class . ' in file ' . $path . '.php';
         die;
     }
-    require $path . $class . '.php';
+    require $path . '.php';
 }
 spl_autoload_register('__autoload');
 

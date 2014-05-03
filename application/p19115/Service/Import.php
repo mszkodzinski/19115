@@ -75,11 +75,11 @@ class p19115_Service_Import
                     $fileName .= '.csv';
 
                     $a->saveContent('../data/file/' . $fileName);
-                    $fileModel->insert([
+                    $fileModel->insert(array(
                         "file" => $fileName,
                         "import_date" => "CURRENT_TIMESTAMP",
                         "status" => p19115_Model_File::STATUS_NEW
-                    ]);
+                    ));
                 }
             }
         }
@@ -136,14 +136,14 @@ class p19115_Service_Import
         $path = '../data/file/';
 
         // 'SELECT * FROM  `importer` where status = 0 order by id asc ');
-        foreach ($fileModel->select("*", ["status" => p19115_Model_File::STATUS_NEW]) as $qr) {
+        foreach ($fileModel->select("*", array("status" => p19115_Model_File::STATUS_NEW)) as $qr) {
             $file = $path.$qr['file'];
             $fileconv = substr($file, 0, strlen($file)-4).'_utf8.csv';
             $this->_convertFile($file, $fileconv);
             $this->_insertData($fileconv);
 
             //$db->updateRow('`importer`', array('status' => '1'), array('id' => $qr['id']));
-            $db->update("importer", ["status" => p19115_Model_File::STATUS_PARSED], ["id" => $qr['id']]);
+            $db->update("importer", array("status" => p19115_Model_File::STATUS_PARSED), array("id" => $qr['id']));
         }
     }
 
