@@ -95,21 +95,30 @@ class p19115_Service_Import
      */
     public function convertCoords()
     {
-
         $model = new p19115_Model_Notification();
         $result = $model->select(
-            array('id','status'),
-            array('lattitude_2000[!]' => '', 'longtitude_2000[!]' => '', 'LIMIT'=>10)//, 'ORDER' => 'id ASC')
-        );var_dump($result);
-        echo $model->getMedoo()->last_query();die;
+            array('longtitude_2000', 'lattitude_2000'),
+            array(
+                'AND' => array(
+                    'lattitude_2000[!]' => '',
+                    'longtitude_2000[!]' => '',
+                    'lattitude' => ''
+                ),
+                'ORDER' => 'id ASC'
+            )
+        );
+
         if (!$result) {
             return false;
-        }
+        }echo count($result);
 
         $path = '../data/file/';
         $file = $path . 'coords.csv';
         $fp = fopen($file, 'w');
-        foreach($result as $coords) {
+        foreach ($result as $coords) {
+            foreach ($coords as $k => $v) {
+                $coords[$k] = str_replace(',', '.', $v);
+            }
             fputcsv($fp, array_values($coords), "\t");
         }
         fclose($fp);
@@ -125,12 +134,17 @@ class p19115_Service_Import
             return false;
         }
         while (($row = fgetcsv($handle, 1000, "\t")) !== FALSE) {
+            if (count($row) < 4) {
+                continue;
+            }
             $model->update(array(
                 'lattitude' => trim($row[3]),
                 'longtitude' => trim($row[2])
             ), array(
-                'lattitude_2000' => trim($row[1]),
-                'longtitude_2000' => trim($row[0])
+                'AND' => array(
+                    'lattitude_2000' => trim($row[1]),
+                    'longtitude_2000' => trim($row[0])
+                )
             ));
         }
         fclose($handle);
