@@ -14,4 +14,4 @@ if (!count($data)) {
 }
 
 $engine = new Api_Engine();
-echo $engine->action($action, $data);
+echo $engine->run($action, $data);

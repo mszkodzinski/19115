@@ -2,7 +2,7 @@ var map = $('#map'),
     chart = $('#visualization'),
     container = $('#container');
 
-var Hackathon19115 = {
+var p19115 = {
     filters: {
         date: [0, 0]
     },
@@ -10,8 +10,8 @@ var Hackathon19115 = {
         switch (page) {
             case 'charts':
                 Chart.init(function () {
-                    Hackathon19115.initFilter();
-//            Hackathon19115.chart();
+                    p19115.initFilter();
+//            p19115.chart();
                 });
                 break;
             case 'maps':
@@ -20,7 +20,7 @@ var Hackathon19115 = {
                 break;
             case 'main':
                 Chart.init(function () {
-                    Hackathon19115.main();
+                    p19115.main();
                 });
                 break;
         }
@@ -90,18 +90,18 @@ var Hackathon19115 = {
                     $('#date-from,#date-to').show();
                     break;
             }
-            Hackathon19115.filters.date[0] = $('#date-from').val();
-            Hackathon19115.filters.date[1] = $('#date-to').val();
-            Hackathon19115.chart();
+            p19115.filters.date[0] = $('#date-from').val();
+            p19115.filters.date[1] = $('#date-to').val();
+            p19115.chart();
         });
         $('ul.date-type .active a').trigger('click');
     },
     chart: function(){
         Api.call({
-            action: 'getData',
+            action: 'p19115_Data_getData',
             data: {
                 groupby: 'source',
-                filter: Hackathon19115.filters,
+                filter: p19115.filters,
                 sortby: 'value',
                 order: 'desc'
             },
@@ -110,10 +110,10 @@ var Hackathon19115 = {
             }
         });
         Api.call({
-            action: 'getData',
+            action: 'p19115_Data_getData',
             data: {
                 groupby: 'district',
-                filter: Hackathon19115.filters,
+                filter: p19115.filters,
                 sortby: 'value',
                 order: 'desc'
             },
@@ -122,47 +122,47 @@ var Hackathon19115 = {
             }
         });
         Api.call({
-            action: 'getData',
+            action: 'p19115_Data_getData',
             data: {
                 groupby: 'year_month',
-                filter: Hackathon19115.filters
+                filter: p19115.filters
             },
             success: function (data) {
                 Chart.drawPie(data.label, data.value, null, 'year');
             }
         });
         Api.call({
-            action: 'getData',
+            action: 'p19115_Data_getData',
             data: {
                 groupby: 'organization',
-                filter: Hackathon19115.filters
+                filter: p19115.filters
             },
             success: function (data) {
                 Chart.drawPie(Chart.getLabels('organization', data.label), data.value, null, 'organization');
             }
         });
 //        Api.call({
-//            action: 'getData',
+//            action: 'p19115_Data_getData',
 //            data: {
 //                groupby: 'year_month_day',
-//                filter: Hackathon19115.filters
+//                filter: p19115.filters
 //            },
 //            success: function (data) {
 //                Chart.drawCalendar(data.label, data.value, 'Dni', 'calendar');
 //            }
 //        });
         Api.call({
-            action: 'getData',
+            action: 'p19115_Data_getData',
             data: {
                 groupby: 'year_month_day',
-                filter: Hackathon19115.filters
+                filter: p19115.filters
             },
             success: function (data) {
                 Chart.drawLine(data.label, data.value, 'Liczba', 'day-by-day');
             }
         });
         Api.call({
-            action: 'getTime',
+            action: 'p19115_Data_getTime',
             data: {
             },
             success: function (data) {
@@ -172,7 +172,7 @@ var Hackathon19115 = {
     },
     main: function () {
         Api.call({
-            action: 'getData',
+            action: 'p19115_Data_getData',
             data: {
                 groupby: 'district',
                 sortby: 'value',
@@ -184,7 +184,7 @@ var Hackathon19115 = {
             }
         });
         Api.call({
-            action: 'getData',
+            action: 'p19115_Data_getData',
             data: {
                 groupby: 'status'
             },
@@ -193,7 +193,7 @@ var Hackathon19115 = {
             }
         });
         Api.call({
-            action: 'getStats',
+            action: 'p19115_Data_getStats',
             data: {
             },
             success: function (data) {
@@ -205,7 +205,7 @@ var Hackathon19115 = {
         if (GBrowserIsCompatible()) {
 
             Api.call({
-                action: 'getMaps',
+                action: 'p19115_Data_getMaps',
                 data: {
                 },
                 success: function (data) {
@@ -260,7 +260,7 @@ var Hackathon19115 = {
 
         }
     },
-    webResponse: function(){
+    webResponse: function () {
         var w = container.width();
 
         function setSize(w){
@@ -270,11 +270,8 @@ var Hackathon19115 = {
 
         window.onresize = function(event) {
             var w = container.width();
-
             setSize(w);
         };
-
         setSize(w);
-
     }
 };

@@ -92,10 +92,10 @@ include_once "header.inc";
         google.load('visualization', '1', {packages: ['corechart', 'calendar', 'corechart']});
     </script>
     <script src="./script/bootstrap-datepicker.js"></script>
-    <script src="./script/init.js"></script>
+    <script src="application/p19115/init.js"></script>
     <script>
         $(function () {
-            Hackathon19115.init('charts');
+            p19115.init('charts');
         });
     </script>
 <?php

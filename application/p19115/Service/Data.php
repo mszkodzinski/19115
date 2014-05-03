@@ -8,7 +8,8 @@ class p19115_Service_Data
             'label' => array(),
             'value' => array(),
         );
-        $q = Medoo_Medoo::getInstance()->query('select round(avg(notification_time)/60/24) as value ,o.name as label from notification n
+        $model = new p19115_Model_Notification();
+        $q = $model->query('select round(avg(notification_time)/60/24) as value ,o.name as label from notification n
 join organization o on o.id = n.k_organization
 where notification_time > 0 and length(trim(o.name)) > 0
 group by k_organization order by value desc');
@@ -29,19 +30,17 @@ group by k_organization order by value desc');
             'diff30' => 0
         );
 
-        $q = Medoo_Medoo::getInstance()->count("notification");//'select count(1) as sum from notification');
+        $model = new p19115_Model_Notification();
+        $q = $model->count();//'select count(1) as sum from notification');
         if ($q) {
-            //$r = $q->fetchAll();
             $result['sum'] = $q;
         }
-        $q = Medoo_Medoo::getInstance()->count("notification", array("date_of_acceptance[>]" => date('Y-m-d', strtotime('-30 days'))));//'select count(1) as sum from notification where date_of_acceptance > \'' . date('Y-m-d', strtotime('-30 days')) . '\'');
+        $q = $model->count(array("date_of_acceptance[>]" => date('Y-m-d', strtotime('-30 days'))));//'select count(1) as sum from notification where date_of_acceptance > \'' . date('Y-m-d', strtotime('-30 days')) . '\'');
         if ($q) {
-            //$r = $q->fetchAll();
             $result['sum30'] = $q;
         }
-        $q = Medoo_Medoo::getInstance()->count("notification", array("date_of_acceptance[>]" => date('Y-m-d', strtotime('-60 days'))));//select count(1) as sum from notification where date_of_acceptance > \'' . date('Y-m-d', strtotime('-60 days')) . '\'');
+        $q = $model->count(array("date_of_acceptance[>]" => date('Y-m-d', strtotime('-60 days'))));//select count(1) as sum from notification where date_of_acceptance > \'' . date('Y-m-d', strtotime('-60 days')) . '\'');
         if ($q) {
-            //$r = $q->fetchAll();
             $result['sum60'] = $q;
             $result['diff60p'] = ($result['sum60'] - $result['sum30']) != 0 ? -1 * round(100 * ((float)$result['sum60'] - 2 * $result['sum30']) / ($result['sum60'] - $result['sum30'])) : 0;
         }
@@ -58,25 +57,25 @@ group by k_organization order by value desc');
             'district' => array(),
             'status' => array()
         );
-        $q = Medoo_Medoo::getInstance()->select("organization", "*");
+        $q = Medoo_Model::factory('organization')->select("*");
         if ($q) {
             foreach ($q as $item) {
                 $result['organization'][$item['id']] = $item['name'];
             }
         }
-        $q = Medoo_Medoo::getInstance()->select("source", "*");//('select * from source');
+        $q = Medoo_Model::factory('source')->select("*");//('select * from source');
         if ($q) {
             foreach ($q as $item) {
                 $result['source'][$item['id']] = $item['name'];
             }
         }
-        $q = Medoo_Medoo::getInstance()->select("district", "*");//('select * from district');
+        $q = Medoo_Model::factory('district')->select("*");//('select * from district');
         if ($q) {
             foreach ($q as $item) {
                 $result['district'][$item['id']] = $item['name'];
             }
         }
-        $q = Medoo_Medoo::getInstance()->select("status", "*");//('select * from status');
+        $q = Medoo_Model::factory('status')->select("*");//('select * from status');
         if ($q) {
             foreach ($q as $item) {
                 $result['status'][$item['id']] = $item['name'];
@@ -156,7 +155,8 @@ group by k_organization order by value desc');
             'value' => array(),
         );
 
-        $q = Medoo_Medoo::getInstance()->query($sql);
+        $model = new p19115_Model_Notification();
+        $q = $model->query($sql);
 
         if ($q) {
             foreach ($q->fetchAll() as $item) {
@@ -173,8 +173,16 @@ group by k_organization order by value desc');
         $result = array(
         );
 
-        $q = Medoo_Medoo::getInstance()->select("notification", array("[>]status" => array("k_status" => "id")), array("notification.longtitude(lon)", "notification.lattitude(lat)", "status.name(des)", "status.id(type)"), array(
-            "AND" => array("AND" => array("longtitude[>]" => 19, "longtitude[<]" => 23), "AND" => array("lattitude[>]" => 50, "lattitude[<]" => 54)),
+        $model = new p19115_Model_Notification();
+        $q = $model->select(array(
+            "[>]status" => array("k_status" => "id")
+        ), array(
+            "notification.longtitude(lon)", "notification.lattitude(lat)", "status.name(des)", "status.id(type)"
+        ), array(
+            "AND" => array(
+                "AND" => array("longtitude[>]" => 19, "longtitude[<]" => 23),
+                "AND" => array("lattitude[>]" => 50, "lattitude[<]" => 54)
+            ),
             "ORDER" => "date_of_acceptance DESC",
             "LIMIT" => 300
         ));

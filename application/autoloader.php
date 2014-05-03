@@ -1,4 +1,9 @@
 <?php
+setlocale(LC_CTYPE, "pl.UTF8");
+
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+set_time_limit(300);
 
 define('LIB_PATH', '../library/');
 define('APP_PATH', '../application/');

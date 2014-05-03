@@ -1,6 +1,6 @@
 <?php
 
-abstract class Medoo_Model
+class Medoo_Model
 {
     /**
      * @var null|string
@@ -18,9 +18,37 @@ abstract class Medoo_Model
         $this->init();
     }
 
+    /**
+     * @param $tableName
+     * @return Medoo_Model
+     */
+    public static function factory($tableName)
+    {
+        $model = new self();
+        return $model->setTableName($tableName);
+    }
+
     public function init()
     {
         $this->_medoo = Medoo_Medoo::getInstance();
+    }
+
+    /**
+     * @param $tableName
+     * @return Medoo_Model
+     */
+    public function setTableName($tableName)
+    {
+        $this->_tableName = $tableName;
+        return $this;
+    }
+
+    /**
+     * @return null|string
+     */
+    public function getTableName()
+    {
+        return $this->_tableName;
     }
 
     /**
@@ -60,5 +88,38 @@ abstract class Medoo_Model
     public function select($join, $column = null, $where = null)
     {
         return $this->_medoo->select($this->_tableName, $join, $column, $where);
+    }
+
+    /**
+     * @param null $join
+     * @param null $column
+     * @param null $where
+     * @return int
+     */
+    public function count($join = null, $column = null, $where = null)
+    {
+        return $this->_medoo->count($this->_tableName, $join, $column, $where);
+    }
+
+    /**
+     * @param $query
+     * @return PDOStatement
+     */
+    public function query($query)
+    {
+        return $this->_medoo->query($query);
+    }
+
+    /**
+     * @param $value
+     * @param string $columnName
+     * @return array
+     */
+    public function insertIfNotExist($value, $columnName = 'name')
+    {
+        if ($res = $this->select('id', array($columnName => $value))) {
+            return $res['id'];
+        }
+        return $this->insert(array($columnName => $value));
     }
 }

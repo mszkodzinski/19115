@@ -3,7 +3,7 @@ Chart = {
     init: function (callback) {
         var self = this;
         Api.call({
-            action: 'getLabels',
+            action: 'p19115_Data_getLabels',
             success: function (data) {
                 self.labels = data;
                 if ($.isFunction(callback)) {

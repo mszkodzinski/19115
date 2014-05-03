@@ -35,10 +35,10 @@ include_once "header.inc";
 </div>
 <script src="//maps.google.com/maps?file=api&amp;v=2&amp;sensor=false&amp;key=ABQIAAAAuPsJpk3MBtDpJ4G8cqBnjRRaGTYH6UMl8mADNa0YKuWNNa8VNxQCzVBXTx2DYyXGsTOxpWhvIG7Djw" type="text/javascript"></script>
 <script src="./script/bootstrap-datepicker.js"></script>
-<script src="./script/init.js"></script>
+<script src="application/p19115/init.js"></script>
 <script>
     $(function () {
-        Hackathon19115.init('maps');
+        p19115.init('maps');
     });
 </script>
 

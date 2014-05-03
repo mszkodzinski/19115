@@ -71,10 +71,10 @@ include_once "header.inc";
     <script type="text/javascript">
         google.load('visualization', '1', {packages: ['corechart', 'calendar', 'corechart']});
     </script>
-    <script src="./script/init.js"></script>
+    <script src="application/p19115/init.js"></script>
     <script>
         $(function () {
-            Hackathon19115.init('main');
+            p19115.init('main');
         });
     </script>
 
