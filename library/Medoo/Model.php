@@ -118,7 +118,7 @@ class Medoo_Model
     public function insertIfNotExist($value, $columnName = 'name')
     {
         if ($res = $this->select('id', array($columnName => $value))) {
-            return $res['id'];
+            return $res[0]['id'];
         }
         return $this->insert(array($columnName => $value));
     }

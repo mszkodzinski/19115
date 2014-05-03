@@ -1,6 +1,6 @@
 <?php
 
-class p19115_Script_ConvertCords extends Core_CliScript
+class p19115_Script_ConvertCoords extends Core_CliScript
 {
     public function run($data)
     {

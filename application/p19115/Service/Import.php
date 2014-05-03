@@ -9,7 +9,7 @@ class p19115_Service_Import
     /**
      * @var bool
      */
-    protected $_isDebug = false;
+    protected $_isDebug = true;
 
 
     /**
@@ -54,9 +54,14 @@ class p19115_Service_Import
         }
 
         // Pobierz wszystkie od daty... bez treści
-        // @todo dynamiczna wartość $dateStart
-        $dateStart = '2013-03-07';
         $fileModel = new p19115_Model_File();
+        $newestFile = $fileModel->select('*', array('ORDER' => 'id DESC', 'LIMIT' => 1));
+        if (!count($newestFile)) {
+            $dateStart = '2013-01-01';
+        } else {
+            $dateStart = substr($newestFile[0]['file'], 0, 10);
+        }
+
         foreach ($connection->getMailboxList(array('INBOX')) as $mailbox) {
             $uids = $mailbox->getMessagesUidSinceDate($dateStart);
 
@@ -66,19 +71,19 @@ class p19115_Service_Import
                     $fileName = substr($model['date'], 0, 10);
                     switch (trim($model['subject'])) {
                         case self::MAIL_TITLE_CLOSE:
-                            $fileName .= "_closed";
+                            $fileName .= '_closed';
                             break;
                         case self::MAIL_TITLE_ALL:
-                            $fileName .= "_open";
+                            $fileName .= '_open';
                             break;
                     }
                     $fileName .= '.csv';
 
                     $a->saveContent('../data/file/' . $fileName);
                     $fileModel->insert(array(
-                        "file" => $fileName,
-                        "import_date" => "CURRENT_TIMESTAMP",
-                        "status" => p19115_Model_File::STATUS_NEW
+                        'file' => $fileName,
+                        'import_date' => 'CURRENT_TIMESTAMP',
+                        'status' => p19115_Model_File::STATUS_NEW
                     ));
                 }
             }
@@ -95,10 +100,14 @@ class p19115_Service_Import
 
         $model = new p19115_Model_Notification();
         $fp = fopen($file, 'w');
-        foreach($model->select(
-                array("longtitude_2000", "lattitude_2000"),
-                array("lattitude_2000[!]" => "", "longtitude_2000[!]" => "", "ORDER" => "id ASC")
-            ) as $coords) {
+        $result = $model->select(
+            array('longtitude_2000', 'lattitude_2000'),
+            array('lattitude_2000[!]' => '', 'longtitude_2000[!]' => '', 'ORDER' => 'id ASC')
+        );
+        if (!$result) {
+            return false;
+        }
+        foreach($result as $coords) {
             fputcsv($fp, array_values($coords), "\t");
         }
         fclose($fp);
@@ -115,11 +124,11 @@ class p19115_Service_Import
         }
         while (($row = fgetcsv($handle, 1000, "\t")) !== FALSE) {
             $model->update(array(
-                "lattitude" => trim($row[3]),
-                "longtitude" => trim($row[2])
+                'lattitude' => trim($row[3]),
+                'longtitude' => trim($row[2])
             ), array(
-                "lattitude_2000" => trim($row[1]),
-                "longtitude_2000" => trim($row[0])
+                'lattitude_2000' => trim($row[1]),
+                'longtitude_2000' => trim($row[0])
             ));
         }
         fclose($handle);
@@ -136,14 +145,14 @@ class p19115_Service_Import
         $path = '../data/file/';
 
         // 'SELECT * FROM  `importer` where status = 0 order by id asc ');
-        foreach ($fileModel->select("*", array("status" => p19115_Model_File::STATUS_NEW)) as $qr) {
+        foreach ($fileModel->select('*', array('status' => p19115_Model_File::STATUS_NEW)) as $qr) {
             $file = $path.$qr['file'];
-            $fileconv = substr($file, 0, strlen($file)-4).'_utf8.csv';
+            $fileconv = substr($file, 0, strlen($file) - 4) . '_utf8.csv';
             $this->_convertFile($file, $fileconv);
             $this->_insertData($fileconv);
 
             //$db->updateRow('`importer`', array('status' => '1'), array('id' => $qr['id']));
-            $db->update("importer", array("status" => p19115_Model_File::STATUS_PARSED), array("id" => $qr['id']));
+            $db->update('importer', array('status' => p19115_Model_File::STATUS_PARSED), array('id' => $qr['id']));
         }
     }
 
@@ -216,7 +225,7 @@ class p19115_Service_Import
                         $this->log($row['number']. ' update result ' . $u);
                         $res['update']++;
                     } else {
-                        $id = $this->_insertNotification('notification', $row);
+                        $id = $this->_insertNotification($row);
                         $this->log($row['number'] . ' insert result ' . $id);
                         $res['insert']++;
                     }
