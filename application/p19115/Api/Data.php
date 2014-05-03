@@ -80,7 +80,7 @@ class p19115_Api_Data extends Api_Engine
 
         if (!$result) {
             $r->status = false;
-            $r->code = Api_Responce::CODE_ERROR;
+            $r->code = 500;
         } else {
             $r->data = $result;
         }
@@ -112,7 +112,7 @@ class p19115_Api_Data extends Api_Engine
 
         if (!$result) {
             $r->status = false;
-            $r->code = Api_Responce::CODE_ERROR;
+            $r->code = 500;
         } else {
             $r->data = $result;
         }

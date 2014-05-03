@@ -95,18 +95,20 @@ class p19115_Service_Import
      */
     public function convertCoords()
     {
-        $path = '../data/file/';
-        $file = $path . 'coords.csv';
 
         $model = new p19115_Model_Notification();
-        $fp = fopen($file, 'w');
         $result = $model->select(
-            array('longtitude_2000', 'lattitude_2000'),
-            array('lattitude_2000[!]' => '', 'longtitude_2000[!]' => '', 'ORDER' => 'id ASC')
-        );
+            array('id','status'),
+            array('lattitude_2000[!]' => '', 'longtitude_2000[!]' => '', 'LIMIT'=>10)//, 'ORDER' => 'id ASC')
+        );var_dump($result);
+        echo $model->getMedoo()->last_query();die;
         if (!$result) {
             return false;
         }
+
+        $path = '../data/file/';
+        $file = $path . 'coords.csv';
+        $fp = fopen($file, 'w');
         foreach($result as $coords) {
             fputcsv($fp, array_values($coords), "\t");
         }

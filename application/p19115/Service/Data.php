@@ -90,16 +90,16 @@ group by k_organization order by value desc');
 
         switch ($params['groupby']) {
             case 'year':
-                $params["GROUP"] = 'year(date_of_acceptance)';
+                $params["groupby"] = 'year(date_of_acceptance)';
                 break;
             case 'month':
-                $params["GROUP"] = 'year(date_of_acceptance)';
+                $params["groupby"] = 'year(date_of_acceptance)';
                 break;
             case 'year_month':
-                $params["GROUP"] = 'concat(year(date_of_acceptance),\'-\',month(date_of_acceptance))';
+                $params["groupby"] = 'concat(year(date_of_acceptance),\'-\',month(date_of_acceptance))';
                 break;
             case 'year_month_day':
-                $params["GROUP"] = 'concat(year(date_of_acceptance),\'-\',month(date_of_acceptance),\'-\',day(date_of_acceptance))';
+                $params["groupby"] = 'concat(year(date_of_acceptance),\'-\',month(date_of_acceptance),\'-\',day(date_of_acceptance))';
                 break;
         }
 
@@ -134,6 +134,7 @@ group by k_organization order by value desc');
 //        if ($params['groupby'] && $params['notnull']) {
 //            $where[] = $params['groupby'] . ' is not null';
 //        }
+
         if (count($where)) {
             $sql .= ' where ' . implode(' and ', $where);
         }

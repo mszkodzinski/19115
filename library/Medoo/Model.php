@@ -52,6 +52,14 @@ class Medoo_Model
     }
 
     /**
+     * @return medoo
+     */
+    public function getMedoo()
+    {
+        return $this->_medoo;
+    }
+
+    /**
      * @param $datas
      * @return array
      */
