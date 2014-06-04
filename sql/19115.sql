@@ -114,6 +114,40 @@ CREATE TABLE IF NOT EXISTS `status` (
   UNIQUE KEY `uniq_name` (`name`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
 
+--
+-- Table structure for table `stations`
+--
+
+CREATE TABLE IF NOT EXISTS `stations` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(150) NOT NULL,
+  `lng` varchar(100) NOT NULL,
+  `lat` varchar(100) NOT NULL,
+  `uid` int(11) NOT NULL,
+  `bike_numbers` varchar(255) NOT NULL,
+  `bike_racks` int(11) NOT NULL,
+  `bikes` varchar(10) NOT NULL,
+  `number` int(11) NOT NULL,
+  `spot` int(11) NOT NULL,
+  `terminal_type` varchar(100) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+
+--
+-- Table structure for table `ride`
+--
+
+CREATE TABLE IF NOT EXISTS `ride` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `start_time` datetime NOT NULL,
+  `end_time` datetime NOT NULL,
+  `start_place_id` int(11) NOT NULL,
+  `end_place_id` int(11) NOT NULL,
+  `price` int(11) NOT NULL,
+  `invalid` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
